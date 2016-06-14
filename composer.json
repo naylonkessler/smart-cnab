@@ -1,0 +1,23 @@
+{
+    "name": "naylonkessler/smart-cnab",
+    "description": "Just a smart package to generate CNAB files.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Naylon Kessler de Aquino",
+            "email": "naylon.kessler@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "5.3.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "SmartCNAB\\": "src/SmartCNAB/"
+        }
+    }
+}
