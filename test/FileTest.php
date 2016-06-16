@@ -24,17 +24,19 @@ class FileTest extends PHPUnit_Framework_TestCase
             \SmartCNAB\Support\File\File::CNAB400);
         $lines = $remittance->begin([])
                     ->addDetail([
+                        'portfolio' => '109',
+                        'companyinscnum' => '12345678901414',
+                        'inscnum' => '12345678900',
                         'expiration' => new \DateTime(),
                         'emission' => new \DateTime(),
-                        'discountto' => new \DateTime(),
-                        'lateinteresetdate' => new \DateTime(),
                     ])
                     ->end()
                     ->getLines();
 
-        $this->assertCount(3, $lines);
+        $this->assertCount(4, $lines);
         $this->assertTrue(strlen(implode('', $lines[0])) == 400);
         $this->assertTrue(strlen(implode('', $lines[1])) == 400);
         $this->assertTrue(strlen(implode('', $lines[2])) == 400);
+        $this->assertTrue(strlen(implode('', $lines[3])) == 0);
     }
 }

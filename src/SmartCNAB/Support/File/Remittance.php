@@ -3,6 +3,7 @@
 namespace SmartCNAB\Support\File;
 
 use SmartCNAB\Contracts\File\Remittance as RemittanceContract;
+use SmartCNAB\Support\Picture;
 
 /**
  * Base file class.
@@ -29,13 +30,6 @@ class Remittance extends File implements RemittanceContract
      * @var array
      */
     protected $schema;
-
-    /**
-     * File schema file.
-     *
-     * @var string
-     */
-    protected $schemaFile;
 
     /**
      * Lines sequencial.
@@ -122,15 +116,20 @@ class Remittance extends File implements RemittanceContract
      */
     protected function formatLine(array $data, $type = 'detail')
     {
+        $formatted = [];
+
         foreach ($this->schema[$type] as $field => $meta) {
-            $method = 'format'.ucfirst($type).ucfirst($field);
             $value = empty($data[$field])? '' : $data[$field];
-            method_exists($this, $method) &&
-            ($value = call_user_func_array($method, [$data, $meta]));
-            $data[$field] = $this->picture->to($meta['pic'], $value, $meta);
+            $method = 'format'.ucfirst($type).ucfirst($field);
+
+            if (method_exists($this, $method)) {
+                $value = call_user_func([$this, $method], $value, $data, $meta);
+            }
+
+            $formatted[$field] = $this->picture->to($meta['pic'], $value, $meta);
         }
 
-        return $data;
+        return $formatted;
     }
 
     /**
@@ -164,25 +163,5 @@ class Remittance extends File implements RemittanceContract
         $data['seq'] = ++$this->sequencial;
 
         return $data;
-    }
-
-    /**
-     * Parse and return the schema structure.
-     *
-     * @return array
-     */
-    protected function parseSchema()
-    {
-        return json_decode(file_get_contents($this->schemaPath()), true);
-    }
-
-    /**
-     * Generate and return the schema file path.
-     *
-     * @return string
-     */
-    protected function schemaPath()
-    {
-        return realpath(dirname(__FILE__).$this->schemaFile);
     }
 }

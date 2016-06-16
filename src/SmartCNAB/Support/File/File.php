@@ -19,6 +19,26 @@ class File implements FileContract
     const CNAB400 = 400;
 
     /**
+     * File schema file.
+     *
+     * @var string
+     */
+    protected $schemaFile;
+
+    /**
+     * Transform a class to a path.
+     *
+     * @param  string  $class
+     * @return string
+     */
+    protected function classToPath($class)
+    {
+        $base = dirname(dirname(dirname(dirname(__FILE__))));
+
+        return $base.'/'.dirname(str_replace('\\', '/', $class));
+    }
+
+    /**
      * Generate and return the file contents.
      *
      * @return string
@@ -30,6 +50,16 @@ class File implements FileContract
         $output = strtoupper($output);
 
         return $output;
+    }
+
+    /**
+     * Parse and return the schema structure.
+     *
+     * @return array
+     */
+    protected function parseSchema()
+    {
+        return json_decode(file_get_contents($this->schemaPath()), true);
     }
 
     /**
@@ -48,5 +78,15 @@ class File implements FileContract
         }
 
         return new SplFileObject($path);
+    }
+
+    /**
+     * Generate and return the schema file path.
+     *
+     * @return string
+     */
+    protected function schemaPath()
+    {
+        return realpath($this->classToPath(get_class($this)).$this->schemaFile);
     }
 }
