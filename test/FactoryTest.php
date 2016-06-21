@@ -25,11 +25,14 @@ class FactoryTest extends PHPUnit_Framework_TestCase
     public function testReturningReturn()
     {
         $factory = new \SmartCNAB\Services\Factory();
-        $returning = $factory->returning('');
+        $returning = $factory->returning(
+            dirname(__FILE__).'/return.RET',
+            \SmartCNAB\Support\Bank::ITAU
+        );
 
-        // $this->assertInstanceOf(
-        //     \SmartCNAB\Services\Returning\Banks\Itau\File400::class,
-        //     $returning
-        // );
+        $this->assertInstanceOf(
+            \SmartCNAB\Services\Returning\Banks\Itau\File400::class,
+            $returning
+        );
     }
 }

@@ -20,7 +20,8 @@ interface Factory
      * Return an instance of a returning.
      *
      * @param  string  $path
+     * @param  integer  $bank
      * @return \SmartCNAB\Contracts\File\Returning
      */
-    public function returning($path);
+    public function returning($path, $bank);
 }

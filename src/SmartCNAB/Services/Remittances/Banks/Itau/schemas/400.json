@@ -154,7 +154,7 @@
             "pos": [127, 139],
             "pic": "9(11)V9(2)"
         },
-        "bankcode": {
+        "recbankcode": {
             "pos": [140, 142],
             "pic": "9(03)",
             "def": "341"
@@ -194,7 +194,7 @@
             "pic": "9(06)",
             "type": "date"
         },
-        "discountvalue": {
+        "discount": {
             "pos": [180, 192],
             "pic": "9(11)V9(2)"
         },
