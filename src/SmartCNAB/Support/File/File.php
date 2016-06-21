@@ -45,7 +45,11 @@ class File implements FileContract
      */
     protected function generate()
     {
-        $output = implode("\r\n", $this->getLines());
+        $lines = array_map(function ($line) {
+            return implode('', $line);
+        }, $this->getLines());
+
+        $output = implode("\r\n", $lines);
         $output = iconv('UTF-8', 'ASCII//TRANSLIT', $output);
         $output = strtoupper($output);
 
