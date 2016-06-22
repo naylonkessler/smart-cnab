@@ -60,19 +60,22 @@ class Picture
     }
 
     /**
-     * Execute a string limit or string pad if is shorten then size.
+     * Execute a content limit or pad if is shorten then size.
      *
-     * @param  mixed  $string
+     * @param  mixed  $value
      * @param  integer  $size
+     * @param  array  $meta
      * @return string
      */
-    public function limit($string, $size)
+    public function limit($value, $size, array $meta = [])
     {
-        if (strlen($string) > $size) {
-            return substr($string, 0, $size);
+        if (strlen($value) > $size) {
+            return substr($value, 0, $size);
         }
 
-        return $this->stringPad($string, $size);
+        $method = $meta['data-type'].'Pad';
+
+        return call_user_func_array([$this, $method], [$value, $meta['size']]);
     }
 
     /**
@@ -174,9 +177,7 @@ class Picture
             return call_user_func_array([$this, $method], [$value, $parsed]);
         }
 
-        $method = $parsed['data-type'].'Pad';
-
-        return call_user_func_array([$this, $method], [$value, $parsed['size']]);
+        return $this->limit($value, $parsed['size'], $parsed);
     }
 
     /**
@@ -202,7 +203,7 @@ class Picture
     {
         $value = $value->format('dmy');
 
-        return $this->numericPad($value, $meta['size']);
+        return $this->limit($value, $meta['size'], $meta);
     }
 
     /**
@@ -243,6 +244,6 @@ class Picture
     {
         $value = number_format(floatval($value), $meta['last']);
 
-        return $this->numericPad($value, $meta['size']);
+        return $this->limit($value, $meta['size'], $meta);
     }
 }
