@@ -3,8 +3,12 @@
 ```php
 <?php
 
-$factory = new \SmartCNAB\Factory();
-$remittance = $factory->remittance(\SmartCNAB\Support\Bank::ITAU, \SmartCNAB\Support\File\File::CNAB400);
+use SmartCNAB\Services\Factory;
+use SmartCNAB\Support\Bank;
+use SmartCNAB\Support\File\File;
+
+$factory = new Factory();
+$remittance = $factory->remittance(Bank::ITAU, File::CNAB400);
 $remittance->begin([]);
 $remittance->addDetail([]);
 $remittance->end();
@@ -14,9 +18,14 @@ $remittance->save($path);
 ```php
 <?php
 
-$factory = new \SmartCNAB\Factory();
+use SmartCNAB\Services\Factory;
+use SmartCNAB\Support\Bank;
+
+$path = '...';
+
+$factory = new Factory();
 $return = $factory->returning($path);
-$return->getHeader();
-$return->getDetails();
-$return->getFooter();
+$header = $return->header();
+$details = $return->details();
+$trailer = $return->trailer();
 ```

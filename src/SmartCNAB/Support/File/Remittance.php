@@ -6,17 +6,10 @@ use SmartCNAB\Contracts\File\Remittance as RemittanceContract;
 use SmartCNAB\Support\Picture;
 
 /**
- * Base file class.
+ * Base remittances class.
  */
 class Remittance extends File implements RemittanceContract
 {
-    /**
-     * File lines collection.
-     *
-     * @var array
-     */
-    protected $lines = [];
-
     /**
      * Picture instance.
      *
@@ -130,16 +123,6 @@ class Remittance extends File implements RemittanceContract
         }
 
         return $formatted;
-    }
-
-    /**
-     * Return the file lines.
-     *
-     * @return array
-     */
-    public function getLines()
-    {
-        return $this->lines;
     }
 
     /**

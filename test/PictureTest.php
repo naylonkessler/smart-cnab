@@ -56,6 +56,7 @@ class PictureTest extends PHPUnit_Framework_TestCase
         $number = $picture->from('9(04)', '0011');
         $money = $picture->from('9(04)V9(2)', '012312');
         $date = $picture->from('9(06)', '090616', ['type' => 'date']);
+        $position = $picture->from('X(03)', '001NKA00', ['pos' => [4, 6]]);
 
         $refDate = new \DateTime('2016-06-09');
 
@@ -63,6 +64,7 @@ class PictureTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(11, $number);
         $this->assertEquals(123.12, $money);
         $this->assertEquals($refDate->format('dmy'), $date->format('dmy'));
+        $this->assertEquals('NKA', $position);
     }
 
     public function testPictureToDefault()

@@ -55,13 +55,29 @@ class Factory implements FactoryContract
         $header = fgets($file);
         fclose($file);
 
-        $size = strlen($header);
+        $size = strlen(trim($header));
 
         if ( ! in_array($size, [240, 400])) {
             throw new RangeException('Invalid CNAB file version. Size '.$size);
         }
 
         return $size;
+    }
+
+    /**
+     * Discover and return the bank number a file.
+     *
+     * @param  string  $path
+     * @return integer
+     * @todo Refactoring to own class
+     */
+    protected function discoverBank($path)
+    {
+        $file = fopen(realpath($path), 'r');
+        $header = fgets($file);
+        fclose($file);
+
+        return substr($header, 76, 3);
     }
 
     /**
@@ -87,13 +103,14 @@ class Factory implements FactoryContract
      * @param  integer  $bank
      * @return \SmartCNAB\Contracts\File\Returning
      */
-    public function returning($path, $bank)
+    public function returning($path, $bank = null)
     {
+        $bank = $bank?: $this->discoverBank($path);
         $bankNs = $this->discoverBankNamespace($bank, 'Returning');
         $version = $this->discoverFileVersion($path);
         $file = "File{$version}";
         $class = $bankNs.$file;
 
-        return new $class(new Picture());
+        return new $class($path, new Picture());
     }
 }

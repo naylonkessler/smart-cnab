@@ -19,6 +19,13 @@ class File implements FileContract
     const CNAB400 = 400;
 
     /**
+     * File lines collection.
+     *
+     * @var array
+     */
+    protected $lines = [];
+
+    /**
      * File schema file.
      *
      * @var string
@@ -57,13 +64,49 @@ class File implements FileContract
     }
 
     /**
+     * Return the file lines.
+     *
+     * @return array
+     */
+    public function getLines()
+    {
+        return $this->lines;
+    }
+
+    /**
+     * Loads a file content.
+     *
+     * @param  string  $path
+     * @return self
+     * @throws \RuntimeException
+     */
+    public function load($path)
+    {
+        $contents = file($path);
+
+        if ($contents === false) {
+            throw new RuntimeException('Unable to read file '.$path);
+        }
+
+        $this->lines = $contents;
+
+        return $this;
+    }
+
+    /**
      * Parse and return the schema structure.
      *
      * @return array
      */
     protected function parseSchema()
     {
-        return json_decode(file_get_contents($this->schemaPath()), true);
+        $parsed = json_decode(file_get_contents($this->schemaPath()), true);
+
+        if ($parsed === null) {
+            throw new RuntimeException('Unable to parse schema');
+        }
+
+        return $parsed;
     }
 
     /**

@@ -14,7 +14,8 @@ class FactoryTest extends PHPUnit_Framework_TestCase
         $factory = new \SmartCNAB\Services\Factory();
         $remittance = $factory->remittance(
             \SmartCNAB\Support\Bank::ITAU,
-            \SmartCNAB\Support\File\File::CNAB400);
+            \SmartCNAB\Support\File\File::CNAB400
+        );
 
         $this->assertInstanceOf(
             \SmartCNAB\Services\Remittances\Banks\Itau\File400::class,
@@ -26,9 +27,20 @@ class FactoryTest extends PHPUnit_Framework_TestCase
     {
         $factory = new \SmartCNAB\Services\Factory();
         $returning = $factory->returning(
-            dirname(__FILE__).'/return.RET',
+            dirname(__FILE__).'/sample.RET',
             \SmartCNAB\Support\Bank::ITAU
         );
+
+        $this->assertInstanceOf(
+            \SmartCNAB\Services\Returning\Banks\Itau\File400::class,
+            $returning
+        );
+    }
+
+    public function testReturningDiscoverBank()
+    {
+        $factory = new \SmartCNAB\Services\Factory();
+        $returning = $factory->returning(dirname(__FILE__).'/sample.RET');
 
         $this->assertInstanceOf(
             \SmartCNAB\Services\Returning\Banks\Itau\File400::class,

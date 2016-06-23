@@ -6,7 +6,7 @@ use SmartCNAB\Contracts\File\Returning as ReturningContract;
 use SmartCNAB\Support\Picture;
 
 /**
- * Base file class.
+ * Base returning class.
  */
 class Returning extends File implements ReturningContract
 {
@@ -29,10 +29,12 @@ class Returning extends File implements ReturningContract
      *
      * @param  \SmartCNAB\Support\Picture  $picture
      */
-    public function __construct(Picture $picture)
+    public function __construct($path, Picture $picture)
     {
         $this->picture = $picture;
         $this->schema = $this->parseSchema();
+
+        $this->load($path);
     }
 
     /**
@@ -42,40 +44,11 @@ class Returning extends File implements ReturningContract
      */
     public function details()
     {
-        $data = $this->increment($data);
-        $data = $this->formatLine($data);
-        $this->addLine($data);
+        $details = array_slice($this->lines, 1, count($this->lines) - 2);
 
-        return $this;
-    }
-
-    /**
-     * Returns the file header.
-     *
-     * @return \StdClass
-     */
-    public function header()
-    {
-        $data = $this->increment($data);
-        $data = $this->formatLine($data, 'header');
-        $this->addLine($data);
-
-        return $this;
-    }
-
-    /**
-     * Returns the file trailer.
-     *
-     * @return \StdClass
-     */
-    public function trailer()
-    {
-        $data = $this->increment([]);
-        $data = $this->formatLine($data, 'trailer');
-        $this->addLine($data);
-        $this->addLine(['']);
-
-        return $this;
+        return array_map(function($detail) {
+            return (object)$this->parseLine($detail);
+        }, $details);
     }
 
     /**
@@ -86,5 +59,47 @@ class Returning extends File implements ReturningContract
     public function getSchema()
     {
         return $this->schema;
+    }
+
+    /**
+     * Returns the file header.
+     *
+     * @return \StdClass
+     */
+    public function header()
+    {
+        $data = $this->parseLine($this->lines[0], 'header');
+
+        return (object)$data;
+    }
+
+    /**
+     * Parses a line data received using the schema.
+     *
+     * @param  string  $data
+     * @param  string  $type
+     * @return array
+     */
+    protected function parseLine($data, $type = 'detail')
+    {
+        $parsed = [];
+
+        foreach ($this->schema[$type] as $field => $meta) {
+            $parsed[$field] = $this->picture->from($meta['pic'], $data, $meta);
+        }
+
+        return $parsed;
+    }
+
+    /**
+     * Returns the file trailer.
+     *
+     * @return \StdClass
+     */
+    public function trailer()
+    {
+        $data = $this->parseLine(end($this->lines), 'trailer');
+
+        return (object)$data;
     }
 }

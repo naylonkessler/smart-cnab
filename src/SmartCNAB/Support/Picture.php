@@ -22,6 +22,8 @@ class Picture
     {
         $parsed = $this->parse($picture, $meta);
         $method = 'from'.ucfirst($parsed['info-type']);
+        $start = empty($parsed['pos'])? 0 : $parsed['pos'][0] - 1;
+        $value = substr($value, $start, $parsed['size']);
 
         if (method_exists($this, $method)) {
             return call_user_func_array([$this, $method], [$value, $parsed]);

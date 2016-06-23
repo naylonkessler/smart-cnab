@@ -23,5 +23,5 @@ interface Factory
      * @param  integer  $bank
      * @return \SmartCNAB\Contracts\File\Returning
      */
-    public function returning($path, $bank);
+    public function returning($path, $bank = null);
 }
