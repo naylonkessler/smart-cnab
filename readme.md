@@ -19,7 +19,6 @@ $remittance->save($path);
 <?php
 
 use SmartCNAB\Services\Factory;
-use SmartCNAB\Support\Bank;
 
 $path = '...';
 
