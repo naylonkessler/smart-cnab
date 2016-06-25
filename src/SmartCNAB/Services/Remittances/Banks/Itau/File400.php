@@ -3,7 +3,6 @@
 namespace SmartCNAB\Services\Remittances\Banks\Itau;
 
 use SmartCNAB\Support\File\Remittance;
-use SmartCNAB\Support\Picture;
 
 /**
  * Class for Itau remittance CNAB 400 layout.
