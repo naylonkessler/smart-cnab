@@ -120,7 +120,7 @@
             "pos": [38, 62],
             "pic": "X(25)"
         },
-        "ournum": {
+        "ournumber": {
             "pos": [63, 70],
             "pic": "9(08)"
         },
@@ -132,11 +132,11 @@
             "pos": [83, 85],
             "pic": "9(03)"
         },
-        "ournum2": {
+        "ournumber2": {
             "pos": [86, 93],
             "pic": "9(08)"
         },
-        "ournum2dac": {
+        "ournumber2dac": {
             "pos": [94, 94],
             "pic": "9(01)"
         },
@@ -148,11 +148,11 @@
             "pos": [108, 108],
             "pic": "X(01)"
         },
-        "ocurrcode": {
+        "occurrcode": {
             "pos": [109, 110],
             "pic": "9(02)"
         },
-        "ocurrdate": {
+        "occurrdate": {
             "pos": [111, 116],
             "pic": "9(06)",
             "type": "date"
@@ -161,7 +161,7 @@
             "pos": [117, 126],
             "pic": "X(10)"
         },
-        "ournumconf": {
+        "ournumberconf": {
             "pos": [127, 134],
             "pic": "9(08)"
         },

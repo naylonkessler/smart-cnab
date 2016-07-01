@@ -8,117 +8,224 @@ namespace SmartCNAB\Support\Bank;
 class Itau
 {
     /**
-     * Occurrence codes
+     * Especies codes.
+     *
+     * @var array
      */
-    const OCURR_REMESSA = 1;
-    const OCURR_PEDIDO_DE_BAIXA = 2;
-    const OCURR_CONCESSAO_DE_ABATIMENTO_IND_12_5 = 4;
-    const OCURR_CANCELAMENTO_DE_ABATIMENTO = 5;
-    const OCURR_ALTERACAO_DO_VENCIMENTO = 6;
-    const OCURR_ALTERACAO_DO_USO_DA_EMPRESA = 7;
-    const OCURR_ALTERACAO_DO_SEU_NUMERO = 8;
-    const OCURR_PROTESTAR = 9;
-    const OCURR_NAO_PROTESTAR = 10;
-    const OCURR_PROTESTO_PARA_FINS_FALIMENTARES = 11;
-    const OCURR_SUSTAR_O_PROTESTO = 18;
-    const OCURR_EXCLUSAO_DE_SACADOR_AVALISTA = 30;
-    const OCURR_ALTERACAO_DE_OUTROS_DADOS = 31;
-    const OCURR_BAIXA_POR_TER_SIDO_PAGO_DIRETAMENTE_AO_BENEFICIARIO = 34;
-    const OCURR_CANCELAMENTO_DE_INSTRUCAO = 35;
-    const OCURR_ALTERACAO_DO_VENCIMENTO_E_SUSTAR_PROTESTO = 37;
-    const OCURR_BENEFICIARIO_NAO_CONCORDA_COM_ALEGACAO_DO_PAGADOR = 38;
-    const OCURR_BENEFICIARIO_SOLICITA_DISPENSA_DE_JUROS = 47;
-    const OCURR_ALTERACAO_DE_DADOS_EXTRAS_REGISTRO_DE_MULTA = 49;
-    const OCURR_ENTRADA_EM_NEGATIVACAO_EXPRESSA = 66;
-    const OCURR_NAO_NEGATIVAR_INIBE_A_ENTRADA_EM_NEGATIVACAO_EXPRESSA = 67;
-    const OCURR_EXCLUIR_NEGATIVACAO_EXPRESSA_ATE_15_DIAS_CORRIDOS_APOS_A_ENTRADA_EM_NEGATIVACAO_EXPRESSA = 68;
-    const OCURR_CANCELAR_NEGATIVACAO_EXPRESSA_APOS_TITULO_TER_SIDO_NEGATIVADO = 69;
-    const OCURR_DESCONTAR_TITULOS_ENCAMINHADOS_NO_DIA = 93;
+    protected $especies = [
+        '01' => 'Duplicata mercantil',
+        '02' => 'Nota promissória',
+        '03' => 'Nota de seguro',
+        '04' => 'Mensalidade escolar',
+        '05' => 'Recibo',
+        '06' => 'Contrato',
+        '07' => 'Cosseguros',
+        '08' => 'Duplicata de serviço',
+        '09' => 'Letra de câmbio',
+        '13' => 'Nota de débitos',
+        '15' => 'Documento de dívida',
+        '16' => 'Encargos condominiais',
+        '17' => 'Conta de prestação de serviços',
+        '18' => 'Boleto de proposta*', // Not implemented
+        '99' => 'Diversos',
+    ];
 
     /**
-     * Especies codes
+     * Billing instruction.
+     *
+     * @var array
      */
-    const ESP_DUPLICATA_MERCANTIL = 1;
-    const ESP_NOTA_PROMISSORIA = 2;
-    const ESP_NOTA_DE_SEGURO = 3;
-    const ESP_MENSALIDADE_ESCOLAR = 4;
-    const ESP_RECIBO = 5;
-    const ESP_CONTRATO = 6;
-    const ESP_COSSEGUROS = 7;
-    const ESP_DUPLICATA_DE_SERVICO = 8;
-    const ESP_LETRA_DE_CAMBIO = 9;
-    const ESP_NOTA_DE_DEBITOS = 13;
-    const ESP_DOCUMENTO_DE_DIVIDA = 15;
-    const ESP_ENCARGOS_CONDOMINIAIS = 16;
-    const ESP_CONTA_DE_PRESTACAO_DE_SERVICOS = 17;
-    // const ESP_BOLETO_DE_PROPOSTA = 18; // Not implemented
-    const ESP_DIVERSOS = 99;
+    protected $instructions = [
+        '02' => 'Devolver após 05 dias do vencimento',
+        '03' => 'Devolver após 30 dias do vencimento',
+        '05' => 'Receber conforme instruções no próprio título',
+        '06' => 'Devolver após 10 dias do vencimento',
+        '07' => 'Devolver após 15 dias do vencimento',
+        '08' => 'Devolver após 20 dias do vencimento',
+        '09' => 'Protestar',
+        '10' => 'Não protestar (inibe protesto, quando houver instrução permanente na conta corrente)',
+        '11' => 'Devolver após 25 dias do vencimento',
+        '12' => 'Devolver após 35 dias do vencimento',
+        '13' => 'Devolver após 40 dias do vencimento',
+        '14' => 'Devolver após 45 dias do vencimento',
+        '15' => 'Devolver após 50 dias do vencimento',
+        '16' => 'Devolver após 55 dias do vencimento',
+        '17' => 'Devolver após 60 dias do vencimento',
+        '18' => 'Devolver após 90 dias do vencimento',
+        '19' => 'Não receber após 05 dias do vencimento',
+        '20' => 'Não receber após 10 dias do vencimento',
+        '21' => 'Não receber após 15 dias do vencimento',
+        '22' => 'Não receber após 20 dias do vencimento',
+        '23' => 'Não receber após 25 dias do vencimento',
+        '24' => 'Não receber após 30 dias do vencimento',
+        '25' => 'Não receber após 35 dias do vencimento',
+        '26' => 'Não receber após 40 dias do vencimento',
+        '27' => 'Não receber após 45 dias do vencimento',
+        '28' => 'Não receber após 50 dias do vencimento',
+        '29' => 'Não receber após 55 dias do vencimento',
+        '30' => 'Importância de desconto por dia',
+        '31' => 'Não receber após 60 dias do vencimento',
+        '32' => 'Não receber após 90 dias do vencimento',
+        '33' => 'Conceder abatimento ref. à PIS-PASEP/COFIN/CSSL, mesmo após vencimento',
+        '34' => 'Protestar após xx dias corridos do vencimento',
+        '35' => 'Protestar após xx dias úteis do vencimento',
+        '37' => 'Receber até o último dia do mês de vencimento',
+        '38' => 'Conceder desconto mesmo após vencimento',
+        '39' => 'Não receber após o vencimento',
+        '40' => 'Conceder desconto conforme nota de crédito',
+        '42' => 'Protesto para fins falimentares',
+        '43' => 'Sujeito a protesto se não for pago no vencimento',
+        '44' => 'Importância por dia de atraso a partir de ddmmaa',
+        '45' => 'Tem dia da graça',
+        '46' => 'Uso do banco',
+        '47' => 'Dispensar juros/comissão de permanência',
+        '51' => 'Receber somente com a parcela anterior quitada',
+        '52' => 'Efetuar o pagamento somente através deste boleto e na rede bancária',
+        '53' => 'Uso do banco',
+        '54' => 'Após vencimento pagável somente na empresa',
+        '56' => 'Uso do banco',
+        '57' => 'Somar valor do título ao valor do campo mora/multa caso exista',
+        '58' => 'Devolver após 365 dias de vencido',
+        '59' => 'Cobrança negociada. pagável somente por este boleto na rede bancária',
+        '61' => 'Título entregue em penhor em favor do beneficiário acima',
+        '62' => 'Título transferido a favor do beneficiário',
+        '66' => 'Entrada em negativação expressa (imprime: sujeito a negativação após o vencimento)',
+        '67' => 'Não negativar (inibe a entrada em negativação expressa)',
+        '78' => 'Valor da ida engloba multa de 10% pro rata',
+        '79' => 'Cobrar juros após 15 dias da emissão (para títulos com vencimento à vista)',
+        '80' => 'Pagamento em cheque: somente receber com cheque de emissão do pagador',
+        '83' => 'Operação ref a vendor',
+        '84' => 'Após vencimento consultar a agência beneficiário',
+        '86' => 'Antes do vencimento ou após 15 dias, pagável somente em nossa sede',
+        '87' => 'Uso do banco',
+        '88' => 'Não receber antes do vencimento',
+        '89' => 'Uso do banco',
+        '90' => 'No vencimento pagável em qualquer agência bancária',
+        '91' => 'Não receber após xx dias do vencimento',
+        '92' => 'Devolver após xx dias do vencimento',
+        '93' => 'Mensagens nos boletos com 30 posições',
+        '94' => 'Mensagens nos boletos com 40 posições',
+        '98' => 'Duplicata / Número fatura',
+    ];
 
     /**
-     * Billing instruction
+     * Remittance occurrences codes.
+     *
+     * @var array
      */
-    const INST_DEVOLVER_APOS_05_DIAS_DO_VENCIMENTO = 2;
-    const INST_DEVOLVER_APOS_30_DIAS_DO_VENCIMENTO = 3;
-    const INST_RECEBER_CONFORME_INSTRUCOES_NO_PROPRIO_TITULO = 5;
-    const INST_DEVOLVER_APOS_10_DIAS_DO_VENCIMENTO = 6;
-    const INST_DEVOLVER_APOS_15_DIAS_DO_VENCIMENTO = 7;
-    const INST_DEVOLVER_APOS_20_DIAS_DO_VENCIMENTO = 8;
-    const INST_PROTESTAR = 9;
-    const INST_NAO_PROTESTAR = 10;
-    const INST_DEVOLVER_APOS_25_DIAS_DO_VENCIMENTO = 11;
-    const INST_DEVOLVER_APOS_35_DIAS_DO_VENCIMENTO = 12;
-    const INST_DEVOLVER_APOS_40_DIAS_DO_VENCIMENTO = 13;
-    const INST_DEVOLVER_APOS_45_DIAS_DO_VENCIMENTO = 14;
-    const INST_DEVOLVER_APOS_50_DIAS_DO_VENCIMENTO = 15;
-    const INST_DEVOLVER_APOS_55_DIAS_DO_VENCIMENTO = 16;
-    const INST_DEVOLVER_APOS_60_DIAS_DO_VENCIMENTO = 17;
-    const INST_DEVOLVER_APOS_90_DIAS_DO_VENCIMENTO = 18;
-    const INST_NAO_RECEBER_APOS_05_DIAS_DO_VENCIMENTO = 19;
-    const INST_NAO_RECEBER_APOS_10_DIAS_DO_VENCIMENTO = 20;
-    const INST_NAO_RECEBER_APOS_15_DIAS_DO_VENCIMENTO = 21;
-    const INST_NAO_RECEBER_APOS_20_DIAS_DO_VENCIMENTO = 22;
-    const INST_NAO_RECEBER_APOS_25_DIAS_DO_VENCIMENTO = 23;
-    const INST_NAO_RECEBER_APOS_30_DIAS_DO_VENCIMENTO = 24;
-    const INST_NAO_RECEBER_APOS_35_DIAS_DO_VENCIMENTO = 25;
-    const INST_NAO_RECEBER_APOS_40_DIAS_DO_VENCIMENTO = 26;
-    const INST_NAO_RECEBER_APOS_45_DIAS_DO_VENCIMENTO = 27;
-    const INST_NAO_RECEBER_APOS_50_DIAS_DO_VENCIMENTO = 28;
-    const INST_NAO_RECEBER_APOS_55_DIAS_DO_VENCIMENTO = 29;
-    const INST_IMPORTANCIA_DE_DESCONTO_POR_DIA = 30;
-    const INST_NAO_RECEBER_APOS_60_DIAS_DO_VENCIMENTO = 31;
-    const INST_NAO_RECEBER_APOS_90_DIAS_DO_VENCIMENTO = 32;
-    const INST_CONCEDER_ABATIMENTO_REF_PIS_PASEP_COFIN_CSSL_MESMO_APOS_VENCIMENTO = 33;
-    const INST_PROTESTAR_APOS_XX_DIAS_CORRIDOS_DO_VENCIMENTO = 34;
-    const INST_PROTESTAR_APOS_XX_DIAS_UTEIS_DO_VENCIMENTO = 35;
-    const INST_RECEBER_ATE_O_ULTIMO_DIA_DO_MES_DE_VENCIMENTO = 37;
-    const INST_CONCEDER_DESCONTO_MESMO_APOS_VENCIMENTO = 38;
-    const INST_NAO_RECEBER_APOS_O_VENCIMENTO = 39;
-    const INST_CONCEDER_DESCONTO_CONFORME_NOTA_DE_CREDITO = 40;
-    const INST_PROTESTO_PARA_FINS_FALIMENTARES = 42;
-    const INST_SUJEITO_A_PROTESTO_SE_NAO_FOR_PAGO_NO_VENCIMENTO = 43;
-    const INST_IMPORTANCIA_POR_DIA_DE_ATRASO_A_PARTIR_DE_DDMMAA = 44;
-    const INST_TEM_DIA_DA_GRACA = 45;
-    const INST_DISPENSAR_JUROS_COMISSAO_DE_PERMANENCIA = 47;
-    const INST_RECEBER_SOMENTE_COM_A_PARCELA_ANTERIOR_QUITADA = 51;
-    const INST_EFETUAR_O_PAGAMENTO_SOMENTE_ATRAVES_DESTE_BOLETO_E_NA_REDE_BANCARIA = 52;
-    const INST_APOS_VENCIMENTO_PAGAVEL_SOMENTE_NA_EMPRESA = 54;
-    const INST_SOMAR_VALOR_DO_TITULO_AO_VALOR_DO_CAMPO_MORA_MULTA_CASO_EXISTA = 57;
-    const INST_DEVOLVER_APOS_365_DIAS_DE_VENCIDO = 58;
-    const INST_COBRANCA_NEGOCIADA_PAGAVEL_SOMENTE_POR_ESTE_BOLETO_NA_REDE_BANCARIA = 59;
-    const INST_TITULO_ENTREGUE_EM_PENHOR_EM_FAVOR_DO_BENEFICIARIO_ACIMA = 61;
-    const INST_TITULO_TRANSFERIDO_A_FAVOR_DO_BENEFICIARIO = 62;
-    const INST_ENTRADA_EM_NEGATIVACAO_EXPRESSA_IMPRIME_SUJEITO_A_NEGATIVACAO_APOS_O_VENCIMENTO = 66;
-    const INST_NAO_NEGATIVAR_INIBE_A_ENTRADA_EM_NEGATIVACAO_EXPRESSA = 67;
-    const INST_VALOR_DA_IDA_ENGLOBA_MULTA_DE_10PERC_PRO_RATA = 78;
-    const INST_COBRAR_JUROS_APOS_15_DIAS_DA_EMISSAO_PARA_TITULOS_COM_VENCIMENTO_A_VISTA = 79;
-    const INST_PAGAMENTO_EM_CHEQUE_SOMENTE_RECEBER_COM_CHEQUE_DE_EMISSAO_DO_PAGADOR = 80;
-    const INST_OPERACAO_REF_A_VENDOR = 83;
-    const INST_APOS_VENCIMENTO_CONSULTAR_A_AGENCIA_BENEFICIARIO = 84;
-    const INST_ANTES_DO_VENCIMENTO_OU_APOS_15_DIAS_PAGAVEL_SOMENTE_EM_NOSSA_SEDE = 86;
-    const INST_NAO_RECEBER_ANTES_DO_VENCIMENTO = 88;
-    const INST_NO_VENCIMENTO_PAGAVEL_EM_QUALQUER_AGENCIA_BANCARIA = 90;
-    const INST_NAO_RECEBER_APOS_XX_DIAS_DO_VENCIMENTO = 91;
-    const INST_DEVOLVER_APOS_XX_DIAS_DO_VENCIMENTO = 92;
-    const INST_MENSAGENS_NOS_BOLETOS_COM_30_POSICOES = 93;
-    const INST_MENSAGENS_NOS_BOLETOS_COM_40_POSICOES = 94;
+    protected $remittanceOccurrences = [
+        '01' => 'Remessa',
+        '02' => 'Pedido de baixa',
+        '04' => 'Concessão de abatimento (indicador 12.5)',
+        '05' => 'Cancelamento de abatimento',
+        '06' => 'Alteração do vencimento',
+        '07' => 'Alteração do uso da empresa',
+        '08' => 'Alteração do seu número',
+        '09' => 'Protestar',
+        '10' => 'Não protestar',
+        '11' => 'Protesto para fins falimentares',
+        '18' => 'Sustar o protesto',
+        '30' => 'Exclusão de sacador avalista',
+        '31' => 'Alteração de outros dados',
+        '34' => 'Baixa por ter sido pago diretamente ao beneficiário',
+        '35' => 'Cancelamento de instrução',
+        '37' => 'Alteração do vencimento e sustar protesto',
+        '38' => 'Beneficiário não concorda com alegação do pagador',
+        '47' => 'Beneficiário solicita dispensa de juros',
+        '49' => 'Alteração de dados extras (registro de multa)',
+        '66' => 'Entrada em negativação expressa',
+        '67' => 'Não negativar (inibe a entrada em negativação expressa)',
+        '68' => 'Excluir negativação expressa (até 15 dias corridos após a entrada em negativação expressa)',
+        '69' => 'Cancelar negativação expressa (após título ter sido negativado)',
+        '93' => 'Descontar títulos encaminhados no dia',
+    ];
+
+    /**
+     * Return occurrences codes.
+     *
+     * @var array
+     */
+    protected $returnOccurrences = [
+        '02' => 'Entrada confirmada com possibilidade de mensagem',
+        '03' => 'Entrada rejeitada',
+        '04' => 'Alteração de dados – nova entrada ou alteração/exclusão de dados acatada',
+        '05' => 'Alteração de dados – baixa',
+        '06' => 'Liquidação normal',
+        '07' => 'Liquidação parcial – cobrança inteligente (b2b)',
+        '08' => 'Liquidação em cartório',
+        '09' => 'Baixa simples',
+        '10' => 'Baixa por ter sido liquidado',
+        '11' => 'Em ser (só no retorno mensal)',
+        '12' => 'Abatimento concedido',
+        '13' => 'Abatimento cancelado',
+        '14' => 'Vencimento alterado',
+        '15' => 'Baixas rejeitadas',
+        '16' => 'Instruções rejeitadas',
+        '17' => 'Alteração/exclusão de dados rejeitados',
+        '18' => 'Cobrança contratual – instruções/alterações rejeitadas/pendentes',
+        '19' => 'Confirma recebimento de instrução de protesto',
+        '20' => 'Confirma recebimento de instrução de sustação de protesto /tarifa',
+        '21' => 'Confirma recebimento de instrução de não protestar',
+        '23' => 'Título enviado a cartório/tarifa',
+        '24' => 'Instrução de protesto rejeitada/sustada/pendente',
+        '25' => 'Alegações do pagador',
+        '26' => 'Tarifa de aviso de cobrança',
+        '27' => 'Tarifa de extrato posição (b40x)',
+        '28' => 'Tarifa de relação das liquidações',
+        '29' => 'Tarifa de manutenção de títulos vencidos',
+        '30' => 'Débito mensal de tarifas (para entradas e baixas)',
+        '32' => 'Baixa por ter sido protestado',
+        '33' => 'Custas de protesto',
+        '34' => 'Custas de sustação',
+        '35' => 'Custas de cartório distribuidor',
+        '36' => 'Custas de edital',
+        '37' => 'Tarifa de emissão de boleto/tarifa de envio de duplicata',
+        '38' => 'Tarifa de instrução',
+        '39' => 'Tarifa de ocorrências',
+        '40' => 'Tarifa mensal de emissão de boleto/tarifa mensal de envio de duplicata',
+        '41' => 'Débito mensal de tarifas – extrato de posição (b4ep/b4ox)',
+        '42' => 'Débito mensal de tarifas – outras instruções',
+        '43' => 'Débito mensal de tarifas – manutenção de títulos vencidos',
+        '44' => 'Débito mensal de tarifas – outras ocorrências',
+        '45' => 'Débito mensal de tarifas – protesto',
+        '46' => 'Débito mensal de tarifas – sustação de protesto',
+        '47' => 'Baixa com transferência para desconto',
+        '48' => 'Custas de sustação judicial',
+        '51' => 'Tarifa mensal ref a entradas bancos correspondentes na carteira',
+        '52' => 'Tarifa mensal baixas na carteira',
+        '53' => 'Tarifa mensal baixas em bancos correspondentes na carteira',
+        '54' => 'Tarifa mensal de liquidações na carteira',
+        '55' => 'Tarifa mensal de liquidações em bancos correspondentes na carteira',
+        '56' => 'Custas de irregularidade',
+        '57' => 'Instrução cancelada',
+        '59' => 'Baixa por crédito em c/c através do sispag',
+        '60' => 'Entrada rejeitada carnê',
+        '61' => 'Tarifa emissão aviso de movimentação de títulos (2154)',
+        '62' => 'Débito mensal de tarifa – aviso de movimentação de títulos (2154)',
+        '63' => 'Título sustado judicialmente',
+        '64' => 'Entrada confirmada com rateio de crédito',
+        '65' => 'Pagamento com cheque – aguardando compensação',
+        '69' => 'Cheque devolvido',
+        '71' => 'Entrada registrada, aguardando avaliação',
+        '72' => 'Baixa por crédito em c/c através do sispag sem título correspondente',
+        '73' => 'Confirmação de entrada na cobrança simples – entrada não aceita na cobrança contratual',
+        '74' => 'Instrução de negativação expressa rejeitada',
+        '75' => 'Confirmação de recebimento de instrução de entrada em negativação expressa',
+        '76' => 'Cheque compensado',
+        '77' => 'Confirmação de recebimento de instrução de exclusão de entrada em negativação expressa',
+        '78' => 'Confirmação de recebimento de instrução de cancelamento de negativação expressa',
+        '79' => 'Negativação expressa informacional',
+        '80' => 'Confirmação de entrada em negativação expressa – tarifa',
+        '82' => 'Confirmação do cancelamento de negativação expressa – tarifa',
+        '83' => 'Confirmação de exclusão de entrada em negativação expressa por liquidação – tarifa',
+        '85' => 'Tarifa por boleto (até 03 envios) cobrança ativa eletrônica',
+        '86' => 'Tarifa email cobrança ativa eletrônica',
+        '87' => 'Tarifa sms cobrança ativa eletrônica',
+        '88' => 'Tarifa mensal por boleto (até 03 envios) cobrança ativa eletrônica',
+        '89' => 'Tarifa mensal email cobrança ativa eletrônica',
+        '90' => 'Tarifa mensal sms cobrança ativa eletrônica',
+        '91' => 'Tarifa mensal de exclusão de entrada de negativação expressa',
+        '92' => 'Tarifa mensal de cancelamento de negativação expressa',
+        '93' => 'Tarifa mensal de exclusão de negativação expressa por liquidação',
+    ];
 }
