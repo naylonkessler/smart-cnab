@@ -230,6 +230,20 @@ class Itau
     ];
 
     /**
+     * Return the default state of itau infos.
+     *
+     * @return array
+     */
+    public function defaults()
+    {
+        return [
+            'especie' => '01',
+            'instruction1' => '02',
+            'instruction2' => '00',
+        ];
+    }
+
+    /**
      * Return all available especies.
      *
      * @return array
