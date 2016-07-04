@@ -6,6 +6,7 @@ use InvalidArgumentException;
 use RangeException;
 
 use SmartCNAB\Contracts\Factory as FactoryContract;
+use SmartCNAB\Support\Bank;
 use SmartCNAB\Support\Picture;
 
 /**
@@ -13,15 +14,6 @@ use SmartCNAB\Support\Picture;
  */
 class Factory implements FactoryContract
 {
-    /**
-     * Map for bank codes and names.
-     *
-     * @var array
-     */
-    protected $banksMap = [
-        341 => 'Itau',
-    ];
-
     /**
      * Discover and return a bank namespace with received bank code.
      *
@@ -32,11 +24,11 @@ class Factory implements FactoryContract
      */
     protected function discoverBankNamespace($bank, $type = 'Remittances')
     {
-        if (empty($this->banksMap[$bank])) {
+        if ( ! Bank::isHandled($bank)) {
             throw new InvalidArgumentException('Unable to handle bank '.$bank);
         }
 
-        $name = $this->banksMap[$bank];
+        $name = Bank::nameOfNumber($bank);
 
         return "\SmartCNAB\Services\\{$type}\Banks\\{$name}\\";
     }

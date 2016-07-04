@@ -12,7 +12,7 @@ class Itau
      *
      * @var array
      */
-    protected $especies = [
+    protected static $especies = [
         '01' => 'Duplicata mercantil',
         '02' => 'Nota promissória',
         '03' => 'Nota de seguro',
@@ -35,7 +35,7 @@ class Itau
      *
      * @var array
      */
-    protected $instructions = [
+    protected static $instructions = [
         '02' => 'Devolver após 05 dias do vencimento',
         '03' => 'Devolver após 30 dias do vencimento',
         '05' => 'Receber conforme instruções no próprio título',
@@ -113,7 +113,7 @@ class Itau
      *
      * @var array
      */
-    protected $remittanceOccurrences = [
+    protected static $remittanceOccurrences = [
         '01' => 'Remessa',
         '02' => 'Pedido de baixa',
         '04' => 'Concessão de abatimento (indicador 12.5)',
@@ -145,7 +145,7 @@ class Itau
      *
      * @var array
      */
-    protected $returnOccurrences = [
+    protected static $returnOccurrences = [
         '02' => 'Entrada confirmada com possibilidade de mensagem',
         '03' => 'Entrada rejeitada',
         '04' => 'Alteração de dados – nova entrada ou alteração/exclusão de dados acatada',
@@ -228,4 +228,44 @@ class Itau
         '92' => 'Tarifa mensal de cancelamento de negativação expressa',
         '93' => 'Tarifa mensal de exclusão de negativação expressa por liquidação',
     ];
+
+    /**
+     * Return all available especies.
+     *
+     * @return array
+     */
+    public function especies()
+    {
+        return static::$especies;
+    }
+
+    /**
+     * Return all available instructions.
+     *
+     * @return array
+     */
+    public function instructions()
+    {
+        return static::$instructions;
+    }
+
+    /**
+     * Return all occurrences available for remittances.
+     *
+     * @return array
+     */
+    public function remittanceOccurrences()
+    {
+        return static::$remittanceOccurrences;
+    }
+
+    /**
+     * Return all occurrences available for returning.
+     *
+     * @return array
+     */
+    public function returnOccurrences()
+    {
+        return static::$returnOccurrences;
+    }
 }
