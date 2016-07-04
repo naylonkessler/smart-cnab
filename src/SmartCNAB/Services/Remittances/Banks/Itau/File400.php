@@ -64,7 +64,7 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        return $value?: $data['emission'];
+        return $value?: $data['expiration'];
     }
 
     /**
