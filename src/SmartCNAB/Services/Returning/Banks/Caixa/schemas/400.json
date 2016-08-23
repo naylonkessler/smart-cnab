@@ -1,0 +1,257 @@
+{
+    "header": {
+       "regtype": {
+            "pos": [1, 1],
+            "pic": "9(01)"
+        },
+        "retcode": {
+            "pos": [2, 2],
+            "pic": "9(01)"
+        },
+        "retlit": {
+            "pos": [3, 9],
+            "pic": "X(07)"
+        },
+        "servcode": {
+            "pos": [10, 11],
+            "pic": "9(02)"
+        },
+        "servlit": {
+            "pos": [12, 26],
+            "pic": "X(15)"
+        },
+        "branch": {
+            "pos": [27, 30],
+            "pic": "9(04)"
+        },
+        "companycode": {
+            "pos": [31, 36],
+            "pic": "9(06)"
+        },
+        "s1": {
+            "pos": [37, 46],
+            "pic": "X(10)"
+        },
+        "companyname": {
+            "pos": [47, 76],
+            "pic": "X(30)"
+        },
+        "bankcode": {
+            "pos": [77, 79],
+            "pic": "9(03)"
+        },
+        "bankname": {
+            "pos": [80, 94],
+            "pic": "X(15)"
+        },
+        "gendate": {
+            "pos": [95, 100],
+            "pic": "9(06)",
+            "type": "date"
+        },
+        "message": {
+            "pos": [101, 158],
+            "pic": "X(58)"
+        },
+        "s2": {
+            "pos": [159, 389],
+            "pic": "X(231)"
+        },
+        "fileseq": {
+            "pos": [390, 394],
+            "pic": "9(05)"
+        },
+        "seq": {
+            "pos": [395, 400],
+            "pic": "9(06)"
+        }
+    },
+    "detail": {
+        "regtype": {
+            "pos": [1, 1],
+            "pic": "9(01)"
+        },
+        "companyinsccode": {
+            "pos": [2, 3],
+            "pic": "9(02)"
+        },
+        "companyinscnum": {
+            "pos": [4, 17],
+            "pic": "9(14)"
+        },
+        "branch": {
+            "pos": [18, 21],
+            "pic": "9(04)"
+        },
+        "companycode": {
+            "pos": [22, 27],
+            "pic": "9(06)"
+        },
+        "emissionid": {
+            "pos": [28, 28],
+            "pic": "9(01)"
+        },
+        "postageid": {
+            "pos": [29, 29],
+            "pic": "9(01)"
+        },
+        "s1": {
+            "pos": [30, 31],
+            "pic": "X(02)"
+        },
+        "companyuse": {
+            "pos": [32, 56],
+            "pic": "X(25)"
+        },
+        "ournumber": {
+            "pos": [57, 73],
+            "pic": "9(17)"
+        },
+        "s2": {
+            "pos": [74, 79],
+            "pic": "X(06)"
+        },
+        "rejectioncode": {
+            "pos": [80, 82],
+            "pic": "9(03)"
+        },
+        "s3": {
+            "pos": [83, 106],
+            "pic": "X(25)"
+        },
+        "portfolio": {
+            "pos": [107, 108],
+            "pic": "9(02)"
+        },
+        "occurrcode": {
+            "pos": [109, 110],
+            "pic": "9(02)"
+        },
+        "occurrdate": {
+            "pos": [111, 116],
+            "pic": "9(06)",
+            "type": "date"
+        },
+        "docnumber": {
+            "pos": [117, 126],
+            "pic": "X(10)"
+        },
+        "s4": {
+            "pos": [127, 146],
+            "pic": "X(20)"
+        },
+        "expiration": {
+            "pos": [147, 152],
+            "pic": "9(06)",
+            "type": "date"
+        },
+        "value": {
+            "pos": [153, 165],
+            "pic": "9(11)V9(2)"
+        },
+        "recbankcode": {
+            "pos": [166, 168],
+            "pic": "9(03)"
+        },
+        "recbranch": {
+            "pos": [169, 173],
+            "pic": "9(05)"
+        },
+        "especies": {
+            "pos": [174, 175],
+            "pic": "9(02)"
+        },
+        "billingfare": {
+            "pos": [176, 188],
+            "pic": "9(11)V9(2)"
+        },
+        "channel": {
+            "pos": [189, 191],
+            "pic": "9(03)"
+        },
+        "paymentmethod": {
+            "pos": [192, 192],
+            "pic": "9(01)"
+        },
+        "floatdays": {
+            "pos": [193, 194],
+            "pic": "9(02)"
+        },
+        "billingfaredate": {
+            "pos": [195, 200],
+            "pic": "9(06)",
+            "type": "date"
+        },
+        "s5": {
+            "pos": [201, 214],
+            "pic": "X(14)"
+        },
+        "iof": {
+            "pos": [215, 227],
+            "pic": "9(11)V9(2)"
+        },
+        "rebate": {
+            "pos": [228, 240],
+            "pic": "9(11)V9(2)"
+        },
+        "discount": {
+            "pos": [241, 253],
+            "pic": "9(11)V9(2)"
+        },
+        "mainvalue": {
+            "pos": [254, 266],
+            "pic": "9(11)V9(2)"
+        },
+        "interest": {
+            "pos": [267, 279],
+            "pic": "9(11)V9(2)"
+        },
+        "lateinterest": {
+            "pos": [280, 292],
+            "pic": "9(11)V9(2)"
+        },
+        "currcode": {
+            "pos": [293, 293],
+            "pic": "9(01)"
+        },
+        "creditdate": {
+            "pos": [294, 299],
+            "pic": "9(06)",
+            "type": "date"
+        },
+        "s6": {
+            "pos": [300, 394],
+            "pic": "X(95)"
+        },
+        "seq": {
+            "pos": [395, 400],
+            "pic": "9(06)"
+        }
+    },
+    "trailer": {
+        "regtype": {
+            "pos": [1, 1],
+            "pic": "9(01)"
+        },
+        "retcode": {
+            "pos": [2, 2],
+            "pic": "9(01)"
+        },
+        "servcode": {
+            "pos": [3, 4],
+            "pic": "9(02)"
+        },
+        "bankcode": {
+            "pos": [5, 7],
+            "pic": "9(03)"
+        },
+        "s1": {
+            "pos": [8, 394],
+            "pic": "X(387)"
+        },
+        "seq": {
+            "pos": [395, 400],
+            "pic": "9(06)"
+        }
+    }
+}

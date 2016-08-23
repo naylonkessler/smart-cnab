@@ -150,7 +150,7 @@
             "pos": [98, 101],
             "pic": "X(04)"
         },
-        "lateinteresetdate": {
+        "lateinterestdate": {
             "pos": [102, 107],
             "pic": "9(06)",
             "type": "date"
@@ -159,7 +159,7 @@
             "pos": [108, 108],
             "pic": "9(01)"
         },
-        "ocurrcode": {
+        "occurrcode": {
             "pos": [109, 110],
             "pic": "9(02)",
             "def": "1"

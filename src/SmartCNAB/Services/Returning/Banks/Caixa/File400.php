@@ -1,11 +1,11 @@
 <?php
 
-namespace SmartCNAB\Services\Returning\Banks\Itau;
+namespace SmartCNAB\Services\Returning\Banks\Caixa;
 
 use SmartCNAB\Support\File\Returning;
 
 /**
- * Class for Itau return CNAB 400 layout.
+ * Class for Caixa return CNAB 400 layout.
  */
 class File400 extends Returning
 {
