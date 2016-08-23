@@ -8,6 +8,23 @@ namespace SmartCNAB\Support\Bank;
 class Caixa
 {
     /**
+     * Channels codes.
+     *
+     * @var array
+     */
+    protected static $channels = [
+        '002' => 'Unidade lotérica',
+        '003' => 'Agências CAIXA',
+        '004' => 'Compensação eletrônica',
+        '006' => 'Internet banking',
+        '007' => 'Correspondente CAIXAaqui',
+        '008' => 'Em cartório',
+        '009' => 'Comandada banco',
+        '010' => 'Comandada cliente via arquivo',
+        '011' => 'Comandada cliente on-line',
+    ];
+
+    /**
      * Especies codes.
      *
      * @var array
@@ -119,6 +136,16 @@ class Caixa
         '34' => 'Tarifas diversas',
         '99' => 'Rejeição do título',
     ];
+
+    /**
+     * Return the payment channels.
+     *
+     * @return array
+     */
+    public function channels()
+    {
+        return static::$channels;
+    }
 
     /**
      * Return the default state of itau infos.
