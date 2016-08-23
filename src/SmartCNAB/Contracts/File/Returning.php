@@ -15,6 +15,13 @@ interface Returning
     public function details();
 
     /**
+     * Return the parsed schema.
+     *
+     * @return array
+     */
+    public function getSchema();
+
+    /**
      * Returns the file header.
      *
      * @return \StdClass

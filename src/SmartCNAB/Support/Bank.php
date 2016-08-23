@@ -10,6 +10,7 @@ class Bank
     /**
      * Bank numbers constants
      */
+    const CAIXA = 104;
     const ITAU = 341;
 
     /**
@@ -18,7 +19,8 @@ class Bank
      * @var array
      */
     protected static $banksMap = [
-        341 => 'Itau',
+        static::CAIXA => 'Caixa',
+        static::ITAU => 'Itau',
     ];
 
     /**

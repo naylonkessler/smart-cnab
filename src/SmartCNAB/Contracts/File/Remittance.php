@@ -29,4 +29,11 @@ interface Remittance
      * @return self
      */
     public function end();
+
+    /**
+     * Return the parsed schema.
+     *
+     * @return array
+     */
+    public function getSchema();
 }
