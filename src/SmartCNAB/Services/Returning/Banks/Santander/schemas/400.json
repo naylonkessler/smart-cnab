@@ -1,0 +1,364 @@
+{
+    "header": {
+        "regtype": {
+            "pos": [1, 1],
+            "pic": "9(01)"
+        },
+        "retcode": {
+            "pos": [2, 2],
+            "pic": "9(01)"
+        },
+        "retlit": {
+            "pos": [3, 9],
+            "pic": "X(07)"
+        },
+        "servcode": {
+            "pos": [10, 11],
+            "pic": "9(02)"
+        },
+        "servlit": {
+            "pos": [12, 26],
+            "pic": "X(15)"
+        },
+        "branch": {
+            "pos": [27, 30],
+            "pic": "9(04)"
+        },
+        "account": {
+            "pos": [31, 38],
+            "pic": "9(08)"
+        },
+        "billingaccount": {
+            "pos": [39, 46],
+            "pic": "9(08)"
+        },
+        "companyname": {
+            "pos": [47, 76],
+            "pic": "X(30)"
+        },
+        "bankcode": {
+            "pos": [77, 79],
+            "pic": "9(03)"
+        },
+        "bankname": {
+            "pos": [80, 94],
+            "pic": "X(15)"
+        },
+        "gendate": {
+            "pos": [95, 100],
+            "pic": "9(06)",
+            "type": "date"
+        },
+        "density": {
+            "pos": [101, 108],
+            "pic": "9(08)"
+        },
+        "s1": {
+            "pos": [109, 385],
+            "pic": "X(277)"
+        },
+        "companycode": {
+            "pos": [386, 389],
+            "pic": "X(04)"
+        },
+        "s2": {
+            "pos": [390, 391],
+            "pic": "X(02)"
+        },
+        "version": {
+            "pos": [392, 394],
+            "pic": "9(03)"
+        },
+        "seq": {
+            "pos": [395, 400],
+            "pic": "9(06)"
+        }
+    },
+    "detail": {
+        "regtype": {
+            "pos": [1, 1],
+            "pic": "9(01)"
+        },
+        "companyinsccode": {
+            "pos": [2, 3],
+            "pic": "9(02)"
+        },
+        "companyinscnum": {
+            "pos": [4, 17],
+            "pic": "9(14)"
+        },
+        "branch": {
+            "pos": [18, 21],
+            "pic": "9(04)"
+        },
+        "account": {
+            "pos": [22, 29],
+            "pic": "9(08)"
+        },
+        "billingaccount": {
+            "pos": [30, 37],
+            "pic": "9(08)"
+        },
+        "companyuse": {
+            "pos": [38, 62],
+            "pic": "X(25)"
+        },
+        "ournumber": {
+            "pos": [63, 70],
+            "pic": "9(08)"
+        },
+        "s1": {
+            "pos": [71, 107],
+            "pic": "X(37)"
+        },
+        "portcode": {
+            "pos": [108, 108],
+            "pic": "X(01)"
+        },
+        "occurrcode": {
+            "pos": [109, 110],
+            "pic": "9(02)"
+        },
+        "occurrdate": {
+            "pos": [111, 116],
+            "pic": "9(06)",
+            "type": "date"
+        },
+        "docnumber": {
+            "pos": [117, 126],
+            "pic": "X(10)"
+        },
+        "ournumber": {
+            "pos": [127, 134],
+            "pic": "9(08)"
+        },
+        "originalretcode": {
+            "pos": [135, 136],
+            "pic": "9(02)"
+        },
+        "errorcode1": {
+            "pos": [137, 139],
+            "pic": "X(03)"
+        },
+        "errorcode2": {
+            "pos": [140, 142],
+            "pic": "X(03)"
+        },
+        "errorcode3": {
+            "pos": [143, 145],
+            "pic": "X(03)"
+        },
+        "s2": {
+            "pos": [146, 146],
+            "pic": "X(01)"
+        },
+        "expiration": {
+            "pos": [147, 152],
+            "pic": "9(06)",
+            "type": "date"
+        },
+        "value": {
+            "pos": [153, 165],
+            "pic": "9(11)V9(2)"
+        },
+        "recbankcode": {
+            "pos": [166, 168],
+            "pic": "9(03)"
+        },
+        "recbranch": {
+            "pos": [169, 173],
+            "pic": "9(05)"
+        },
+        "especies": {
+            "pos": [174, 175],
+            "pic": "9(02)"
+        },
+        "billingfare": {
+            "pos": [176, 188],
+            "pic": "9(11)V9(2)"
+        },
+        "othercharges": {
+            "pos": [189, 201],
+            "pic": "9(11)V9(2)"
+        },
+        "iof": {
+            "pos": [215, 227],
+            "pic": "9(11)V9(2)"
+        },
+        "rebate": {
+            "pos": [228, 240],
+            "pic": "9(11)V9(2)"
+        },
+        "discount": {
+            "pos": [241, 253],
+            "pic": "9(11)V9(2)"
+        },
+        "mainvalue": {
+            "pos": [254, 266],
+            "pic": "9(11)V9(2)"
+        },
+        "interests": {
+            "pos": [267, 279],
+            "pic": "9(11)V9(2)"
+        },
+        "othercredits": {
+            "pos": [280, 292],
+            "pic": "9(11)V9(2)"
+        },
+        "s3": {
+            "pos": [293, 293],
+            "pic": "X(01)"
+        },
+        "accepted": {
+            "pos": [294, 294],
+            "pic": "X(01)"
+        },
+        "s4": {
+            "pos": [295, 295],
+            "pic": "X(01)"
+        },
+        "creditdate": {
+            "pos": [296, 301],
+            "pic": "9(06)",
+            "type": "date"
+        },
+        "name": {
+            "pos": [302, 337],
+            "pic": "X(36)"
+        },
+        "complementid": {
+            "pos": [338, 338],
+            "pic": "X(01)"
+        },
+        "currentcurrencyvalue": {
+            "pos": [339, 340],
+            "pic": "X(02)"
+        },
+        "quantcurr": {
+            "pos": [341, 353],
+            "pic": "9(08)V9(5)"
+        },
+        "ioccurr": {
+            "pos": [354, 366],
+            "pic": "9(08)V9(5)"
+        },
+        "creditdebtvalue": {
+            "pos": [367, 379],
+            "pic": "9(11)V9(2)"
+        },
+        "creditordebt": {
+            "pos": [380, 380],
+            "pic": "X(01)"
+        },
+        "s5": {
+            "pos": [381, 383],
+            "pic": "X(03)"
+        },
+        "complement": {
+            "pos": [384, 385],
+            "pic": "9(02)"
+        },
+        "companycode": {
+            "pos": [386, 389],
+            "pic": "X(04)"
+        },
+        "s6": {
+            "pos": [390, 391],
+            "pic": "X(02)"
+        },
+        "version": {
+            "pos": [392, 394],
+            "pic": "9(03)"
+        },
+        "seq": {
+            "pos": [395, 400],
+            "pic": "9(06)"
+        }
+    },
+    "trailer": {
+        "regtype": {
+            "pos": [1, 1],
+            "pic": "9(01)"
+        },
+        "retcode": {
+            "pos": [2, 2],
+            "pic": "9(01)"
+        },
+        "servcode": {
+            "pos": [3, 4],
+            "pic": "9(02)"
+        },
+        "bankcode": {
+            "pos": [5, 7],
+            "pic": "9(03)"
+        },
+        "s1": {
+            "pos": [8, 17],
+            "pic": "X(10)"
+        },
+        "quantsimple": {
+            "pos": [18, 25],
+            "pic": "9(08)"
+        },
+        "valuesimple": {
+            "pos": [26, 39],
+            "pic": "9(12)V9(2)"
+        },
+        "banknotice1": {
+            "pos": [40, 47],
+            "pic": "X(08)"
+        },
+        "s2": {
+            "pos": [48, 57],
+            "pic": "X(10)"
+        },
+        "z1": {
+            "pos": [58, 87],
+            "pic": "9(30)"
+        },
+        "s3": {
+            "pos": [88, 97],
+            "pic": "X(10)"
+        },
+        "quantescrowed": {
+            "pos": [98, 105],
+            "pic": "9(08)"
+        },
+        "valueescrowed": {
+            "pos": [106, 119],
+            "pic": "9(12)V9(2)"
+        },
+        "banknotice2": {
+            "pos": [120, 127],
+            "pic": "X(08)"
+        },
+        "s4": {
+            "pos": [128, 137],
+            "pic": "X(10)"
+        },
+        "quantdiscount": {
+            "pos": [138, 145],
+            "pic": "9(08)"
+        },
+        "valuediscount": {
+            "pos": [146, 159],
+            "pic": "9(12)V9(2)"
+        },
+        "banknotice3": {
+            "pos": [160, 167],
+            "pic": "X(08)"
+        },
+        "s5": {
+            "pos": [168, 391],
+            "pic": "X(224)"
+        },
+        "version": {
+            "pos": [392, 394],
+            "pic": "9(03)"
+        },
+        "seq": {
+            "pos": [395, 400],
+            "pic": "9(06)"
+        }
+    }
+}
