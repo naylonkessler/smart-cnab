@@ -25,9 +25,17 @@
             "pic": "X(15)",
             "def": "COBRANCA"
         },
+        "branch": {
+            "pos": [27, 30],
+            "pic": "9(04)"
+        },
+        "account": {
+            "pos": [31, 38],
+            "pic": "9(08)"
+        },
         "transcode": {
-            "pos": [27, 46],
-            "pic": "9(20)"
+            "pos": [39, 46],
+            "pic": "9(08)"
         },
         "companyname": {
             "pos": [47, 76],
@@ -36,7 +44,7 @@
         "bankcode": {
             "pos": [77, 79],
             "pic": "9(03)",
-            "def": "353"
+            "def": "033"
         },
         "bankname": {
             "pos": [80, 94],
@@ -131,7 +139,8 @@
         },
         "interestinfo": {
             "pos": [78, 78],
-            "pic": "9(01)"
+            "pic": "9(01)",
+            "def": "4"
         },
         "lateinterestperc": {
             "pos": [79, 82],
@@ -180,7 +189,7 @@
         "recbankcode": {
             "pos": [140, 142],
             "pic": "9(03)",
-            "def": "353"
+            "def": "033"
         },
         "recbranch": {
             "pos": [143, 147],
