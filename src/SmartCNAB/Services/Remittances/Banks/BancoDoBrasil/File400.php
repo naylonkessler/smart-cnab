@@ -1,6 +1,6 @@
 <?php
 
-namespace SmartCNAB\Services\Remittances\Banks\BancodoBrasil;
+namespace SmartCNAB\Services\Remittances\Banks\BancoDoBrasil;
 
 use SmartCNAB\Support\File\Remittance;
 

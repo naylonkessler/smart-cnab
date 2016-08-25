@@ -1,6 +1,6 @@
 <?php
 
-namespace SmartCNAB\Services\Returning\Banks\BancodoBrasil;
+namespace SmartCNAB\Services\Returning\Banks\BancoDoBrasil;
 
 use SmartCNAB\Support\File\Returning;
 
