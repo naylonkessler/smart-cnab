@@ -1,11 +1,11 @@
 <?php
 
-namespace SmartCNAB\Services\Returning\Banks\Caixa;
+namespace SmartCNAB\Services\Returning\Banks\BancodoBrasil;
 
 use SmartCNAB\Support\File\Returning;
 
 /**
- * Class for Caixa return CNAB 400 layout.
+ * Class for BancodoBrasil return CNAB 400 layout.
  */
 class File400 extends Returning
 {
