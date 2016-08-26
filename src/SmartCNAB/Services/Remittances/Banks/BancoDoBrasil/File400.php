@@ -1,11 +1,11 @@
 <?php
 
-namespace SmartCNAB\Services\Remittances\Banks\Santander;
+namespace SmartCNAB\Services\Remittances\Banks\BancoDoBrasil;
 
 use SmartCNAB\Support\File\Remittance;
 
 /**
- * Class for Santander remittance CNAB 400 layout.
+ * Class for Banco do Brasil remittance CNAB 400 layout.
  */
 class File400 extends Remittance
 {
@@ -29,23 +29,23 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        return strlen($data['companyinscnum']) == 14? 2 : 1;
+        return strlen($data['companyinscnum']) === 14? 2 : 1;
     }
 
     /**
-     * Formats a late interest date.
+     * Formats a discount to date.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailLateinteresetdate(
+    protected function formatDetailEmission(
         $value,
         array $data = [],
         array $meta = []
     ) {
-        return $value?: $data['expiration']->add(new \DateInterval('P1D'));
+        return $value?: $data['expiration'];
     }
 
     /**
@@ -64,20 +64,7 @@ class File400 extends Remittance
         return strlen($data['inscnum']) == 14? 2 : 1;
     }
 
-    /**
-     * Formats a deadline.
-     *
-     * @param  mixed  $value
-     * @param  array  $data
-     * @param  array  $meta
-     * @return mixed
-     */
-    protected function formatDetailDeadline(
-        $value,
-        array $data = [],
-        array $meta = []
-    ) {
-        $value = $value?: 0;
-        return ($data['inst1'] == 6 || $data['inst2'] == 6)? $value : 0;
-    }
+
+
+
 }
