@@ -1,0 +1,347 @@
+{
+    "header": {
+       "regtype": {
+            "pos": [1, 1],
+            "pic": "9(01)"
+        },
+        "retcode": {
+            "pos": [2, 2],
+            "pic": "9(01)"
+        },
+        "retlit": {
+            "pos": [3, 9],
+            "pic": "X(07)"
+        },
+        "servcode": {
+            "pos": [10, 11],
+            "pic": "9(02)"
+        },
+        "servlit": {
+            "pos": [12, 19],
+            "pic": "X(08)"
+        },
+        "s1": {
+            "pos": [20, 26],
+            "pic": "X(07)"
+        },
+        "coopcode": {
+            "pos": [27, 30],
+            "pic": "9(04)"
+        },
+        "coopcodevd": {
+            "pos": [31, 31],
+            "pic": "X(01)"
+        },
+        "companycode": {
+            "pos": [32, 39],
+            "pic": "9(08)"
+        },
+        "companycodevd": {
+            "pos": [40, 40],
+            "pic": "X(01)"
+        },
+        "maincovenant": {
+            "pos": [41, 46],
+            "pic": "9(06)"
+        },
+        "companyname": {
+            "pos": [47, 76],
+            "pic": "X(30)"
+        },
+        "bankcode": {
+            "pos": [77, 79],
+            "pic": "9(03)"
+        },
+        "bankname": {
+            "pos": [80, 94],
+            "pic": "X(15)"
+        },
+        "gendate": {
+            "pos": [95, 100],
+            "pic": "9(06)",
+            "type": "date"
+        },
+        "fileseq": {
+            "pos": [101, 107],
+            "pic": "9(07)"
+        },
+        "s2": {
+            "pos": [108, 394],
+            "pic": "X(231)"
+        },
+        "seq": {
+            "pos": [395, 400],
+            "pic": "9(06)"
+        }
+    },
+    "detail": {
+        "regtype": {
+            "pos": [1, 1],
+            "pic": "9(01)"
+        },
+        "companyinsccode": {
+            "pos": [2, 3],
+            "pic": "9(02)"
+        },
+        "companyinscnum": {
+            "pos": [4, 17],
+            "pic": "9(14)"
+        },
+        "coopcode": {
+            "pos": [18, 21],
+            "pic": "9(04)"
+        },
+        "coopcodevd": {
+            "pos": [22, 22],
+            "pic": "X(01)"
+        },
+        "account": {
+            "pos": [23, 30],
+            "pic": "9(08)"
+        },
+        "accountvd": {
+            "pos": [31, 31],
+            "pic": "X(01)"
+        },
+        "billingcovenant": {
+            "pos": [32, 37],
+            "pic": "9(06)"
+        },
+        "companyuse": {
+            "pos": [38, 62],
+            "pic": "X(25)"
+        },
+        "ournumber": {
+            "pos": [63, 74],
+            "pic": "9(12)"
+        },
+        "parcel": {
+            "pos": [75, 76],
+            "pic": "9(02)",
+            "def": "01"
+        },
+        "valuegroup": {
+            "pos": [77, 80],
+            "pic": "9(04)"
+        },
+        "returncode": {
+            "pos": [80, 81],
+            "pic": "9(02)"
+        },
+        "docprefix": {
+            "pos": [83, 85],
+            "pic": "X(03)"
+        },
+        "portvar": {
+            "pos": [86, 88],
+            "pic": "9(03)"
+        },
+        "scrowaccount": {
+            "pos": [89, 89],
+            "pic": "9(01)"
+        },
+        "responsabilitycode": {
+            "pos": [90, 94],
+            "pic": "9(05)"
+        },
+        "responsabilitycodevd": {
+            "pos": [95, 95],
+            "pic": "X(01)",
+            "def": "0"
+        },
+        "discountperc": {
+            "pos": [96, 100],
+            "pic": "9(03)V9(2)"
+        },
+        "iofperc": {
+            "pos": [101, 105],
+            "pic": "9(01)V9(4)"
+        },
+        "s1": {
+            "pos": [106, 106],
+            "pic": "X(01)"
+        },
+        "portfolio": {
+            "pos": [107, 108],
+            "pic": "9(02)"
+        },
+        "occurrcode": {
+            "pos": [109, 110],
+            "pic": "9(02)"
+        },
+        "occurrdate": {
+            "pos": [111, 116],
+            "pic": "9(06)",
+            "type": "date"
+        },
+        "docnumber": {
+            "pos": [117, 126],
+            "pic": "X(10)"
+        },
+        "s2": {
+            "pos": [127, 146],
+            "pic": "X(20)"
+        },
+        "expiration": {
+            "pos": [147, 152],
+            "pic": "9(06)",
+            "type": "date"
+        },
+        "value": {
+            "pos": [153, 165],
+            "pic": "9(11)V9(2)"
+        },
+        "recbankcode": {
+            "pos": [166, 168],
+            "pic": "9(03)"
+        },
+        "recbranch": {
+            "pos": [169, 173],
+            "pic": "9(05)"
+        },
+        "especies": {
+            "pos": [174, 175],
+            "pic": "9(02)"
+        },
+        "creditdate": {
+            "pos": [176, 181],
+            "pic": "9(06)",
+            "type": "date"
+        },
+        "billingfare": {
+            "pos": [182, 188],
+            "pic": "9(05)V9(2)"
+        },
+        "otherdebits": {
+            "pos": [189, 201],
+            "pic": "9(11)V9(2)"
+        },
+        "discountinterest": {
+            "pos": [202, 214],
+            "pic": "9(11)V9(2)"
+        },
+        "discountiof": {
+            "pos": [215, 227],
+            "pic": "9(11)V9(2)"
+        },
+        "rebate": {
+            "pos": [228, 240],
+            "pic": "9(11)V9(2)"
+        },
+        "discount": {
+            "pos": [241, 253],
+            "pic": "9(11)V9(2)"
+        },
+        "mainvalue": {
+            "pos": [254, 266],
+            "pic": "9(11)V9(2)"
+        },
+        "interest": {
+            "pos": [267, 279],
+            "pic": "9(11)V9(2)"
+        },
+        "othercredits": {
+            "pos": [280, 292],
+            "pic": "9(11)V9(2)"
+        },
+        "pendingrebate": {
+            "pos": [293, 305],
+            "pic": "9(11)V9(2)"
+        },
+        "releasevalue": {
+            "pos": [306, 318],
+            "pic": "9(11)V9(2)"
+        },
+        "creditdebitflag": {
+            "pos": [319, 319],
+            "pic": "9(01)"
+        },
+        "valueflag": {
+            "pos": [320, 320],
+            "pic": "9(01)"
+        },
+        "adjustvalue": {
+            "pos": [321, 332],
+            "pic": "9(10)V9(2)"
+        },
+        "s3": {
+            "pos": [333, 342],
+            "pic": "X(10)"
+        },
+        "inscnum": {
+            "pos": [343, 357],
+            "pic": "9(14)"
+        },
+        "s4": {
+            "pos": [358, 394],
+            "pic": "X(38)"
+        },,
+        "seq": {
+            "pos": [395, 400],
+            "pic": "9(06)"
+        }
+    },
+    "trailer": {
+        "regtype": {
+            "pos": [1, 1],
+            "pic": "9(01)"
+        },
+        "servcode": {
+            "pos": [2, 3],
+            "pic": "9(02)"
+        },
+        "bankcode": {
+            "pos": [4, 6],
+            "pic": "9(03)"
+        },
+        "coopcode": {
+            "pos": [7, 10],
+            "pic": "9(04)"
+        },
+        "coopabbr": {
+            "pos": [11, 35],
+            "pic": "X(25)"
+        },
+        "coopstreet": {
+            "pos": [36, 85],
+            "pic": "X(50)"
+        },
+        "coopdistrict": {
+            "pos": [56, 115],
+            "pic": "X(30)"
+        },
+        "cooppostalcode": {
+            "pos": [116, 123],
+            "pic": "9(08)"
+        },
+        "coopcity": {
+            "pos": [124, 153],
+            "pic": "X(30)"
+        },
+        "coopstate": {
+            "pos": [154, 155],
+            "pic": "X(02)"
+        },
+        "date": {
+            "pos": [156, 163],
+            "pic": "9(06)",
+            "type": "date"
+        },
+        "quant": {
+            "pos": [164, 171],
+            "pic": "9(08)"
+        },
+        "lastournumber": {
+            "pos": [172, 182],
+            "pic": "9(11)"
+        },
+        "s1": {
+            "pos": [183, 394],
+            "pic": "X(212)"
+        },
+        "seq": {
+            "pos": [395, 400],
+            "pic": "9(06)"
+        }
+    }
+}
