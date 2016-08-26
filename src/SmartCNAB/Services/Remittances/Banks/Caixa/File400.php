@@ -72,7 +72,7 @@ class File400 extends Remittance
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailLateinteresetdate(
+    protected function formatDetailLateinterestdate(
         $value,
         array $data = [],
         array $meta = []

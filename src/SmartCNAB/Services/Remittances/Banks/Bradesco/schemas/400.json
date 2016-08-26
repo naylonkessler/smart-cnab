@@ -1,0 +1,279 @@
+{
+    "header": {
+        "regtype": {
+            "pos": [1, 1],
+            "pic": "9(01)",
+            "def": "0"
+        },
+        "op": {
+            "pos": [2, 2],
+            "pic": "9(01)",
+            "def": "1"
+        },
+        "remlit": {
+            "pos": [3, 9],
+            "pic": "X(07)",
+            "def": "REMESSA"
+        },
+        "servcode": {
+            "pos": [10, 11],
+            "pic": "9(02)",
+            "def": "01"
+        },
+        "servlit": {
+            "pos": [12, 26],
+            "pic": "X(15)",
+            "def": "COBRANCA"
+        },
+        "companycode": {
+            "pos": [27, 46],
+            "pic": "9(20)"
+        },
+       "companyname": {
+            "pos": [47, 76],
+            "pic": "X(30)"
+        },
+        "bankcode": {
+            "pos": [77, 79],
+            "pic": "9(03)",
+            "def": "237"
+        },
+        "bankname": {
+            "pos": [80, 94],
+            "pic": "X(15)",
+            "def": "Bradesco"
+        },
+        "gendate": {
+            "pos": [95, 100],
+            "pic": "9(06)",
+            "type": "date",
+            "def": "@auto"
+        },
+        "s1": {
+            "pos": [101, 108],
+            "pic": "X(08)"
+        },
+        "sysid": {
+            "pos": [109, 110],
+            "pic": "X(02)",
+            "def": "MX"
+        },
+        "fileseq": {
+            "pos": [111, 117],
+            "pic": "9(07)"
+        },
+        "s2": {
+            "pos": [118, 394],
+            "pic": "X(277)"
+        },
+        "seq": {
+            "pos": [395, 400],
+            "pic": "9(06)"
+        }
+    },
+    "detail": {
+        "regtype": {
+            "pos": [1, 1],
+            "pic": "9(01)",
+            "def": "1"
+        },
+        "debbranch": {
+            "pos": [2, 6],
+            "pic": "9(05)"
+        },
+        "debbranchnum": {
+            "pos": [7, 7],
+            "pic": "X(01)"
+        },
+        "accountreason": {
+            "pos": [8, 12],
+            "pic": "9(05)"
+        },
+        "accountcli": {
+            "pos": [13, 19],
+            "pic": "9(07)"
+        },
+        "accountclinum": {
+            "pos": [20, 20],
+            "pic": "X(01)"
+        },
+        "companyid": {
+            "pos": [21, 37],
+            "pic": "X(17)"
+        },
+        "companyuse": {
+            "pos": [38, 62],
+            "pic": "X(25)"
+        },
+        "bankcode": {
+            "pos": [63, 65],
+            "pic": "9(03)",
+            "def": "237"
+        },
+        "lateinterestflag": {
+            "pos": [66, 66],
+            "pic": "9(01)"
+        },
+        "lateinterestperc": {
+            "pos": [67, 70],
+            "pic": "9(04)"
+        },
+        "ournumber": {
+            "pos": [71, 81],
+            "pic": "9(11)"
+        },
+        "ournumberdac": {
+            "pos": [82, 82],
+            "pic": "9(01)"
+        },
+        "discount": {
+            "pos": [83, 92],
+            "pic": "9(8)V9(2)"
+        },
+        "billingemitflag": {
+            "pos": [93, 93],
+            "pic": "X(01)"
+        },
+        "﻿billetemitflag": {
+            "pos": [94, 94],
+            "pic": "X(01)"
+        },
+        "bankuse": {
+            "pos": [95, 104],
+            "pic": "X(10)"
+        },
+        "apportionmentflag": {
+            "pos": [105, 105],
+            "pic": "X(01)",
+            "def": "R"
+        },
+        "debaddressflag": {
+            "pos": [106, 106],
+            "pic": "9(01)"
+        },
+         "s1": {
+            "pos": [107, 108],
+            "pic": "X(02)"
+        },
+        "occurrcode": {
+            "pos": [109, 110],
+            "pic": "9(02)",
+            "def": "1"
+        },
+        "docnumber": {
+            "pos": [111, 120],
+            "pic": "X(10)"
+        },
+        "expiration": {
+            "pos": [121, 126],
+            "pic": "9(06)",
+            "type": "date"
+        },
+        "value": {
+            "pos": [127, 139],
+            "pic": "9(11)V9(2)"
+        },
+        "recbankcode": {
+            "pos": [140, 142],
+            "pic": "9(03)"
+        },
+        "recbranch": {
+            "pos": [143, 147],
+            "pic": "9(05)"
+        },
+        "especies": {
+            "pos": [148, 149],
+            "pic": "9(02)"
+        },
+        "accepted": {
+            "pos": [150, 150],
+            "pic": "X(01)",
+            "def": "N"
+        },
+        "emission": {
+            "pos": [151, 156],
+            "pic": "9(06)",
+            "type": "date"
+        },
+        "inst1": {
+            "pos": [157, 158],
+            "pic": "9(02)"
+        },
+        "inst2": {
+            "pos": [159, 160],
+            "pic": "9(02)"
+        },
+        "dayinterest": {
+            "pos": [161, 173],
+            "pic": "9(11)V9(2)"
+        },
+        "discountto": {
+            "pos": [174, 179],
+            "pic": "9(06)",
+            "type": "date"
+        },
+        "valuediscount": {
+            "pos": [180, 192],
+            "pic": "9(11)V9(2)"
+        },
+        "iof": {
+            "pos": [193, 205],
+            "pic": "9(11)V9(2)"
+        },
+        "rebate": {
+            "pos": [206, 218],
+            "pic": "9(11)V9(2)"
+        },
+        "insccode": {
+            "pos": [219, 220],
+            "pic": "9(02)"
+        },
+        "inscnum": {
+            "pos": [221, 234],
+            "pic": "9(14)"
+        },
+        "name": {
+            "pos": [235, 274],
+            "pic": "X(40)"
+        },
+        "street": {
+            "pos": [275, 314],
+            "pic": "X(40)"
+        },
+        "banknotice1": {
+            "pos": [315, 326],
+            "pic": "X(12)"
+        },
+        "postalcode": {
+            "pos": [327, 331],
+            "pic": "9(05)"
+        },
+        "postalcodecomp": {
+            "pos": [332, 334],
+            "pic": "9(03)"
+        },
+        "pullerguarantor": {
+            "pos": [335, 394],
+            "pic": "X(60)"
+        },
+        "seq": {
+            "pos": [395, 400],
+            "pic": "9(06)"
+        }
+    },
+    "trailer": {
+        "regtype": {
+            "pos": [1, 1],
+            "pic": "9(01)",
+            "def": "9"
+        },
+        "s1": {
+            "pos": [2, 394],
+            "pic": "X(393)"
+        },
+        "seq": {
+            "pos": [395, 400],
+            "pic": "9(06)"
+        }
+    }
+}
