@@ -63,36 +63,4 @@ class File400 extends Remittance
     ) {
         return strlen($data['inscnum']) === 14? 2 : 1;
     }
-
-    /**
-     * Formats a late interest date.
-     *
-     * @param  mixed  $value
-     * @param  array  $data
-     * @param  array  $meta
-     * @return mixed
-     */
-    protected function formatDetailLateinteresetdate(
-        $value,
-        array $data = [],
-        array $meta = []
-    ) {
-        return $value?: $data['expiration']->add(new \DateInterval('P1D'));
-    }
-
-    /**
-     * Formats a portfolio.
-     *
-     * @param  mixed  $value
-     * @param  array  $data
-     * @param  array  $meta
-     * @return mixed
-     */
-    protected function formatDetailPortfolio(
-        $value,
-        array $data = [],
-        array $meta = []
-    ) {
-        return ($value === 'SR'? 2 : ($value === 'RG'? 1 : $value));
-    }
 }
