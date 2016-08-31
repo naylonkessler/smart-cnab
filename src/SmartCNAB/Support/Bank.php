@@ -14,6 +14,7 @@ class Bank
     const CAIXA = 104;
     const ITAU = 341;
     const SANTANDER = 33;
+    const SICOOB = 756;
 
     /**
      * Map for bank numbers and names.
@@ -25,6 +26,7 @@ class Bank
         self::CAIXA => 'Caixa',
         self::ITAU => 'Itau',
         self::SANTANDER => 'Santander',
+        self::SICOOB => 'SICOOB',
     ];
 
     /**
