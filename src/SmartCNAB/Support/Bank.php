@@ -21,10 +21,10 @@ class Bank
      * @var array
      */
     protected static $banksMap = [
-        static::BANCO_DO_BRASIL => 'BancoDoBrasil',
-        static::CAIXA => 'Caixa',
-        static::ITAU => 'Itau',
-        static::SANTANDER => 'Santander',
+        self::BANCO_DO_BRASIL => 'BancoDoBrasil',
+        self::CAIXA => 'Caixa',
+        self::ITAU => 'Itau',
+        self::SANTANDER => 'Santander',
     ];
 
     /**
