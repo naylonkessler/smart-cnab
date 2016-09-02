@@ -11,6 +11,7 @@ class Bank
      * Bank numbers constants
      */
     const BANCO_DO_BRASIL = 1;
+    const BRADESCO = 237;
     const CAIXA = 104;
     const ITAU = 341;
     const SANTANDER = 33;
@@ -23,6 +24,7 @@ class Bank
      */
     protected static $banksMap = [
         self::BANCO_DO_BRASIL => 'BancoDoBrasil',
+        self::BRADESCO => 'Bradesco',
         self::CAIXA => 'Caixa',
         self::ITAU => 'Itau',
         self::SANTANDER => 'Santander',
