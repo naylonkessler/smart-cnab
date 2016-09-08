@@ -153,11 +153,7 @@ class Bradesco
             '17' => 'Titulo baixado transferido carteira',
             '20' => 'Titulo baixado e transferido para desconto',
         ],
-        '15' => [
-            '00' => 'Título pago com dinheiro',
-            '15' => 'Título pago com cheque',
-        ],
-        '17' => [
+        '15, 17' => [
             '00' => 'Título pago com dinheiro',
             '15' => 'Título pago com cheque',
         ],
