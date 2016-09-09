@@ -313,11 +313,11 @@
             "pic": "9(01)",
             "def": "9"
         },
-        "documentsQuantity": {
+        "quantity": {
             "pos": [2, 7],
             "pic": "9(06)"
         },
-        "totalValue": {
+        "value": {
             "pos": [8, 20],
             "pic": "9(11)V9(2)"
         },
