@@ -10,8 +10,12 @@ class Bank
     /**
      * Bank numbers constants
      */
+    const BANCO_DO_BRASIL = 1;
+    const BRADESCO = 237;
     const CAIXA = 104;
     const ITAU = 341;
+    const SANTANDER = 33;
+    const SICOOB = 756;
 
     /**
      * Map for bank numbers and names.
@@ -19,8 +23,12 @@ class Bank
      * @var array
      */
     protected static $banksMap = [
-        static::CAIXA => 'Caixa',
-        static::ITAU => 'Itau',
+        self::BANCO_DO_BRASIL => 'BancoDoBrasil',
+        self::BRADESCO => 'Bradesco',
+        self::CAIXA => 'Caixa',
+        self::ITAU => 'Itau',
+        self::SANTANDER => 'Santander',
+        self::SICOOB => 'SICOOB',
     ];
 
     /**

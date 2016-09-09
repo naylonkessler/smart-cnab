@@ -1,6 +1,6 @@
 {
     "header": {
-        "regtype": {
+        "registryType": {
             "pos": [1, 1],
             "pic": "9(01)",
             "def": "0"
@@ -10,17 +10,17 @@
             "pic": "9(01)",
             "def": "1"
         },
-        "remlit": {
+        "remittanceLiteral": {
             "pos": [3, 9],
             "pic": "X(07)",
             "def": "REMESSA"
         },
-        "servcode": {
+        "serviceCode": {
             "pos": [10, 11],
             "pic": "9(02)",
             "def": "01"
         },
-        "servlit": {
+        "serviceLiteral": {
             "pos": [12, 26],
             "pic": "X(15)",
             "def": "COBRANCA"
@@ -45,21 +45,21 @@
             "pos": [39, 46],
             "pic": "X(08)"
         },
-        "companyname": {
+        "companyName": {
             "pos": [47, 76],
             "pic": "X(30)"
         },
-        "bankcode": {
+        "bankCode": {
             "pos": [77, 79],
             "pic": "9(03)",
             "def": "341"
         },
-        "bankname": {
+        "bankName": {
             "pos": [80, 94],
             "pic": "X(15)",
             "def": "BANCO ITAU SA"
         },
-        "gendate": {
+        "generationDate": {
             "pos": [95, 100],
             "pic": "9(06)",
             "type": "date",
@@ -69,22 +69,22 @@
             "pos": [101, 394],
             "pic": "X(294)"
         },
-        "seq": {
+        "sequential": {
             "pos": [395, 400],
             "pic": "9(06)"
         }
     },
     "detail": {
-        "regtype": {
+        "registryType": {
             "pos": [1, 1],
             "pic": "9(01)",
             "def": "1"
         },
-        "companyinsccode": {
+        "companyDocumentType": {
             "pos": [2, 3],
             "pic": "9(02)"
         },
-        "companyinscnum": {
+        "companyDocument": {
             "pos": [4, 17],
             "pic": "9(14)"
         },
@@ -112,15 +112,15 @@
             "pos": [34, 37],
             "pic": "9(04)"
         },
-        "companyuse": {
+        "companyUse": {
             "pos": [38, 62],
             "pic": "X(25)"
         },
-        "ournumber": {
+        "ourNumber": {
             "pos": [63, 70],
             "pic": "9(08)"
         },
-        "quantcurr": {
+        "currencyQuantity": {
             "pos": [71, 83],
             "pic": "9(08)V9(5)"
         },
@@ -128,20 +128,20 @@
             "pos": [84, 86],
             "pic": "9(03)"
         },
-        "bankuse": {
+        "bankUse": {
             "pos": [87, 107],
             "pic": "X(21)"
         },
-        "portcode": {
+        "portfolioCode": {
             "pos": [108, 108],
             "pic": "X(01)"
         },
-        "occurrcode": {
+        "occurrenceCode": {
             "pos": [109, 110],
             "pic": "9(02)",
             "def": "1"
         },
-        "docnumber": {
+        "documentNumber": {
             "pos": [111, 120],
             "pic": "X(10)"
         },
@@ -154,12 +154,12 @@
             "pos": [127, 139],
             "pic": "9(11)V9(2)"
         },
-        "recbankcode": {
+        "receiveBankCode": {
             "pos": [140, 142],
             "pic": "9(03)",
             "def": "341"
         },
-        "recbranch": {
+        "receiveBranch": {
             "pos": [143, 147],
             "pic": "9(05)"
         },
@@ -177,19 +177,19 @@
             "pic": "9(06)",
             "type": "date"
         },
-        "inst1": {
+        "instruction1": {
             "pos": [157, 158],
             "pic": "X(02)"
         },
-        "inst2": {
+        "instruction2": {
             "pos": [159, 160],
             "pic": "X(02)"
         },
-        "dayinterest": {
+        "dayInterest": {
             "pos": [161, 173],
             "pic": "9(11)V9(2)"
         },
-        "discountto": {
+        "discountTo": {
             "pos": [174, 179],
             "pic": "9(06)",
             "type": "date"
@@ -206,11 +206,11 @@
             "pos": [206, 218],
             "pic": "9(11)V9(2)"
         },
-        "insccode": {
+        "documentType": {
             "pos": [219, 220],
             "pic": "9(02)"
         },
-        "inscnum": {
+        "document": {
             "pos": [221, 234],
             "pic": "9(14)"
         },
@@ -230,7 +230,7 @@
             "pos": [315, 326],
             "pic": "X(12)"
         },
-        "postalcode": {
+        "postalCode": {
             "pos": [327, 334],
             "pic": "9(08)"
         },
@@ -242,7 +242,7 @@
             "pos": [350, 351],
             "pic": "X(02)"
         },
-        "pullerguarantor": {
+        "pullerGuarantor": {
             "pos": [352, 381],
             "pic": "X(30)"
         },
@@ -250,7 +250,7 @@
             "pos": [382, 385],
             "pic": "X(04)"
         },
-        "lateinterestdate": {
+        "lateInterestDate": {
             "pos": [383, 391],
             "pic": "9(06)",
             "type": "date"
@@ -264,13 +264,13 @@
             "pos": [394, 394],
             "pic": "X(01)"
         },
-        "seq": {
+        "sequential": {
             "pos": [395, 400],
             "pic": "9(06)"
         }
     },
     "trailer": {
-        "regtype": {
+        "registryType": {
             "pos": [1, 1],
             "pic": "9(01)",
             "def": "9"
@@ -279,7 +279,7 @@
             "pos": [2, 394],
             "pic": "X(393)"
         },
-        "seq": {
+        "sequential": {
             "pos": [395, 400],
             "pic": "9(06)"
         }

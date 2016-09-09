@@ -25,11 +25,11 @@ class Remittance extends File implements RemittanceContract
     protected $schema;
 
     /**
-     * Lines sequencial.
+     * Lines sequential.
      *
      * @var integer
      */
-    protected $sequencial = 0;
+    protected $sequential = 0;
 
     /**
      * Initialize and return a new instance.
@@ -143,7 +143,7 @@ class Remittance extends File implements RemittanceContract
      */
     protected function increment(array $data)
     {
-        $data['seq'] = ++$this->sequencial;
+        $data['sequential'] = ++$this->sequential;
 
         return $data;
     }

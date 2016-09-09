@@ -17,19 +17,19 @@ class File400 extends Remittance
     protected $schemaFile = '/schemas/400.json';
 
     /**
-     * Formats a company inscription code.
+     * Formats a company document type.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailCompanyinsccode(
+    protected function formatDetailCompanyDocumentType(
         $value,
         array $data = [],
         array $meta = []
     ) {
-        return strlen($data['companyinscnum']) == 14? 2 : 1;
+        return strlen($data['companyDocumentType']) == 14? 2 : 1;
     }
 
     /**
@@ -40,7 +40,7 @@ class File400 extends Remittance
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailLateinteresetdate(
+    protected function formatDetailLateInterestDate(
         $value,
         array $data = [],
         array $meta = []
@@ -49,19 +49,19 @@ class File400 extends Remittance
     }
 
     /**
-     * Formats a inscription code.
+     * Formats a document type.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailInsccode(
+    protected function formatDetailDocumentType(
         $value,
         array $data = [],
         array $meta = []
     ) {
-        return strlen($data['inscnum']) == 14? 2 : 1;
+        return strlen($data['document']) == 14? 2 : 1;
     }
 
     /**
@@ -78,6 +78,6 @@ class File400 extends Remittance
         array $meta = []
     ) {
         $value = $value?: 0;
-        return ($data['inst1'] == 6 || $data['inst2'] == 6)? $value : 0;
+        return ($data['instruction1'] == 6 || $data['instruction2'] == 6)? $value : 0;
     }
 }

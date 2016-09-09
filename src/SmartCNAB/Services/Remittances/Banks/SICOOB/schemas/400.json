@@ -21,21 +21,33 @@
             "def": "01"
         },
         "serviceLiteral": {
-            "pos": [12, 26],
-            "pic": "X(15)",
+            "pos": [12, 19],
+            "pic": "X(08)",
             "def": "COBRANCA"
         },
-        "branch": {
+        "s1": {
+            "pos": [20, 26],
+            "pic": "X(07)"
+        },
+        "cooperativeCode": {
             "pos": [27, 30],
             "pic": "9(04)"
         },
-        "account": {
-            "pos": [31, 38],
+        "cooperativeCodeDv": {
+            "pos": [31, 31],
+            "pic": "X(01)"
+        },
+        "companyCode": {
+            "pos": [32, 39],
             "pic": "9(08)"
         },
-        "transmissionCode": {
-            "pos": [39, 46],
-            "pic": "9(08)"
+        "companyCodeDv": {
+            "pos": [40, 40],
+            "pic": "X(01)"
+        },
+        "mainCovenant": {
+            "pos": [41, 46],
+            "pic": "9(06)"
         },
         "companyName": {
             "pos": [47, 76],
@@ -44,12 +56,12 @@
         "bankCode": {
             "pos": [77, 79],
             "pic": "9(03)",
-            "def": "033"
+            "def": "756"
         },
         "bankName": {
             "pos": [80, 94],
             "pic": "X(15)",
-            "def": "SANTANDER"
+            "def": "BANCOOBCED"
         },
         "generationDate": {
             "pos": [95, 100],
@@ -57,37 +69,13 @@
             "type": "date",
             "def": "@auto"
         },
-        "s1": {
-            "pos": [101, 116],
-            "pic": "X(16)"
+        "fileSequential": {
+            "pos": [101, 107],
+            "pic": "9(07)"
         },
-        "message1": {
-            "pos": [117, 163],
-            "pic": "X(47)"
-        },
-        "message2": {
-            "pos": [164, 210],
-            "pic": "X(47)"
-        },
-        "message3": {
-            "pos": [211, 257],
-            "pic": "X(47)"
-        },
-        "message4": {
-            "pos": [258, 304],
-            "pic": "X(47)"
-        },
-        "message5": {
-            "pos": [305, 351],
-            "pic": "X(47)"
-        },
-        "message6": {
-            "pos": [352, 391],
-            "pic": "X(47)"
-        },
-        "version": {
-            "pos": [392, 394],
-            "pic": "9(03)"
+        "s2": {
+            "pos": [108, 394],
+            "pic": "X(287)"
         },
         "sequential": {
             "pos": [395, 400],
@@ -108,65 +96,88 @@
             "pos": [4, 17],
             "pic": "9(14)"
         },
-        "branch": {
+        "cooperativeCode": {
             "pos": [18, 21],
             "pic": "9(04)"
         },
+        "cooperativeCodeDv": {
+            "pos": [22, 22],
+            "pic": "X(01)"
+        },
         "account": {
-            "pos": [22, 29],
+            "pos": [23, 30],
             "pic": "9(08)"
         },
-        "billingAccount": {
-            "pos": [30, 37],
-            "pic": "9(08)"
+        "accountDv": {
+            "pos": [31, 31],
+            "pic": "X(01)"
+        },
+        "billingCovenant": {
+            "pos": [32, 37],
+            "pic": "9(06)"
         },
         "companyUse": {
             "pos": [38, 62],
             "pic": "X(25)"
         },
         "ourNumber": {
-            "pos": [63, 70],
-            "pic": "9(08)"
+            "pos": [63, 74],
+            "pic": "9(12)"
         },
-        "secondDiscountDate": {
-            "pos": [71, 76],
-            "pic": "9(06)",
-            "type": "date"
+        "parcel": {
+            "pos": [75, 76],
+            "pic": "9(02)",
+            "def": "01"
+        },
+        "valueGroup": {
+            "pos": [77, 78],
+            "pic": "9(02)"
         },
         "s1": {
-            "pos": [77, 77],
+            "pos": [79, 81],
+            "pic": "X(03)"
+        },
+        "messageFlag": {
+            "pos": [82, 82],
             "pic": "X(01)"
         },
-        "interestInfo": {
-            "pos": [78, 78],
-            "pic": "9(01)",
-            "def": "4"
+        "documentPrefix": {
+            "pos": [83, 85],
+            "pic": "X(03)"
         },
-        "lateInterestPercentage": {
-            "pos": [79, 82],
-            "pic": "9(02)V9(02)"
+        "portfolioVariation": {
+            "pos": [86, 88],
+            "pic": "9(03)"
         },
-        "currentCurrencyValue": {
-            "pos": [83, 84],
-            "pic": "9(02)",
-            "def": "00"
+        "escrowAccount": {
+            "pos": [89, 89],
+            "pic": "9(01)"
         },
-        "currencyQuantity": {
-            "pos": [85, 97],
-            "pic": "9(08)V9(5)"
+        "guaranteeContract": {
+            "pos": [90, 94],
+            "pic": "9(05)"
+        },
+        "guaranteeContractDv": {
+            "pos": [95, 95],
+            "pic": "X(01)",
+            "def": "0"
+        },
+        "bordero": {
+            "pos": [96, 101],
+            "pic": "9(06)"
         },
         "s2": {
-            "pos": [98, 101],
+            "pos": [102, 105],
             "pic": "X(04)"
         },
-        "lateInterestDate": {
-            "pos": [102, 107],
-            "pic": "9(06)",
-            "type": "date"
+        "emissionId": {
+            "pos": [106, 106],
+            "pic": "9(01)",
+            "def": "2"
         },
         "portfolio": {
-            "pos": [108, 108],
-            "pic": "9(01)"
+            "pos": [107, 108],
+            "pic": "9(02)"
         },
         "occurrenceCode": {
             "pos": [109, 110],
@@ -189,20 +200,25 @@
         "receiveBankCode": {
             "pos": [140, 142],
             "pic": "9(03)",
-            "def": "033"
+            "def": "756"
         },
-        "receiveBranch": {
-            "pos": [143, 147],
-            "pic": "9(05)"
+        "receiveCooperativeCode": {
+            "pos": [143, 146],
+            "pic": "9(04)"
+        },
+        "receiveCooperativeCodeDv": {
+            "pos": [147, 147],
+            "pic": "X(01)"
         },
         "especies": {
             "pos": [148, 149],
-            "pic": "9(02)"
+            "pic": "9(02)",
+            "def": "01"
         },
         "accepted": {
             "pos": [150, 150],
             "pic": "X(01)",
-            "def": "N"
+            "def": "1"
         },
         "emission": {
             "pos": [151, 156],
@@ -211,15 +227,26 @@
         },
         "instruction1": {
             "pos": [157, 158],
-            "pic": "9(02)"
+            "pic": "9(02)",
+            "def": "0"
         },
         "instruction2": {
             "pos": [159, 160],
-            "pic": "9(02)"
+            "pic": "9(02)",
+            "def": "0"
         },
-        "dayInterest": {
-            "pos": [161, 173],
-            "pic": "9(11)V9(2)"
+        "monthInterestPercentage": {
+            "pos": [161, 166],
+            "pic": "9(02)V9(4)"
+        },
+        "lateInterestPercentage": {
+            "pos": [167, 172],
+            "pic": "9(02)V9(4)"
+        },
+        "postageId": {
+            "pos": [173, 173],
+            "pic": "9(01)",
+            "def": "2"
         },
         "discountTo": {
             "pos": [174, 179],
@@ -230,9 +257,14 @@
             "pos": [180, 192],
             "pic": "9(11)V9(2)"
         },
+        "currencyCode": {
+            "pos": [193, 193],
+            "pic": "9(01)",
+            "def": "1"
+        },
         "iof": {
-            "pos": [193, 205],
-            "pic": "9(11)V9(2)"
+            "pos": [194, 205],
+            "pic": "9(12)"
         },
         "rebate": {
             "pos": [206, 218],
@@ -260,11 +292,7 @@
         },
         "postalCode": {
             "pos": [327, 331],
-            "pic": "9(05)"
-        },
-        "postalCodeComplement": {
-            "pos": [332, 334],
-            "pic": "9(03)"
+            "pic": "9(08)"
         },
         "city": {
             "pos": [335, 349],
@@ -275,30 +303,14 @@
             "pic": "X(02)"
         },
         "pullerGuarantor": {
-            "pos": [352, 381],
-            "pic": "X(30)"
-        },
-        "s3": {
-            "pos": [382, 382],
-            "pic": "X(01)"
-        },
-        "complementId": {
-            "pos": [383, 383],
-            "pic": "9(01)"
-        },
-        "complement": {
-            "pos": [384, 385],
-            "pic": "9(02)"
-        },
-        "s4": {
-            "pos": [386, 391],
-            "pic": "X(06)"
+            "pos": [352, 391],
+            "pic": "X(40)"
         },
         "deadline": {
             "pos": [392, 393],
             "pic": "9(02)"
         },
-        "s5": {
+        "s3": {
             "pos": [394, 394],
             "pic": "X(01)"
         },
@@ -313,17 +325,29 @@
             "pic": "9(01)",
             "def": "9"
         },
-        "documentsQuantity": {
-            "pos": [2, 7],
-            "pic": "9(06)"
+        "s1": {
+            "pos": [2, 194],
+            "pic": "X(193)"
         },
-        "totalValue": {
-            "pos": [8, 20],
-            "pic": "9(11)V9(2)"
+        "message1": {
+            "pos": [195, 234],
+            "pic": "X(40)"
         },
-        "z1": {
-            "pos": [21, 394],
-            "pic": "9(374)"
+        "message2": {
+            "pos": [235, 274],
+            "pic": "X(40)"
+        },
+        "message3": {
+            "pos": [275, 314],
+            "pic": "X(40)"
+        },
+        "message4": {
+            "pos": [315, 354],
+            "pic": "X(40)"
+        },
+        "message5": {
+            "pos": [355, 394],
+            "pic": "X(40)"
         },
         "sequential": {
             "pos": [395, 400],

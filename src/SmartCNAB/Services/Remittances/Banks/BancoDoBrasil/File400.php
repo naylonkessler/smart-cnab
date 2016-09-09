@@ -1,11 +1,11 @@
 <?php
 
-namespace SmartCNAB\Services\Remittances\Banks\Caixa;
+namespace SmartCNAB\Services\Remittances\Banks\BancoDoBrasil;
 
 use SmartCNAB\Support\File\Remittance;
 
 /**
- * Class for Caixa remittance CNAB 400 layout.
+ * Class for Banco do Brasil remittance CNAB 400 layout.
  */
 class File400 extends Remittance
 {
@@ -33,14 +33,14 @@ class File400 extends Remittance
     }
 
     /**
-     * Formats a discount to date.
+     * Formats an emission date.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailDiscountTo(
+    protected function formatDetailEmission(
         $value,
         array $data = [],
         array $meta = []
@@ -61,38 +61,6 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        return strlen($data['document']) === 14? 2 : 1;
-    }
-
-    /**
-     * Formats a late interest date.
-     *
-     * @param  mixed  $value
-     * @param  array  $data
-     * @param  array  $meta
-     * @return mixed
-     */
-    protected function formatDetailLateInterestDate(
-        $value,
-        array $data = [],
-        array $meta = []
-    ) {
-        return $value?: $data['expiration']->add(new \DateInterval('P1D'));
-    }
-
-    /**
-     * Formats a portfolio.
-     *
-     * @param  mixed  $value
-     * @param  array  $data
-     * @param  array  $meta
-     * @return mixed
-     */
-    protected function formatDetailPortfolio(
-        $value,
-        array $data = [],
-        array $meta = []
-    ) {
-        return ($value === 'SR'? 2 : ($value === 'RG'? 1 : $value));
+        return strlen($data['document']) == 14? 2 : 1;
     }
 }

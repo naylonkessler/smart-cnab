@@ -1,22 +1,22 @@
 {
     "header": {
-        "regtype": {
+        "registryType": {
             "pos": [1, 1],
             "pic": "9(01)"
         },
-        "retcode": {
+        "returnCode": {
             "pos": [2, 2],
             "pic": "9(01)"
         },
-        "retlit": {
+        "returnLiteral": {
             "pos": [3, 9],
             "pic": "X(07)"
         },
-        "servcode": {
+        "serviceCode": {
             "pos": [10, 11],
             "pic": "9(02)"
         },
-        "servlit": {
+        "serviceLiteral": {
             "pos": [12, 19],
             "pic": "X(08)"
         },
@@ -28,7 +28,7 @@
             "pos": [27, 30],
             "pic": "9(04)"
         },
-        "branchdv": {
+        "branchDv": {
             "pos": [31, 31],
             "pic": "X(01)"
         },
@@ -36,7 +36,7 @@
             "pos": [32, 39],
             "pic": "9(08)"
         },
-        "accountdv": {
+        "accountDv": {
             "pos": [40, 40],
             "pic": "X(01)"
         },
@@ -44,21 +44,21 @@
             "pos": [41, 46],
             "pic": "9(06)"
         },
-        "companyname": {
+        "companyName": {
             "pos": [47, 76],
             "pic": "X(30)"
         },
-        "bankname": {
+        "bankName": {
             "pos": [77, 94],
             "pic": "X(18)"
         },
-        "gendate": {
+        "generationDate": {
             "pos": [95, 100],
             "pic": "9(06)",
             "type": "date",
             "def": "@auto"
         },
-        "seqrem": {
+        "remittanceSequential": {
             "pos": [101, 107],
             "pic": "9(7)"
         },
@@ -66,7 +66,7 @@
             "pos": [108, 129],
             "pic": "X(22)"
         },
-        "convnum": {
+        "covenant": {
             "pos": [130, 136],
             "pic": "9(7)"
         },
@@ -74,13 +74,13 @@
             "pos": [137, 394],
             "pic": "X(258)"
         },
-        "seq": {
+        "sequential": {
             "pos": [395, 400],
             "pic": "9(06)"
         }
     },
     "detail": {
-        "regtype": {
+        "registryType": {
             "pos": [1, 1],
             "pic": "9(01)"
         },
@@ -96,7 +96,7 @@
             "pos": [18, 21],
             "pic": "9(04)"
         },
-        "branchdv": {
+        "branchDv": {
             "pos": [22, 22],
             "pic": "X(01)"
         },
@@ -104,35 +104,35 @@
             "pos": [24, 30],
             "pic": "9(08)"
         },
-        "accountdv": {
+        "accountDv": {
             "pos": [31, 31],
             "pic": "X(01)"
         },
-        "convum": {
+        "covenant": {
             "pos": [32, 38],
             "pic": "9(07)"
         },
-        "companyuse": {
+        "companyUse": {
             "pos": [39, 63],
             "pic": "X(25)"
         },
-        "ournumber": {
+        "ourNumber": {
             "pos": [64, 80],
             "pic": "9(17)"
         },
-        "typebilling": {
+        "billingType": {
             "pos": [81, 81],
             "pic": "9(01)"
         },
-        "typebillingcommand72": {
+        "typeBillingCommand72": {
             "pos": [82, 82],
             "pic": "9(01)"
         },
-        "daycalc": {
+        "dayCalc": {
             "pos": [83, 86],
             "pic": "9(04)"
         },
-        "occurrcode": {
+        "occurrenceCode": {
             "pos": [87, 88],
             "pic": "9(01)"
         },
@@ -140,19 +140,19 @@
             "pos": [89, 91],
             "pic": "X(03)"
         },
-        "portfoliovar": {
+        "portfolioVariation": {
             "pos": [92, 94],
             "pic": "9(03)"
         },
-        "escrowaccount": {
+        "escrowAccount": {
             "pos": [95, 95],
             "pic": "9(01)"
         },
-        "discounttx": {
+        "discountTax": {
             "pos": [96, 100],
             "pic": "9(05)"
         },
-        "ioftx": {
+        "iofTax": {
             "pos": [101, 105],
             "pic": "9(05)"
         },
@@ -168,7 +168,7 @@
             "pos": [109, 110],
             "pic": "9(02)"
         },
-        "saleoffdate": {
+        "saleOffDate": {
             "pos": [111, 116],
             "pic": "9(06)",
             "type": "date"
@@ -190,15 +190,15 @@
             "pos": [153, 165],
             "pic": "9(11)V9(2)"
         },
-        "recbankcode": {
+        "receiveBankCode": {
             "pos": [166, 168],
             "pic": "9(03)"
         },
-        "recbranch": {
+        "receiveBranch": {
             "pos": [169, 172],
             "pic": "9(04)"
         },
-        "recbranchddv": {
+        "receiveBranchDv": {
             "pos": [173, 173],
             "pic": "9(01)"
         },
@@ -206,24 +206,24 @@
             "pos": [174, 175],
             "pic": "9(02)"
         },
-        "creditdate": {
+        "creditDate": {
             "pos": [176, 181],
             "pic": "9(6)",
             "type": "date"
         },
-        "billingfare": {
+        "billingFare": {
             "pos": [182, 188],
             "pic": "9(11)V9(2)"
         },
-        "otherexpens": {
+        "otherDebits": {
             "pos": [189, 201],
             "pic": "9(11)V9(2)"
         },
-        "interestdiscount": {
+        "interestDiscount": {
             "pos": [202, 214],
             "pic": "9(11)V9(2)"
         },
-        "discountiof": {
+        "discountIof": {
             "pos": [215, 227],
             "pic": "9(11)V9(2)"
         },
@@ -235,35 +235,35 @@
             "pos": [241, 253],
             "pic": "9(11)V9(2)"
         },
-        "receivedvalue": {
+        "receivedValue": {
             "pos": [254, 266],
             "pic": "9(11)V9(2)"
         },
-        "dayinterest": {
+        "dayInterest": {
             "pos": [267, 279],
             "pic": "9(11)V9(2)"
         },
-        "otherreceipt": {
+        "otherCredits": {
             "pos": [280, 292],
             "pic": "9(11)V9(2)"
         },
-        "abatmentnotuse": {
+        "rebateNotUsed": {
             "pos": [293, 305],
             "pic": "9(11)V9(2)"
         },
-        "releasevalue": {
+        "releaseValue": {
             "pos": [306, 318],
             "pic": "9(11)V9(2)"
         },
-        "debitorcredit": {
+        "debitOrCredit": {
             "pos": [319, 319],
             "pic": "9(01)"
         },
-        "valueindicator": {
+        "valueIndicator": {
             "pos": [320, 320],
             "pic": "9(02)"
         },
-        "valueadjust": {
+        "adjustValue": {
             "pos": [321, 332],
             "pic": "9(11)V9(2)"
         },
@@ -299,7 +299,7 @@
             "pos": [382, 390],
             "pic": "9(09)"
         },
-        "indicatorautopartial": {
+        "autoPartialFlag": {
             "pos": [391, 391],
             "pic": "9(01)"
         },
@@ -311,13 +311,13 @@
             "pos": [393, 394],
             "pic": "9(02)"
         },
-        "seq": {
+        "sequential": {
             "pos": [395, 400],
             "pic": "9(06)"
         }
     },
     "trailer": {
-        "regtype": {
+        "registryType": {
             "pos": [1, 1],
             "pic": "9(01)"
         },
@@ -340,15 +340,15 @@
             "pos": [8, 17],
             "pic": "X(10)"
         },
-        "quantsimple": {
+        "simpleQuantity": {
             "pos": [18, 25],
             "pic": "9(08)"
         },
-        "valuesimple": {
+        "simpleValue": {
             "pos": [26, 39],
             "pic": "9(12)V9(2)"
         },
-        "numbersimple": {
+        "simpleNumber": {
             "pos": [40, 47],
             "pic": "9(08)"
         },
@@ -356,15 +356,15 @@
             "pos": [48, 57],
             "pic": "X(10)"
         },
-        "quantlink": {
+        "linkQuantity": {
             "pos": [58, 65],
             "pic": "9(08)"
         },
-        "valuelink": {
+        "linkValue": {
             "pos": [66, 79],
             "pic": "9(12)V9(2)"
         },
-        "numberlink": {
+        "linkNumber": {
             "pos": [80, 87],
             "pic": "9(08)"
         },
@@ -372,15 +372,15 @@
             "pos": [88, 97],
             "pic": "X(10)"
         },
-        "quantescrow": {
+        "escrowQuantity": {
             "pos": [98, 105],
             "pic": "9(08)"
         },
-        "valueescrow": {
+        "escrowValue": {
             "pos": [106, 119],
             "pic": "9(12)V9(2)"
         },
-        "numberescrow": {
+        "escrowNumber": {
             "pos": [120, 127],
             "pic": "9(08)"
         },
@@ -388,15 +388,15 @@
             "pos": [128, 137],
             "pic": "X(10)"
         },
-        "quantdiscount": {
+        "discountQuantity": {
             "pos": [138, 145],
             "pic": "9(08)"
         },
-        "valuediscount": {
+        "discountValue": {
             "pos": [146, 159],
             "pic": "9(12)V9(2)"
         },
-        "numberdiscount": {
+        "discountNumber": {
             "pos": [160, 167],
             "pic": "9(08)"
         },
@@ -404,15 +404,15 @@
             "pos": [168, 217],
             "pic": "X(50)"
         },
-        "quantvendor": {
+        "vendorQuantity": {
             "pos": [218, 225],
             "pic": "9(08)"
         },
-        "valuevendor": {
+        "vendorValue": {
             "pos": [226, 239],
             "pic": "9(12)V9(2)"
         },
-        "numbervendor": {
+        "vendorNumber": {
             "pos": [240, 247],
             "pic": "9(08)"
         },
@@ -420,7 +420,7 @@
             "pos": [248, 394],
             "pic": "X(147)"
         },
-        "seq": {
+        "sequential": {
             "pos": [395, 400],
             "pic": "9(06)"
         }

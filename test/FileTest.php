@@ -28,8 +28,8 @@ class FileTest extends PHPUnit_Framework_TestCase
                     ->addDetail([
                         'name' => 'Any name to big that lib needs to cut it',
                         'portfolio' => '109',
-                        'companyinscnum' => '12345678901414',
-                        'inscnum' => '12345678900',
+                        'companyDocumentType' => '12345678901414',
+                        'document' => '12345678900',
                         'expiration' => new \DateTime(),
                         'emission' => new \DateTime(),
                     ])
@@ -55,8 +55,8 @@ class FileTest extends PHPUnit_Framework_TestCase
                     ->addDetail([
                         'name' => 'Any name to big that lib needs to cut it',
                         'portfolio' => '109',
-                        'companyinscnum' => '12345678901414',
-                        'inscnum' => '12345678900',
+                        'companyDocumentType' => '12345678901414',
+                        'document' => '12345678900',
                         'expiration' => new \DateTime(),
                         'emission' => new \DateTime(),
                     ])
@@ -89,7 +89,7 @@ class FileTest extends PHPUnit_Framework_TestCase
         $this->assertCount(count($schema['header']), (array)$header);
         $this->assertCount(count($schema['detail']), (array)$details[0]);
         $this->assertCount(count($schema['trailer']), (array)$trailer);
-        $this->assertEquals(341, $header->bankcode);
-        $this->assertEquals('1-21', $details[0]->companyuse);
+        $this->assertEquals(341, $header->bankCode);
+        $this->assertEquals('1-21', $details[0]->companyUse);
     }
 }
