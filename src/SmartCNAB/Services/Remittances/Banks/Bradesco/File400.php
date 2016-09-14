@@ -41,7 +41,6 @@ class File400 extends Remittance
      * @param  array  $meta
      * @return mixed
      */
-
     protected function formatDetailLateInterestFlag(
         $value,
         array $data = [],

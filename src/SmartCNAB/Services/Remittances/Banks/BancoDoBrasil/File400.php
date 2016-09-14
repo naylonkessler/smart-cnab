@@ -17,6 +17,22 @@ class File400 extends Remittance
     protected $schemaFile = '/schemas/400.json';
 
     /**
+     * Formats an account on detail.
+     *
+     * @param  mixed  $value
+     * @param  array  $data
+     * @param  array  $meta
+     * @return mixed
+     */
+    protected function formatDetailAccount(
+        $value,
+        array $data = [],
+        array $meta = []
+    ) {
+        return $this->formatHeaderAccount($value, $data, $meta);
+    }
+
+    /**
      * Formats an account DV on detail.
      *
      * @param  mixed  $value
@@ -30,6 +46,22 @@ class File400 extends Remittance
         array $meta = []
     ) {
         return $this->formatHeaderAccountDv($value, $data, $meta);
+    }
+
+    /**
+     * Formats a branch on detail.
+     *
+     * @param  mixed  $value
+     * @param  array  $data
+     * @param  array  $meta
+     * @return mixed
+     */
+    protected function formatDetailBranch(
+        $value,
+        array $data = [],
+        array $meta = []
+    ) {
+        return $this->formatHeaderBranch($value, $data, $meta);
     }
 
     /**
@@ -97,6 +129,22 @@ class File400 extends Remittance
     }
 
     /**
+     * Formats an account on header.
+     *
+     * @param  mixed  $value
+     * @param  array  $data
+     * @param  array  $meta
+     * @return mixed
+     */
+    protected function formatHeaderAccount(
+        $value,
+        array $data = [],
+        array $meta = []
+    ) {
+        return substr($value, 0, -1);
+    }
+
+    /**
      * Formats an account DV on header.
      *
      * @param  mixed  $value
@@ -110,6 +158,22 @@ class File400 extends Remittance
         array $meta = []
     ) {
         return $value?: substr($data['account'], -1);
+    }
+
+    /**
+     * Formats a branch on header.
+     *
+     * @param  mixed  $value
+     * @param  array  $data
+     * @param  array  $meta
+     * @return mixed
+     */
+    protected function formatHeaderBranch(
+        $value,
+        array $data = [],
+        array $meta = []
+    ) {
+        return substr($value, 0, -1);
     }
 
     /**

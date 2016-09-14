@@ -17,6 +17,70 @@ class File400 extends Remittance
     protected $schemaFile = '/schemas/400.json';
 
     /**
+     * Formats an account on detail.
+     *
+     * @param  mixed  $value
+     * @param  array  $data
+     * @param  array  $meta
+     * @return mixed
+     */
+    protected function formatDetailAccount(
+        $value,
+        array $data = [],
+        array $meta = []
+    ) {
+        return substr($value, 0, -1);
+    }
+
+    /**
+     * Formats an account DV on detail.
+     *
+     * @param  mixed  $value
+     * @param  array  $data
+     * @param  array  $meta
+     * @return mixed
+     */
+    protected function formatDetailAccountDv(
+        $value,
+        array $data = [],
+        array $meta = []
+    ) {
+        return $value?: substr($data['account'], -1);
+    }
+
+    /**
+     * Formats a branch on detail.
+     *
+     * @param  mixed  $value
+     * @param  array  $data
+     * @param  array  $meta
+     * @return mixed
+     */
+    protected function formatDetailBranch(
+        $value,
+        array $data = [],
+        array $meta = []
+    ) {
+        return $this->formatHeaderBranch($value, $data, $meta);
+    }
+
+    /**
+     * Formats a branch DV on detail.
+     *
+     * @param  mixed  $value
+     * @param  array  $data
+     * @param  array  $meta
+     * @return mixed
+     */
+    protected function formatDetailBranchDv(
+        $value,
+        array $data = [],
+        array $meta = []
+    ) {
+        return $this->formatHeaderBranchDv($value, $data, $meta);
+    }
+
+    /**
      * Formats a company document type.
      *
      * @param  mixed  $value
@@ -62,5 +126,133 @@ class File400 extends Remittance
         array $meta = []
     ) {
         return strlen($data['document']) === 14? 2 : 1;
+    }
+
+    /**
+     * Formats a guarantee contract on detail.
+     *
+     * @param  mixed  $value
+     * @param  array  $data
+     * @param  array  $meta
+     * @return mixed
+     */
+    protected function formatDetailGuaranteeContract(
+        $value,
+        array $data = [],
+        array $meta = []
+    ) {
+        return substr($value, 0, -1);
+    }
+
+    /**
+     * Formats a guarantee contract DV on detail.
+     *
+     * @param  mixed  $value
+     * @param  array  $data
+     * @param  array  $meta
+     * @return mixed
+     */
+    protected function formatDetailGuaranteeContractDv(
+        $value,
+        array $data = [],
+        array $meta = []
+    ) {
+        return $value?: substr($data['guaranteeContract'], -1);
+    }
+
+    /**
+     * Formats a receive branch on detail.
+     *
+     * @param  mixed  $value
+     * @param  array  $data
+     * @param  array  $meta
+     * @return mixed
+     */
+    protected function formatDetailReceiveBranch(
+        $value,
+        array $data = [],
+        array $meta = []
+    ) {
+        return $this->formatDetailBranch($value, $data, $meta);
+    }
+
+    /**
+     * Formats a receive branch DV on detail.
+     *
+     * @param  mixed  $value
+     * @param  array  $data
+     * @param  array  $meta
+     * @return mixed
+     */
+    protected function formatDetailReceiveBranchDv(
+        $value,
+        array $data = [],
+        array $meta = []
+    ) {
+        return $this->formatDetailBranchDv($value, $data, $meta);
+    }
+
+    /**
+     * Formats a branch on header.
+     *
+     * @param  mixed  $value
+     * @param  array  $data
+     * @param  array  $meta
+     * @return mixed
+     */
+    protected function formatHeaderBranch(
+        $value,
+        array $data = [],
+        array $meta = []
+    ) {
+        return substr($value, 0, -1);
+    }
+
+    /**
+     * Formats a branch DV on header.
+     *
+     * @param  mixed  $value
+     * @param  array  $data
+     * @param  array  $meta
+     * @return mixed
+     */
+    protected function formatHeaderBranchDv(
+        $value,
+        array $data = [],
+        array $meta = []
+    ) {
+        return $value?: substr($data['branch'], -1);
+    }
+
+    /**
+     * Formats a company code on header.
+     *
+     * @param  mixed  $value
+     * @param  array  $data
+     * @param  array  $meta
+     * @return mixed
+     */
+    protected function formatHeaderCompanyCode(
+        $value,
+        array $data = [],
+        array $meta = []
+    ) {
+        return substr($value, 0, -1);
+    }
+
+    /**
+     * Formats a company code DV on header.
+     *
+     * @param  mixed  $value
+     * @param  array  $data
+     * @param  array  $meta
+     * @return mixed
+     */
+    protected function formatHeaderCompanyCodeDv(
+        $value,
+        array $data = [],
+        array $meta = []
+    ) {
+        return $value?: substr($data['companyCode'], -1);
     }
 }

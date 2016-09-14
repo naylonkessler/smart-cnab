@@ -36,6 +36,38 @@ class File400 extends Remittance
     protected $schemaFile = '/schemas/400.json';
 
     /**
+     * Formats an account on detail.
+     *
+     * @param  mixed  $value
+     * @param  array  $data
+     * @param  array  $meta
+     * @return mixed
+     */
+    protected function formatDetailAccount(
+        $value,
+        array $data = [],
+        array $meta = []
+    ) {
+        return $this->formatHeaderAccount($value, $data, $meta);
+    }
+
+    /**
+     * Formats an account DV on detail.
+     *
+     * @param  mixed  $value
+     * @param  array  $data
+     * @param  array  $meta
+     * @return mixed
+     */
+    protected function formatDetailAccountDv(
+        $value,
+        array $data = [],
+        array $meta = []
+    ) {
+        return $this->formatHeaderAccountDv($value, $data, $meta);
+    }
+
+    /**
      * Formats a company document type.
      *
      * @param  mixed  $value
@@ -48,7 +80,7 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        return strlen($data['companyDocumentType']) == 14? 2 : 1;
+        return strlen($data['companyDocumentType']) === 14? 2 : 1;
     }
 
     /**
@@ -80,7 +112,7 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        return strlen($data['document']) == 14? 2 : 1;
+        return strlen($data['document']) === 14? 2 : 1;
     }
 
     /**
@@ -112,7 +144,7 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        $bypass = $this->portCodes[$data['portfolio']][1] == 'D' ||
+        $bypass = $this->portCodes[$data['portfolio']][1] === 'D' ||
                     $data['portfolio'] == 115;
 
         return $bypass? $value : '';
@@ -131,7 +163,39 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        return !empty($this->portCodes[$data['portfolio']])?
+        return ( ! empty($this->portCodes[$data['portfolio']]))?
                     $this->portCodes[$data['portfolio']][0] : $value;
+    }
+
+    /**
+     * Formats an account on header.
+     *
+     * @param  mixed  $value
+     * @param  array  $data
+     * @param  array  $meta
+     * @return mixed
+     */
+    protected function formatHeaderAccount(
+        $value,
+        array $data = [],
+        array $meta = []
+    ) {
+        return substr($value, 0, -1);
+    }
+
+    /**
+     * Formats an account DV on header.
+     *
+     * @param  mixed  $value
+     * @param  array  $data
+     * @param  array  $meta
+     * @return mixed
+     */
+    protected function formatHeaderAccountDv(
+        $value,
+        array $data = [],
+        array $meta = []
+    ) {
+        return $value?: substr($data['account'], -1);
     }
 }

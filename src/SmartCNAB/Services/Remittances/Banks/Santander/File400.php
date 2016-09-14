@@ -29,7 +29,7 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        return strlen($data['companyDocumentType']) == 14? 2 : 1;
+        return strlen($data['companyDocumentType']) === 14? 2 : 1;
     }
 
     /**
@@ -49,6 +49,22 @@ class File400 extends Remittance
     }
 
     /**
+     * Formats the late interest flag based on late interest percentage.
+     *
+     * @param  mixed  $value
+     * @param  array  $data
+     * @param  array  $meta
+     * @return mixed
+     */
+    protected function formatDetailLateInterestFlag(
+        $value,
+        array $data = [],
+        array $meta = []
+    ) {
+        return ( ! empty($data['lateInterestPercentage']))? 4 : 0;
+    }
+
+    /**
      * Formats a document type.
      *
      * @param  mixed  $value
@@ -61,7 +77,7 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        return strlen($data['document']) == 14? 2 : 1;
+        return strlen($data['document']) === 14? 2 : 1;
     }
 
     /**
@@ -77,7 +93,6 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        $value = $value?: 0;
-        return ($data['instruction1'] == 6 || $data['instruction2'] == 6)? $value : 0;
+        return ($data['instruction1'] == 6 || $data['instruction2'] == 6)? ($value?: 0) : 0;
     }
 }
