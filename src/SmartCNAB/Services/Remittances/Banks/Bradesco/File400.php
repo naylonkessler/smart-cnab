@@ -34,7 +34,7 @@ class File400 extends Remittance
     }
 
     /**
-     * Formats a late interest percentage.
+     * Formats the late interest flag based on late interest percentage.
      *
      * @param  mixed  $value
      * @param  array  $data
@@ -42,11 +42,11 @@ class File400 extends Remittance
      * @return mixed
      */
 
-    protected function formatDetailLateInterestPercentage(
+    protected function formatDetailLateInterestFlag(
         $value,
         array $data = [],
         array $meta = []
     ) {
-        return $data['lateInterestFlag'] == 2? $value : 0;
+        return ( ! empty($data['lateInterestPercentage']))? 2 : 0;
     }
 }
