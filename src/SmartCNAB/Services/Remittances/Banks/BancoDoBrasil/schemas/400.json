@@ -33,7 +33,7 @@
             "pos": [27, 30],
             "pic": "9(04)"
         },
-        "branch": {
+        "branchDv": {
             "pos": [31, 31],
             "pic": "9(01)"
         },
@@ -53,9 +53,14 @@
             "pos": [47, 76],
             "pic": "X(30)"
         },
+        "bankCode": {
+            "pos": [77, 79],
+            "pic": "9(03)",
+            "def": "001"
+        },
         "bankName": {
-            "pos": [77, 94],
-            "pic": "X(18)",
+            "pos": [80, 94],
+            "pic": "X(15)",
             "def": "BANCODOBRASIL"
         },
         "generationDate": {
@@ -64,7 +69,7 @@
             "type": "date",
             "def": "@auto"
         },
-        "remittanceSequential": {
+        "fileSequential": {
             "pos": [101, 107],
             "pic": "9(7)"
         },
@@ -115,7 +120,7 @@
             "pos": [31, 31],
             "pic": "9(01)"
         },
-        "billingAccount": {
+        "covenant": {
             "pos": [32, 38],
             "pic": "9(07)"
         },
@@ -127,11 +132,11 @@
             "pos": [64, 80],
             "pic": "9(17)"
         },
-        "currentNumber": {
+        "parcel": {
             "pos": [81, 82],
             "pic": "9(02)"
         },
-        "groupValue": {
+        "z1": {
             "pos": [83, 84],
             "pic": "9(02)"
         },
@@ -151,7 +156,7 @@
             "pos": [92, 94],
             "pic": "9(03)"
         },
-        "escrowAccount": {
+        "escrowAccountFlag": {
             "pos": [95, 95],
             "pic": "9(01)",
             "def": "0"
@@ -169,11 +174,11 @@
             "pos": [107, 108],
             "pic": "9(02)"
         },
-        "command": {
+        "occurrenceCode": {
             "pos": [109, 110],
             "pic": "9(02)"
         },
-        "documentNumber": {
+        "yourNumber": {
             "pos": [111, 120],
             "pic": "X(10)"
         },
@@ -278,7 +283,7 @@
             "pos": [350, 351],
             "pic": "X(02)"
         },
-        "message2": {
+        "pullerGuarantor": {
             "pos": [352, 391],
             "pic": "X(40)"
         },

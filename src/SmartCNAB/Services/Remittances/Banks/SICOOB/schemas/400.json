@@ -29,11 +29,11 @@
             "pos": [20, 26],
             "pic": "X(07)"
         },
-        "cooperativeCode": {
+        "branch": {
             "pos": [27, 30],
             "pic": "9(04)"
         },
-        "cooperativeCodeDv": {
+        "branchDv": {
             "pos": [31, 31],
             "pic": "X(01)"
         },
@@ -45,7 +45,7 @@
             "pos": [40, 40],
             "pic": "X(01)"
         },
-        "mainCovenant": {
+        "covenant": {
             "pos": [41, 46],
             "pic": "9(06)"
         },
@@ -96,11 +96,11 @@
             "pos": [4, 17],
             "pic": "9(14)"
         },
-        "cooperativeCode": {
+        "branch": {
             "pos": [18, 21],
             "pic": "9(04)"
         },
-        "cooperativeCodeDv": {
+        "branchDv": {
             "pos": [22, 22],
             "pic": "X(01)"
         },
@@ -112,7 +112,7 @@
             "pos": [31, 31],
             "pic": "X(01)"
         },
-        "billingCovenant": {
+        "covenant": {
             "pos": [32, 37],
             "pic": "9(06)"
         },
@@ -129,7 +129,7 @@
             "pic": "9(02)",
             "def": "01"
         },
-        "valueGroup": {
+        "z1": {
             "pos": [77, 78],
             "pic": "9(02)"
         },
@@ -149,7 +149,7 @@
             "pos": [86, 88],
             "pic": "9(03)"
         },
-        "escrowAccount": {
+        "escrowAccountFlag": {
             "pos": [89, 89],
             "pic": "9(01)"
         },
@@ -184,7 +184,7 @@
             "pic": "9(02)",
             "def": "1"
         },
-        "documentNumber": {
+        "yourNumber": {
             "pos": [111, 120],
             "pic": "X(10)"
         },
@@ -202,11 +202,11 @@
             "pic": "9(03)",
             "def": "756"
         },
-        "receiveCooperativeCode": {
+        "receiveBranch": {
             "pos": [143, 146],
             "pic": "9(04)"
         },
-        "receiveCooperativeCodeDv": {
+        "receiveBranchDv": {
             "pos": [147, 147],
             "pic": "X(01)"
         },

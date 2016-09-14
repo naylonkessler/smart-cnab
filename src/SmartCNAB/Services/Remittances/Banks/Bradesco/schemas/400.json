@@ -77,29 +77,45 @@
             "pic": "9(01)",
             "def": "1"
         },
-        "debitBranch": {
+        "ddaBranch": {
             "pos": [2, 6],
             "pic": "9(05)"
         },
-        "debitBranchNumber": {
+        "ddaBranchDv": {
             "pos": [7, 7],
             "pic": "X(01)"
         },
-        "accountReason": {
+        "ddaAccountReason": {
             "pos": [8, 12],
             "pic": "9(05)"
         },
-        "accountCli": {
+        "ddaAccount": {
             "pos": [13, 19],
             "pic": "9(07)"
         },
-        "accountCliNumber": {
+        "ddaAccountDv": {
             "pos": [20, 20],
             "pic": "X(01)"
         },
-        "companyId": {
-            "pos": [21, 37],
-            "pic": "X(17)"
+        "z1": {
+            "pos": [21, 21],
+            "pic": "9(01)"
+        },
+        "portfolio": {
+            "pos": [22, 24],
+            "pic": "9(03)"
+        },
+        "branch": {
+            "pos": [25, 29],
+            "pic": "9(05)"
+        },
+        "account": {
+            "pos": [30, 36],
+            "pic": "9(07)"
+        },
+        "accountDv": {
+            "pos": [37, 37],
+            "pic": "9(01)"
         },
         "companyUse": {
             "pos": [38, 62],
@@ -119,26 +135,22 @@
             "pic": "9(04)"
         },
         "ourNumber": {
-            "pos": [71, 81],
-            "pic": "9(11)"
+            "pos": [71, 82],
+            "pic": "9(12)"
         },
-        "ourNumberDac": {
-            "pos": [82, 82],
-            "pic": "9(01)"
-        },
-        "discount": {
+        "dayDiscount": {
             "pos": [83, 92],
             "pic": "9(8)V9(2)"
         },
-        "billingEmitFlag": {
+        "emissionType": {
             "pos": [93, 93],
             "pic": "X(01)"
         },
-        "﻿billetEmitFlag": {
+        "ddaEmissionFlag": {
             "pos": [94, 94],
             "pic": "X(01)"
         },
-        "bankUse": {
+        "bankOperationId": {
             "pos": [95, 104],
             "pic": "X(10)"
         },
@@ -147,11 +159,11 @@
             "pic": "X(01)",
             "def": "R"
         },
-        "debitAddressFlag": {
+        "ddaNoticeAddressingFlag": {
             "pos": [106, 106],
             "pic": "9(01)"
         },
-         "s1": {
+        "s1": {
             "pos": [107, 108],
             "pic": "X(02)"
         },
@@ -160,7 +172,7 @@
             "pic": "9(02)",
             "def": "1"
         },
-        "documentNumber": {
+        "yourNumber": {
             "pos": [111, 120],
             "pic": "X(10)"
         },
@@ -212,7 +224,7 @@
             "pic": "9(06)",
             "type": "date"
         },
-        "discountValue": {
+        "discount": {
             "pos": [180, 192],
             "pic": "9(11)V9(2)"
         },
@@ -240,17 +252,13 @@
             "pos": [275, 314],
             "pic": "X(40)"
         },
-        "bankNotice1": {
+        "message": {
             "pos": [315, 326],
             "pic": "X(12)"
         },
         "postalCode": {
-            "pos": [327, 331],
-            "pic": "9(05)"
-        },
-        "postalCodeComplement": {
-            "pos": [332, 334],
-            "pic": "9(03)"
+            "pos": [327, 334],
+            "pic": "9(08)"
         },
         "pullerGuarantor": {
             "pos": [335, 394],

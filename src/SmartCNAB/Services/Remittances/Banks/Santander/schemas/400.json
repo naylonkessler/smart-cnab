@@ -85,7 +85,7 @@
             "pos": [352, 391],
             "pic": "X(47)"
         },
-        "version": {
+        "fileSequential": {
             "pos": [392, 394],
             "pic": "9(03)"
         },
@@ -137,7 +137,7 @@
             "pos": [77, 77],
             "pic": "X(01)"
         },
-        "interestInfo": {
+        "lateInterestFlag": {
             "pos": [78, 78],
             "pic": "9(01)",
             "def": "4"
@@ -173,7 +173,7 @@
             "pic": "9(02)",
             "def": "1"
         },
-        "documentNumber": {
+        "yourNumber": {
             "pos": [111, 120],
             "pic": "X(10)"
         },
@@ -259,12 +259,8 @@
             "pic": "X(12)"
         },
         "postalCode": {
-            "pos": [327, 331],
-            "pic": "9(05)"
-        },
-        "postalCodeComplement": {
-            "pos": [332, 334],
-            "pic": "9(03)"
+            "pos": [327, 334],
+            "pic": "9(08)"
         },
         "city": {
             "pos": [335, 349],
