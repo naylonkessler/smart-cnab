@@ -258,6 +258,6 @@ class Picture
      */
     protected function transliterate($value)
     {
-        return iconv('UTF-8', 'ASCII//TRANSLIT', $value);
+        return !is_string($value)? $value : iconv('UTF-8', 'ASCII//TRANSLIT', $value);
     }
 }
