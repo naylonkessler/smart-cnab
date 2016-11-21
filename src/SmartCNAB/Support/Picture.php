@@ -174,6 +174,7 @@ class Picture
         $parsed = $this->parse($picture, $meta);
         $method = 'to'.ucfirst($parsed['info-type']);
         $value = $this->toDefault($value, $parsed);
+        $value = $this->transliterate($value);
 
         if (method_exists($this, $method)) {
             return call_user_func_array([$this, $method], [$value, $parsed]);
@@ -247,5 +248,16 @@ class Picture
         $value = number_format(floatval($value), $meta['last']);
 
         return $this->limit($value, $meta['size'], $meta);
+    }
+
+    /**
+     * Transliterate from UTF-8 to ASCII
+     *
+     * @param  string  $value
+     * @return string
+     */
+    protected function transliterate($value)
+    {
+        return iconv('UTF-8', 'ASCII//TRANSLIT', $value);
     }
 }
