@@ -25,16 +25,16 @@ class FileTest extends PHPUnit_Framework_TestCase
             \SmartCNAB\Support\File\File::CNAB400
         );
         $lines = $remittance->begin([])
-                    ->addDetail([
-                        'name' => 'Any name to big that lib needs to cut it',
-                        'portfolio' => '109',
-                        'companyDocumentType' => '12345678901414',
-                        'document' => '12345678900',
-                        'expiration' => new \DateTime(),
-                        'emission' => new \DateTime(),
-                    ])
-                    ->end()
-                    ->getLines();
+                                    ->addDetail([
+                                        'name' => 'Any name to big that lib needs to cut it',
+                                        'portfolio' => '109',
+                                        'companyDocumentType' => '12345678901414',
+                                        'document' => '12345678900',
+                                        'expiration' => new \DateTime(),
+                                        'emission' => new \DateTime(),
+                                    ])
+                                    ->end()
+                                    ->getLines();
 
         $this->assertCount(4, $lines);
         $this->assertTrue(strlen(implode('', $lines[0])) == 400);
@@ -52,16 +52,16 @@ class FileTest extends PHPUnit_Framework_TestCase
         );
         $path = dirname(__FILE__).'/sample.REM';
         $file = $remittance->begin([])
-                    ->addDetail([
-                        'name' => 'Any name to big that lib needs to cut it',
-                        'portfolio' => '109',
-                        'companyDocumentType' => '12345678901414',
-                        'document' => '12345678900',
-                        'expiration' => new \DateTime(),
-                        'emission' => new \DateTime(),
-                    ])
-                    ->end()
-                    ->save($path);
+                                    ->addDetail([
+                                        'name' => 'Any name to big that lib needs to cut it',
+                                        'portfolio' => '109',
+                                        'companyDocumentType' => '12345678901414',
+                                        'document' => '12345678900',
+                                        'expiration' => new \DateTime(),
+                                        'emission' => new \DateTime(),
+                                    ])
+                                    ->end()
+                                    ->save($path);
 
         $this->assertInstanceOf(\SplFileObject::class, $file);
         $this->assertFileExists($path);
@@ -91,5 +91,27 @@ class FileTest extends PHPUnit_Framework_TestCase
         $this->assertCount(count($schema['trailer']), (array)$trailer);
         $this->assertEquals(341, $header->bankCode);
         $this->assertEquals('1-21', $details[0]->companyUse);
+    }
+
+    public function testSpecialCharactersTransliterate() {
+        $factory = new \SmartCNAB\Services\Factory();
+        $remittance = $factory->remittance(
+            \SmartCNAB\Support\Bank::ITAU,
+            \SmartCNAB\Support\File\File::CNAB400
+        );
+
+        $details = $remittance->begin([])
+                                        ->addDetail([
+                                            'name' => 'testé ç .',
+                                            'portfolio' => '109',
+                                            'companyDocumentType' => '12345678901414',
+                                            'document' => '12345678900',
+                                            'expiration' => new \DateTime(),
+                                            'emission' => new \DateTime(),
+                                        ])
+                                        ->end()
+                                        ->getLines();
+
+        $this->assertEquals('teste c .                     ', $details[1]['name']);
     }
 }
