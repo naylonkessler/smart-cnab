@@ -28,8 +28,8 @@ class FileTest extends PHPUnit_Framework_TestCase
                                     ->addDetail([
                                         'name' => 'Any name to big that lib needs to cut it',
                                         'portfolio' => '109',
-                                        'companyDocumentType' => '12345678901414',
                                         'document' => '12345678900',
+                                        'companyDocument' => '12345678900123',
                                         'expiration' => new \DateTime(),
                                         'emission' => new \DateTime(),
                                     ])
@@ -55,8 +55,8 @@ class FileTest extends PHPUnit_Framework_TestCase
                                     ->addDetail([
                                         'name' => 'Any name to big that lib needs to cut it',
                                         'portfolio' => '109',
-                                        'companyDocumentType' => '12345678901414',
                                         'document' => '12345678900',
+                                        'companyDocument' => '12345678900123',
                                         'expiration' => new \DateTime(),
                                         'emission' => new \DateTime(),
                                     ])
@@ -104,8 +104,8 @@ class FileTest extends PHPUnit_Framework_TestCase
                                         ->addDetail([
                                             'name' => 'testé ç .',
                                             'portfolio' => '109',
-                                            'companyDocumentType' => '12345678901414',
                                             'document' => '12345678900',
+                                            'companyDocument' => '12345678900123',
                                             'expiration' => new \DateTime(),
                                             'emission' => new \DateTime(),
                                         ])
@@ -113,5 +113,28 @@ class FileTest extends PHPUnit_Framework_TestCase
                                         ->getLines();
 
         $this->assertEquals('teste c .                     ', $details[1]['name']);
+    }
+
+    public function testCompanyDocumentType()
+    {
+         $factory = new \SmartCNAB\Services\Factory();
+        $remittance = $factory->remittance(
+            \SmartCNAB\Support\Bank::ITAU,
+            \SmartCNAB\Support\File\File::CNAB400
+        );
+
+        $details = $remittance->begin([])
+                                        ->addDetail([
+                                            'name' => 'Any name to big that lib needs to cut it',
+                                            'portfolio' => '109',
+                                            'document' => '12345678900',
+                                            'companyDocument' => '12345678900123',
+                                            'expiration' => new \DateTime(),
+                                            'emission' => new \DateTime(),
+                                        ])
+                                        ->end()
+                                        ->getLines();
+
+        $this->assertArrayHasKey('companyDocumentType', $details[1]);
     }
 }
