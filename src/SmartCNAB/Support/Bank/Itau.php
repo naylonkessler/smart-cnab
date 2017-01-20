@@ -2,10 +2,12 @@
 
 namespace SmartCNAB\Support\Bank;
 
+use SmartCNAB\Contracts\Support\BankSupport;
+
 /**
  * Bank Itau support class.
  */
-class Itau
+class Itau implements BankSupport
 {
     /**
      * Especies codes.
@@ -225,6 +227,14 @@ class Itau
     ];
 
     /**
+     * @return array
+     */
+    public function channels()
+    {
+        return [];
+    }
+
+    /**
      * Return the default state of itau infos.
      *
      * @return array
@@ -236,6 +246,14 @@ class Itau
             'instruction1' => '02',
             'instruction2' => '00',
         ];
+    }
+
+    /**
+     * @return array
+     */
+    public function documentsPrefixes()
+    {
+        return [];
     }
 
     /**
@@ -256,6 +274,22 @@ class Itau
     public function instructions()
     {
         return static::$instructions;
+    }
+
+    /**
+     * @return array
+     */
+    public function motives()
+    {
+        return [];
+    }
+
+    /**
+     * @return array
+     */
+    public function rejectionCodes()
+    {
+        return [];
     }
 
     /**
