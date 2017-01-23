@@ -196,8 +196,8 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        if (empty($data['account'])) return $value;
+        if (empty($data['accountDv'])) return $value;
 
-        return $value?: substr($data['account'], -1);
+        return $value?: substr($data['accountDv'], -1);
     }
 }
