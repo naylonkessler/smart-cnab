@@ -1,11 +1,11 @@
 <?php
 
-namespace SmartCNAB\Services\Remittances\Banks\Itau;
+namespace SmartCNAB\Services\Remittances\Banks\Bradesco;
 
 use SmartCNAB\Support\File\Remittance;
 
 /**
- * Class for Itau remittance CNAB 400 layout.
+ * Class for Bradesco remittance CNAB 400 layout.
  *
  * @todo  Transpose deadline to instruction2 when occurrenceCode in 06, 05, 18
  */
