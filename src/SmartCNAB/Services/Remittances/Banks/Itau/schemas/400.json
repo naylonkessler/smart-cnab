@@ -165,7 +165,8 @@
         },
         "especies": {
             "pos": [148, 149],
-            "pic": "X(02)"
+            "pic": "X(02)",
+            "def": "01"
         },
         "accepted": {
             "pos": [150, 150],
@@ -179,11 +180,13 @@
         },
         "instruction1": {
             "pos": [157, 158],
-            "pic": "X(02)"
+            "pic": "X(02)",
+            "def": "02"
         },
         "instruction2": {
             "pos": [159, 160],
-            "pic": "X(02)"
+            "pic": "X(02)",
+            "def": "00"
         },
         "dayInterest": {
             "pos": [161, 173],
