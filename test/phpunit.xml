@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+    colors="true"
+    stopOnFailures="false"
+>
+    <testsuites>
+        <testsuite name="Caixa">
+            <file>BankSupportCaixaTest.php</file>
+            <file>BankCaixaTest.php</file>
+            <file>FileCaixaTest.php</file>
+            <file>FactoryCaixaTest.php</file>
+        </testsuite>
+        <testsuite name="SICOOB">
+            <file></file>
+        </testsuite>
+    </testsuites>
+</phpunit>

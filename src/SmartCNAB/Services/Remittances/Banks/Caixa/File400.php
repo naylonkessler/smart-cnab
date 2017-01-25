@@ -29,7 +29,7 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        return strlen($data['companyDocumentType']) === 14? 2 : 1;
+        return strlen($data['companyDocument']) === 14? 2 : 1;
     }
 
     /**

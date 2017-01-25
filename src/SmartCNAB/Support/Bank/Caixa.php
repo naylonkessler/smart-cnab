@@ -2,10 +2,12 @@
 
 namespace SmartCNAB\Support\Bank;
 
+use SmartCNAB\Contracts\Support\BankSupport;
+
 /**
  * Bank Caixa support class.
  */
-class Caixa
+class Caixa implements BankSupport
 {
     /**
      * Channels codes.
@@ -162,6 +164,14 @@ class Caixa
     }
 
     /**
+     * @return array
+     */
+    public function documentsPrefixes()
+    {
+        return [];
+    }
+
+    /**
      * Return all available especies.
      *
      * @return array
@@ -179,6 +189,14 @@ class Caixa
     public function instructions()
     {
         return static::$instructions;
+    }
+
+    /**
+     * @return array
+     */
+    public function motives()
+    {
+        return [];
     }
 
     /**
