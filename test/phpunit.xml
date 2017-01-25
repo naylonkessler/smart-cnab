@@ -11,7 +11,10 @@
             <file>FactoryCaixaTest.php</file>
         </testsuite>
         <testsuite name="SICOOB">
-            <file></file>
+            <file>BankSupportSICOOBTest.php</file>
+            <file>BankSICOOBTest.php</file>
+            <file>FileSICOOBTest.php</file>
+            <file>FactorySICOOBTest.php</file>
         </testsuite>
     </testsuites>
 </phpunit>
