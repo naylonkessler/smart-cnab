@@ -155,7 +155,8 @@
         },
         "guaranteeContract": {
             "pos": [90, 94],
-            "pic": "9(05)"
+            "pic": "9(05)",
+            "def": "00000"
         },
         "guaranteeContractDv": {
             "pos": [95, 95],

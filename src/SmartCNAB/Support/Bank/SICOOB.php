@@ -105,6 +105,14 @@ class SICOOB
     ];
 
     /**
+     * @return array
+     */
+    public function channels()
+    {
+        return [];
+    }
+
+    /**
      * Return the default state of itau infos.
      *
      * @return array
@@ -136,6 +144,22 @@ class SICOOB
     public function especies()
     {
         return static::$especies;
+    }
+
+    /**
+     * @return array
+     */
+    public function motives()
+    {
+        return [];
+    }
+
+    /**
+     * @return array
+     */
+    public function rejectionCodes()
+    {
+        return [];
     }
 
     /**
