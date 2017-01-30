@@ -341,6 +341,14 @@ class BancoDoBrasil
     }
 
     /**
+     * @return array
+     */
+    public function rejectionCodes()
+    {
+        return [];
+    }
+
+    /**
      * Return all occurrences available for remittances.
      *
      * @return array

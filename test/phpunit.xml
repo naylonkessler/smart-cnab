@@ -16,5 +16,11 @@
             <file>FileSICOOBTest.php</file>
             <file>FactorySICOOBTest.php</file>
         </testsuite>
+        <testsuite name="BB">
+            <file>BankSupportBancoDoBrasilTest.php</file>
+            <file>BankBancoDoBrasilTest.php</file>
+            <file>FileBancoDoBrasilTest.php</file>
+            <file>FactoryBancoDoBrasilTest.php</file>
+        </testsuite>
     </testsuites>
 </phpunit>

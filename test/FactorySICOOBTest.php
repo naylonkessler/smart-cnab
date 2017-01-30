@@ -43,7 +43,7 @@ class FactorySICOOBTest extends PHPUnit_Framework_TestCase
         $returning = $factory->returning(dirname(__FILE__).'/sample.RET');
 
         $this->assertInstanceOf(
-            \SmartCNAB\Services\Returning\Banks\Itau\File400::class,
+            \SmartCNAB\Services\Returning\Banks\SICOOB\File400::class,
             $returning
         );
     }
