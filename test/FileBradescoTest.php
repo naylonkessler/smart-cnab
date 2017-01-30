@@ -1,12 +1,12 @@
 <?php
 
-class FileCaixaTest extends PHPUnit_Framework_TestCase
+class FileBradescoTest extends PHPUnit_Framework_TestCase
 {
     public function testSchemaParsing()
     {
         $factory = new \SmartCNAB\Services\Factory();
         $remittance = $factory->remittance(
-            \SmartCNAB\Support\Bank::CAIXA,
+            \SmartCNAB\Support\Bank::BRADESCO,
             \SmartCNAB\Support\File\File::CNAB400
         );
         $schema = $remittance->getSchema();
@@ -21,12 +21,12 @@ class FileCaixaTest extends PHPUnit_Framework_TestCase
     {
         $factory = new \SmartCNAB\Services\Factory();
         $remittance = $factory->remittance(
-            \SmartCNAB\Support\Bank::CAIXA,
+            \SmartCNAB\Support\Bank::BRADESCO,
             \SmartCNAB\Support\File\File::CNAB400
         );
         $lines = $remittance->begin([])
                             ->addDetail([
-                                'name' => 'Qualquer nome grande o sucifiente para a lib ter que cortar',
+                                'name' => 'Um grande conjunto de caracteres para testar a lib',
                                 'portfolio' => '109',
                                 'document' => '01234567890',
                                 'companyDocument' => '01234567890123',
@@ -47,13 +47,13 @@ class FileCaixaTest extends PHPUnit_Framework_TestCase
     {
         $factory = new \SmartCNAB\Services\Factory();
         $remittance = $factory->remittance(
-            \SmartCNAB\Support\Bank::CAIXA,
+            \SmartCNAB\Support\Bank::BRADESCO,
             \SmartCNAB\Support\File\File::CNAB400
         );
         $path = dirname(__FILE__).'/sample.REM';
         $file = $remittance->begin([])
                             ->addDetail([
-                                'name' => 'Qualquer nome grande o sucifiente para a lib ter que cortar',
+                                'name' => 'Um grande conjunto de caracteres para testar a lib',
                                 'portfolio' => '109',
                                 'document' => '01234567890',
                                 'companyDocument' => '01234567890123',
@@ -63,7 +63,7 @@ class FileCaixaTest extends PHPUnit_Framework_TestCase
                             ->end()
                             ->save($path);
 
-        $this->assertInstanceOf(\SplFileObject::class, $file);
+        $this->assertInstanceof(\SplFileObject::class, $file);
         $this->assertFileExists($path);
     }
 
@@ -72,7 +72,7 @@ class FileCaixaTest extends PHPUnit_Framework_TestCase
     //     $factory = new \SmartCNAB\Services\Factory();
     //     $returning = $factory->returning(
     //         dirname(__FILE__).'/sample.RET',
-    //         \SmartCNAB\Support\Bank::CAIXA
+    //         \SmartCNAB\Support\Bank::BRADESCO
     //     );
     //     $schema = $returning->getSchema();
     //     $lines = $returning->getLines();
@@ -89,7 +89,7 @@ class FileCaixaTest extends PHPUnit_Framework_TestCase
     //     $this->assertCount(count($schema['header']), (array)$header);
     //     $this->assertCount(count($schema['detail']), (array)$details[0]);
     //     $this->assertCount(count($schema['trailer']), (array)$trailer);
-    //     $this->assertEquals(104, $header->bankCode);
+    //     $this->assertEquals(237, $header->bankCode);
     //     $this->assertEquals('1-21', $details[0]->companyUse);
     // }
 }

@@ -2,10 +2,12 @@
 
 namespace SmartCNAB\Support\Bank;
 
+use SmartCNAB\Contracts\Support\BankSupport;
+
 /**
  * Bank Bradesco support class.
  */
-class Bradesco
+class Bradesco implements BankSupport
 {
     /**
      * Channels codes.
@@ -450,6 +452,14 @@ class Bradesco
     }
 
     /**
+     * @return array
+     */
+    public function documentsPrefixes()
+    {
+        return [];
+    }
+
+    /**
      * Return all available especies.
      *
      * @return array
@@ -477,6 +487,14 @@ class Bradesco
     public function motives()
     {
         return static::$motives;
+    }
+
+    /**
+     * @return array
+     */
+    public function rejectionCodes()
+    {
+        return [];
     }
 
     /**
