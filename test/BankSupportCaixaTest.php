@@ -2,7 +2,7 @@
 
 class BankSupportCaixaTest extends PHPUnit_Framework_TestCase
 {
-    public function testCaixa()
+    public function testBankSupCaixa()
     {
         $caixa = new \SmartCNAB\Support\Bank\Caixa;
 
@@ -12,18 +12,20 @@ class BankSupportCaixaTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @depends testCaixa
+     * @depends testBankSupCaixa
      */
     public function testDocumentsPrefixes($caixa)
     {
+        $this->assertInternalType('array', $caixa->documentsPrefixes());
         $this->assertEquals([], $caixa->documentsPrefixes());
     }
 
     /**
-     * @depends testCaixa
+     * @depends testBankSupCaixa
      */
     public function testMotives($caixa)
     {
+        $this->assertInternalType('array', $caixa->motives());
         $this->assertEquals([], $caixa->motives());
     }
 }
