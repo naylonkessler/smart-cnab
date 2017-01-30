@@ -4,6 +4,12 @@
     stopOnFailures="false"
 >
     <testsuites>
+        <testsuite name="Bradesco">
+            <file>BankSupportBradescoTest.php</file>
+            <file>BankBradescoTest.php</file>
+            <file>FileBradescoTest.php</file>
+            <file>FactoryBradescoTest.php</file>
+        </testsuite>
         <testsuite name="Caixa">
             <file>BankSupportCaixaTest.php</file>
             <file>BankCaixaTest.php</file>
