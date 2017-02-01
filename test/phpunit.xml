@@ -4,6 +4,12 @@
     stopOnFailures="false"
 >
     <testsuites>
+        <testsuite name="Itau">
+            <file>BankSupportTest.php</file>
+            <file>BankTest.php</file>
+            <file>FileTest.php</file>
+            <file>FactoryTest.php</file>
+        </testsuite>
         <testsuite name="Bradesco">
             <file>BankSupportBradescoTest.php</file>
             <file>BankBradescoTest.php</file>
@@ -22,11 +28,17 @@
             <file>FileSICOOBTest.php</file>
             <file>FactorySICOOBTest.php</file>
         </testsuite>
-        <testsuite name="BB">
+        <testsuite name="BancoDoBrasil">
             <file>BankSupportBancoDoBrasilTest.php</file>
             <file>BankBancoDoBrasilTest.php</file>
             <file>FileBancoDoBrasilTest.php</file>
             <file>FactoryBancoDoBrasilTest.php</file>
+        </testsuite>
+        <testsuite name="Santander">
+            <file>BankSupportSantanderTest.php</file>
+            <file>BankSantanderTest.php</file>
+            <file>FileSantanderTest.php</file>
+            <file>FactorySantanderTest.php</file>
         </testsuite>
     </testsuites>
 </phpunit>

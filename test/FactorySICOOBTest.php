@@ -23,28 +23,28 @@ class FactorySICOOBTest extends PHPUnit_Framework_TestCase
         );
     }
 
-    public function testReturningReturn()
-    {
-        $factory = new \SmartCNAB\Services\Factory();
-        $returning = $factory->returning(
-            dirname(__FILE__).'/sample.RET',
-            \SmartCNAB\Support\Bank::SICOOB
-        );
+    // public function testReturningReturn()
+    // {
+    //     $factory = new \SmartCNAB\Services\Factory();
+    //     $returning = $factory->returning(
+    //         dirname(__FILE__).'/sample.RET',
+    //         \SmartCNAB\Support\Bank::SICOOB
+    //     );
 
-        $this->assertInstanceOf(
-            \SmartCNAB\Services\Returning\Banks\SICOOB\File400::class,
-            $returning
-        );
-    }
+    //     $this->assertInstanceOf(
+    //         \SmartCNAB\Services\Returning\Banks\SICOOB\File400::class,
+    //         $returning
+    //     );
+    // }
 
-    public function testReturningDiscoverBank()
-    {
-        $factory = new \SmartCNAB\Services\Factory();
-        $returning = $factory->returning(dirname(__FILE__).'/sample.RET');
+    // public function testReturningDiscoverBank()
+    // {
+    //     $factory = new \SmartCNAB\Services\Factory();
+    //     $returning = $factory->returning(dirname(__FILE__).'/sample.RET');
 
-        $this->assertInstanceOf(
-            \SmartCNAB\Services\Returning\Banks\SICOOB\File400::class,
-            $returning
-        );
-    }
+    //     $this->assertInstanceOf(
+    //         \SmartCNAB\Services\Returning\Banks\SICOOB\File400::class,
+    //         $returning
+    //     );
+    // }
 }

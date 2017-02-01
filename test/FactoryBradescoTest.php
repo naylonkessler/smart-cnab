@@ -16,19 +16,19 @@ class FactoryBradescoTest extends PHPUnit_Framework_TestCase
         );
     }
 
-    public function testReturningReturn()
-    {
-        $factory = new \SmartCNAB\Services\Factory();
-        $returning = $factory->returning(
-            dirname(__FILE__).'/sample.RET',
-            \SmartCNAB\Support\Bank::BRADESCO
-        );
+    // public function testReturningReturn()
+    // {
+    //     $factory = new \SmartCNAB\Services\Factory();
+    //     $returning = $factory->returning(
+    //         dirname(__FILE__).'/sample.RET',
+    //         \SmartCNAB\Support\Bank::BRADESCO
+    //     );
 
-        $this->assertInstanceOf(
-            \SmartCNAB\Services\Returning\Banks\Bradesco\File400::class,
-            $returning
-        );
-    }
+    //     $this->assertInstanceOf(
+    //         \SmartCNAB\Services\Returning\Banks\Bradesco\File400::class,
+    //         $returning
+    //     );
+    // }
 
     // public function testReturningDiscoverBank()
     // {

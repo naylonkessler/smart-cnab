@@ -1,17 +1,24 @@
 <?php
 
-class FactoryCaixaTest extends PHPUnit_Framework_TestCase
+class FactorySantanderTest extends PHPUnit_Framework_TestCase
 {
+    public function testFactoryInstance()
+    {
+        $factory = new \SmartCNAB\Services\Factory();
+
+        $this->assertInstanceOf(\SmartCNAB\Services\Factory::class, $factory);
+    }
+
     public function testRemittanceReturn()
     {
         $factory = new \SmartCNAB\Services\Factory();
         $remittance = $factory->remittance(
-            \SmartCNAB\Support\Bank::CAIXA, 
+            \SmartCNAB\Support\Bank::SANTANDER,
             \SmartCNAB\Support\File\File::CNAB400
         );
 
         $this->assertInstanceOf(
-            \SmartCNAB\Services\Remittances\Banks\Caixa\File400::class,
+            \SmartCNAB\Services\Remittances\Banks\Santander\File400::class,
             $remittance
         );
     }
@@ -21,11 +28,11 @@ class FactoryCaixaTest extends PHPUnit_Framework_TestCase
     //     $factory = new \SmartCNAB\Services\Factory();
     //     $returning = $factory->returning(
     //         dirname(__FILE__).'/sample.RET',
-    //         \SmartCNAB\Support\Bank::CAIXA
+    //         \SmartCNAB\Support\Bank::SANTANDER
     //     );
 
     //     $this->assertInstanceOf(
-    //         \SmartCNAB\Services\Returning\Banks\Caixa\File400::class,
+    //         \SmartCNAB\Services\Returning\Banks\Santander\File400::class,
     //         $returning
     //     );
     // }
@@ -36,7 +43,7 @@ class FactoryCaixaTest extends PHPUnit_Framework_TestCase
     //     $returning = $factory->returning(dirname(__FILE__).'/sample.RET');
 
     //     $this->assertInstanceOf(
-    //         \SmartCNAB\Services\Returning\Banks\Caixa\File400::class,
+    //         \SmartCNAB\Services\Returning\Banks\Santander\File400::class,
     //         $returning
     //     );
     // }

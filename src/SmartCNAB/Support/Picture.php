@@ -198,13 +198,13 @@ class Picture
     /**
      * Format a value to a date.
      *
-     * @param  \DateTime  $value
+     * @param  mixed  $value
      * @param  array  $meta
      * @return string
      */
-    protected function toDate(DateTime $value, array $meta = [])
+    protected function toDate($value, array $meta = [])
     {
-        $value = $value->format('dmy');
+        $value = $value instanceOf DateTime? $value->format('dmy') : null;
 
         return $this->limit($value, $meta['size'], $meta);
     }
