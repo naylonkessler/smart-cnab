@@ -2,10 +2,12 @@
 
 namespace SmartCNAB\Support\Bank;
 
+use SmartCNAB\Contracts\Support\BankSupport;
+
 /**
  * Bank SICOOB support class.
  */
-class SICOOB
+class SICOOB implements BankSupport
 {
     /**
      * Documents (especies) prefixed.

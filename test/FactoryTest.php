@@ -23,28 +23,28 @@ class FactoryTest extends PHPUnit_Framework_TestCase
         );
     }
 
-    public function testReturningReturn()
-    {
-        $factory = new \SmartCNAB\Services\Factory();
-        $returning = $factory->returning(
-            dirname(__FILE__).'/sample.RET',
-            \SmartCNAB\Support\Bank::ITAU
-        );
+    // public function testReturningReturn()
+    // {
+    //     $factory = new \SmartCNAB\Services\Factory();
+    //     $returning = $factory->returning(
+    //         dirname(__FILE__).'/sample.RET',
+    //         \SmartCNAB\Support\Bank::ITAU
+    //     );
 
-        $this->assertInstanceOf(
-            \SmartCNAB\Services\Returning\Banks\Itau\File400::class,
-            $returning
-        );
-    }
+    //     $this->assertInstanceOf(
+    //         \SmartCNAB\Services\Returning\Banks\Itau\File400::class,
+    //         $returning
+    //     );
+    // }
 
-    public function testReturningDiscoverBank()
-    {
-        $factory = new \SmartCNAB\Services\Factory();
-        $returning = $factory->returning(dirname(__FILE__).'/sample.RET');
+    // public function testReturningDiscoverBank()
+    // {
+    //     $factory = new \SmartCNAB\Services\Factory();
+    //     $returning = $factory->returning(dirname(__FILE__).'/sample.RET');
 
-        $this->assertInstanceOf(
-            \SmartCNAB\Services\Returning\Banks\Itau\File400::class,
-            $returning
-        );
-    }
+    //     $this->assertInstanceOf(
+    //         \SmartCNAB\Services\Returning\Banks\Itau\File400::class,
+    //         $returning
+    //     );
+    // }
 }
