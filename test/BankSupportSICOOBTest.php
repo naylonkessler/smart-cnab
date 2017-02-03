@@ -34,4 +34,28 @@ class BankSupportSICOOBTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals([], $sicoob->rejectionCodes());
     }
+
+    /**
+     * @depends testSICOOB
+     */
+    public function testEmission($sicoob)
+    {
+        $this->assertInternalType('array', $sicoob->emission());
+    }
+
+    /**
+     * @depends testSICOOB
+     */
+    public function testPostage($sicoob)
+    {
+        $this->assertInternalType('array', $sicoob->postage());
+    }
+
+    /**
+     * @depends testSICOOB
+     */
+    public function testBilling($sicoob)
+    {
+        $this->assertInternalType('array', $sicoob->billing());
+    }
 }

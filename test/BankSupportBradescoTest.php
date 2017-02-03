@@ -28,4 +28,28 @@ class BankSupportBradescoTest extends PHPUnit_Framework_TestCase
         $this->assertInternalType('array', $bradesco->rejectionCodes());
         $this->assertEquals([], $bradesco->rejectionCodes());
     }
+
+    /**
+     * @depends testBankSupBradesco
+     */
+    public function testEmission($bradesco)
+    {
+        $this->assertInternalType('array', $bradesco->emission());
+    }
+
+    /**
+     * @depends testBankSupBradesco
+     */
+    public function testPostage($bradesco)
+    {
+        $this->assertInternalType('array', $bradesco->postage());
+    }
+
+    /**
+     * @depends testBankSupBradesco
+     */
+    public function testBilling($bradesco)
+    {
+        $this->assertInternalType('array', $bradesco->billing());
+    }
 }

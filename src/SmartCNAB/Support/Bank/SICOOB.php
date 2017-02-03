@@ -48,6 +48,26 @@ class SICOOB implements BankSupport
     ];
 
     /**
+     * Emission codes.
+     *
+     * @var array
+     */
+    protected static $emission = [
+        '01' => 'Cooperativa',
+        '02' => 'Cliente',
+    ];
+
+    /**
+     * Postage codes.
+     *
+     * @var array
+     */
+    protected static $postage = [
+        '01' => 'Cooperativa',
+        '02' => 'Cliente',
+    ];
+
+    /**
      * Billing instruction.
      *
      * @var array
@@ -109,6 +129,14 @@ class SICOOB implements BankSupport
     /**
      * @return array
      */
+    public function billing()
+    {
+        return [];
+    }
+
+    /**
+     * @return array
+     */
     public function channels()
     {
         return [];
@@ -146,6 +174,26 @@ class SICOOB implements BankSupport
     public function especies()
     {
         return static::$especies;
+    }
+
+    /**
+     * Return all available emission.
+     *
+     * @return array
+     */
+    public function emission()
+    {
+        return static::$emission;
+    }
+
+    /**
+     * Return all available postage.
+     *
+     * @return array
+     */
+    public function postage()
+    {
+        return static::$postage;
     }
 
     /**

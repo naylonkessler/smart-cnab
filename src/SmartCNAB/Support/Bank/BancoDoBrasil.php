@@ -12,6 +12,17 @@ class BancoDoBrasil
      *
      * @var array
      */
+    protected static $billing = [
+        '04DSC' => 'Solicitação de registro na Modalidade Descontada',
+        '08VDR' => 'Solicitação de registro na Modalidade BBVendor',
+        '02VIN' => 'Solicitação de registro na Modalidade Vinculada',
+    ];
+
+    /**
+     * Channels codes.
+     *
+     * @var array
+     */
     protected static $channels = [
         '00' => 'Não é sacado eletrônico no DDA',
         '01' => 'Terminal de auto-atendimento',
@@ -287,6 +298,14 @@ class BancoDoBrasil
     ];
 
     /**
+     * @return array
+     */
+    public function billing()
+    {
+        return [];
+    }
+
+    /**
      * Return the payment channels.
      *
      * @return array
@@ -318,6 +337,26 @@ class BancoDoBrasil
     public function especies()
     {
         return static::$especies;
+    }
+
+    /**
+     * Return all available emission.
+     *
+     * @return array
+     */
+    public function emission()
+    {
+        return [];
+    }
+
+    /**
+     * Return all available postage.
+     *
+     * @return array
+     */
+    public function postage()
+    {
+        return [];
     }
 
     /**

@@ -41,6 +41,28 @@ class Caixa implements BankSupport
     ];
 
     /**
+     * Especies codes.
+     *
+     * @var array
+     */
+    protected static $emission = [
+        '01' => 'Banco emite',
+        '02' => 'Cliente emite',
+    ];
+
+    /**
+     * Postage codes.
+     *
+     * @var array
+     */
+    protected static $postage = [
+        '1' => 'Postagem pelo Beneficiário',
+        '2' => 'Pagador via Correio',
+        '3' => 'Beneficiário via Agência CAIXA',
+        '4' => 'Pagador via e-mail',
+    ];
+
+    /**
      * Billing instruction.
      *
      * @var array
@@ -140,6 +162,14 @@ class Caixa implements BankSupport
     ];
 
     /**
+     * @return array
+     */
+    public function billing()
+    {
+        return [];
+    }
+
+    /**
      * Return the payment channels.
      *
      * @return array
@@ -179,6 +209,26 @@ class Caixa implements BankSupport
     public function especies()
     {
         return static::$especies;
+    }
+
+    /**
+     * Return all available emission.
+     *
+     * @return array
+     */
+    public function emission()
+    {
+        return static::$emission;
+    }
+
+    /**
+     * Return all available postage.
+     *
+     * @return array
+     */
+    public function postage()
+    {
+        return [];
     }
 
     /**

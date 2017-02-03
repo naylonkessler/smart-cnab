@@ -42,4 +42,28 @@ class BankSupportTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals([], $itau->rejectionCodes());
     }
+
+    /**
+     * @depends testItau
+     */
+    public function testEmission($itau)
+    {
+        $this->assertInternalType('array', $itau->emission());
+    }
+
+    /**
+     * @depends testItau
+     */
+    public function testPostage($itau)
+    {
+        $this->assertInternalType('array', $itau->postage());
+    }
+
+    /**
+     * @depends testItau
+     */
+    public function testBilling($itau)
+    {
+        $this->assertInternalType('array', $itau->billing());
+    }
 }

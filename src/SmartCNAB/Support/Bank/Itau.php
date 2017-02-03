@@ -229,6 +229,14 @@ class Itau implements BankSupport
     /**
      * @return array
      */
+    public function billing()
+    {
+        return [];
+    }
+
+    /**
+     * @return array
+     */
     public function channels()
     {
         return [];
@@ -264,6 +272,26 @@ class Itau implements BankSupport
     public function especies()
     {
         return static::$especies;
+    }
+
+    /**
+     * Return all available emission.
+     *
+     * @return array
+     */
+    public function emission()
+    {
+        return [];
+    }
+
+    /**
+     * Return all available postage.
+     *
+     * @return array
+     */
+    public function postage()
+    {
+        return [];
     }
 
     /**
