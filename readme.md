@@ -1,5 +1,7 @@
 # SmartCNAB
 
+## Warning: This package is under active development so breaking changes can accur.
+
 ```php
 <?php
 
