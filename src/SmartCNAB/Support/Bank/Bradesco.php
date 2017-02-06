@@ -36,7 +36,7 @@ class Bradesco implements BankSupport
     ];
 
     /**
-     * Especies codes.
+     * Emission codes.
      *
      * @var array
      */
@@ -494,7 +494,7 @@ class Bradesco implements BankSupport
      */
     public function emission()
     {
-        return [];
+        return static::$emission;
     }
 
     /**

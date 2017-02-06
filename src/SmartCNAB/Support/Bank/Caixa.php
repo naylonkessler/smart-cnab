@@ -41,7 +41,7 @@ class Caixa implements BankSupport
     ];
 
     /**
-     * Especies codes.
+     * Emission codes.
      *
      * @var array
      */
@@ -228,7 +228,7 @@ class Caixa implements BankSupport
      */
     public function postage()
     {
-        return [];
+        return static::$postage;
     }
 
     /**
