@@ -332,6 +332,14 @@ class BancoDoBrasil implements BankSupport
     }
 
     /**
+     * @return array
+     */
+    public function documentsPrefixes()
+    {
+        return [];
+    }
+
+    /**
      * Return all available especies.
      *
      * @return array
