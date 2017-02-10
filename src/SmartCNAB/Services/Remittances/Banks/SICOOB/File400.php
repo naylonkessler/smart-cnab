@@ -227,7 +227,7 @@ class File400 extends Remittance
     ) {
         if (empty($data['branch'])) return $value;
 
-        return $value?: $data['branchDv'];
+        return empty($data['branchDv'])? $value : $data['branchDv'];
     }
 
     /**
