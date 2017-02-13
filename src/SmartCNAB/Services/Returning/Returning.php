@@ -1,6 +1,6 @@
 <?php namespace SmartCNAB\Services\Returning;
 
-class Returning 
+class Returning
 {
     /**
      * @return mixed
@@ -11,7 +11,7 @@ class Returning
     }
 
     /**
-     * @return array 
+     * @return array
      */
     protected function parseCustomGetters()
     {
@@ -31,11 +31,11 @@ class Returning
      */
     public function getMotivesAttribute(array $data)
     {
-        
+
     }
 
     /**
-     * @return boolean 
+     * @return boolean
      */
     public function getWasAnError(array $data)
     {
@@ -55,7 +55,7 @@ class Returning
      */
     public function getWasEntryConfirmedAttribute(array $data)
     {
-        
+
     }
 
     /**
@@ -63,7 +63,7 @@ class Returning
      */
     public function getWasDischargedAttribute(array $data)
     {
-        
+
     }
 
     /**
@@ -71,6 +71,6 @@ class Returning
      */
     public function getWasProtestedAttribute(array $data)
     {
-        
+
     }
 }

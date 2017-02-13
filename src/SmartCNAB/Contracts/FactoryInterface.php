@@ -5,14 +5,14 @@ namespace SmartCNAB\Contracts;
 /**
  * SmartCNAB files factory contract
  */
-interface Factory
+interface FactoryInterface
 {
     /**
      * Return an instance of a remittance.
      *
      * @param  integer  $bank
      * @param  integer  $version
-     * @return \SmartCNAB\Contracts\File\Remittance
+     * @return \SmartCNAB\Contracts\File\RemittanceInterface
      */
     public function remittance($bank, $version);
 
@@ -21,7 +21,7 @@ interface Factory
      *
      * @param  string  $path
      * @param  integer  $bank
-     * @return \SmartCNAB\Contracts\File\Returning
+     * @return \SmartCNAB\Contracts\File\ReturningInterface
      */
     public function returning($path, $bank = null);
 }

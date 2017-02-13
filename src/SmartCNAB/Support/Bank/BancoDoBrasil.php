@@ -2,12 +2,12 @@
 
 namespace SmartCNAB\Support\Bank;
 
-use SmartCNAB\Contracts\Support\BankSupport;
+use SmartCNAB\Contracts\Support\BankSupportInterface;
 
 /**
  * Bank BancoDoBrasil support class.
  */
-class BancoDoBrasil implements BankSupport
+class BancoDoBrasil implements BankSupportInterface
 {
     /**
      * Channels codes.

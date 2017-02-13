@@ -21,7 +21,7 @@ class Picture
     public function from($picture, $value, array $meta = [])
     {
         $parsed = $this->parse($picture, $meta);
-        $method = 'from'.ucfirst($parsed['info-type']);
+        $method = 'fromType'.ucfirst($parsed['info-type']);
         $start = empty($parsed['pos'])? 0 : $parsed['pos'][0] - 1;
         $value = substr($value, $start, $parsed['size']);
 
@@ -32,33 +32,6 @@ class Picture
         $method = $parsed['data-type'].'Trim';
 
         return call_user_func_array([$this, $method], [$value, $parsed['size']]);
-    }
-
-    /**
-     * Format a value from a date.
-     *
-     * @param  mixed  $value
-     * @param  array  $meta
-     * @return \DateTime
-     */
-    protected function fromDate($value, array $meta = [])
-    {
-        return DateTime::createFromFormat('dmy', $value);
-    }
-
-    /**
-     * Format a value from a money.
-     *
-     * @param  numeric  $value
-     * @param  array  $meta
-     * @return float
-     */
-    protected function fromMoney($value, array $meta = [])
-    {
-        $value = (int)$value;
-        $value = substr($value, 0, -$meta['last']).'.'.substr($value, -$meta['last']);
-
-        return floatval($value);
     }
 
     /**
@@ -172,7 +145,7 @@ class Picture
     public function to($picture, $value, array $meta = [])
     {
         $parsed = $this->parse($picture, $meta);
-        $method = 'to'.ucfirst($parsed['info-type']);
+        $method = 'toType'.ucfirst($parsed['info-type']);
         $value = $this->toDefault($value, $parsed);
         $value = $this->transliterate($value);
 
@@ -181,6 +154,33 @@ class Picture
         }
 
         return $this->limit($value, $parsed['size'], $parsed);
+    }
+
+    /**
+     * Format a value from a date.
+     *
+     * @param  mixed  $value
+     * @param  array  $meta
+     * @return \DateTime
+     */
+    protected function fromTypeDate($value, array $meta = [])
+    {
+        return DateTime::createFromFormat('dmy', $value);
+    }
+
+    /**
+     * Format a value from a money.
+     *
+     * @param  numeric  $value
+     * @param  array  $meta
+     * @return float
+     */
+    protected function fromTypeMoney($value, array $meta = [])
+    {
+        $value = (int)$value;
+        $value = substr($value, 0, -$meta['last']).'.'.substr($value, -$meta['last']);
+
+        return floatval($value);
     }
 
     /**
@@ -193,20 +193,6 @@ class Picture
     protected function toAutoDate($value, array $meta = [])
     {
         return new DateTime();
-    }
-
-    /**
-     * Format a value to a date.
-     *
-     * @param  mixed  $value
-     * @param  array  $meta
-     * @return string
-     */
-    protected function toDate($value, array $meta = [])
-    {
-        $value = $value instanceOf DateTime? $value->format('dmy') : null;
-
-        return $this->limit($value, $meta['size'], $meta);
     }
 
     /**
@@ -237,13 +223,27 @@ class Picture
     }
 
     /**
+     * Format a value to a date.
+     *
+     * @param  mixed  $value
+     * @param  array  $meta
+     * @return string
+     */
+    protected function toTypeDate($value, array $meta = [])
+    {
+        $value = $value instanceOf DateTime? $value->format('dmy') : null;
+
+        return $this->limit($value, $meta['size'], $meta);
+    }
+
+    /**
      * Format a value to a money.
      *
      * @param  numeric  $value
      * @param  array  $meta
      * @return string
      */
-    protected function toMoney($value, array $meta = [])
+    protected function toTypeMoney($value, array $meta = [])
     {
         $value = number_format(floatval($value), $meta['last']);
 

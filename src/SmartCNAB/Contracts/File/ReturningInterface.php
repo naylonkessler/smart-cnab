@@ -5,7 +5,7 @@ namespace SmartCNAB\Contracts\File;
 /**
  * Returns files contract
  */
-interface Returning
+interface ReturningInterface
 {
     /**
      * Return all return details.

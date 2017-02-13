@@ -5,7 +5,7 @@ namespace SmartCNAB\Contracts\File;
 /**
  * General files contract
  */
-interface File
+interface FileInterface
 {
     /**
      * Return the file lines.

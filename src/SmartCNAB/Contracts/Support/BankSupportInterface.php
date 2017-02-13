@@ -3,7 +3,7 @@
 /**
  * BankSupport Interface
  */
-interface BankSupport 
+interface BankSupportInterface
 {
     /**
      * @return array

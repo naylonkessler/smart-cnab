@@ -6,7 +6,10 @@ class BankSupportBradescoTest extends PHPUnit_Framework_TestCase
     {
         $bradesco = new \SmartCNAB\Support\Bank\Bradesco;
 
-        $this->assertInstanceOf(\SmartCNAB\Contracts\Support\BankSupport::class, $bradesco);
+        $this->assertInstanceOf(
+            \SmartCNAB\Contracts\Support\BankSupportInterface::class,
+            $bradesco
+        );
 
         return $bradesco;
     }

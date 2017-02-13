@@ -2,12 +2,12 @@
 
 namespace SmartCNAB\Support\Bank;
 
-use SmartCNAB\Contracts\Support\BankSupport;
+use SmartCNAB\Contracts\Support\BankSupportInterface;
 
 /**
  * Bank Itau support class.
  */
-class Itau implements BankSupport
+class Itau implements BankSupportInterface
 {
     /**
      * Especies codes.

@@ -5,7 +5,7 @@ namespace SmartCNAB\Contracts\File;
 /**
  * Remittances files contract
  */
-interface Remittance
+interface RemittanceInterface
 {
     /**
      * Add some detail data for file.

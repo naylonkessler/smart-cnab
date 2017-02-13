@@ -6,7 +6,10 @@ class BankSupportCaixaTest extends PHPUnit_Framework_TestCase
     {
         $caixa = new \SmartCNAB\Support\Bank\Caixa;
 
-        $this->assertInstanceOf(\SmartCNAB\Contracts\Support\BankSupport::class, $caixa);
+        $this->assertInstanceOf(
+            \SmartCNAB\Contracts\Support\BankSupportInterface::class,
+            $caixa
+        );
 
         return $caixa;
     }

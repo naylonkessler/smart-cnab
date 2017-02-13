@@ -5,12 +5,12 @@ namespace SmartCNAB\Support\File;
 use RuntimeException;
 use SplFileObject;
 
-use SmartCNAB\Contracts\File\File as FileContract;
+use SmartCNAB\Contracts\File\FileInterface;
 
 /**
  * Base file class.
  */
-class File implements FileContract
+class File implements FileInterface
 {
     /**
      * Version constants

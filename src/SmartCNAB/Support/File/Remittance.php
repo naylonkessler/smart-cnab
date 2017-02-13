@@ -2,13 +2,13 @@
 
 namespace SmartCNAB\Support\File;
 
-use SmartCNAB\Contracts\File\Remittance as RemittanceContract;
+use SmartCNAB\Contracts\File\RemittanceInterface;
 use SmartCNAB\Support\Picture;
 
 /**
  * Base remittances class.
  */
-class Remittance extends File implements RemittanceContract
+class Remittance extends File implements RemittanceInterface
 {
     /**
      * Picture instance.

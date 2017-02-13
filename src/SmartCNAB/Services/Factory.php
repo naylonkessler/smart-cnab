@@ -5,14 +5,14 @@ namespace SmartCNAB\Services;
 use InvalidArgumentException;
 use RangeException;
 
-use SmartCNAB\Contracts\Factory as FactoryContract;
+use SmartCNAB\Contracts\FactoryInterface;
 use SmartCNAB\Support\Bank;
 use SmartCNAB\Support\Picture;
 
 /**
  * SmartCNAB files factory
  */
-class Factory implements FactoryContract
+class Factory implements FactoryInterface
 {
     /**
      * Discover and return a bank namespace with received bank code.
@@ -38,7 +38,6 @@ class Factory implements FactoryContract
      *
      * @param  string  $path
      * @return integer
-     * @todo Refactoring to own class
      * @throws \RangeException
      */
     protected function discoverFileVersion($path)
@@ -61,7 +60,6 @@ class Factory implements FactoryContract
      *
      * @param  string  $path
      * @return integer
-     * @todo Refactoring to own class
      */
     protected function discoverBank($path)
     {
@@ -77,7 +75,7 @@ class Factory implements FactoryContract
      *
      * @param  integer  $bank
      * @param  integer  $version
-     * @return \SmartCNAB\Contracts\File\Remittance
+     * @return \SmartCNAB\Contracts\File\RemittanceInterface
      */
     public function remittance($bank, $version)
     {
