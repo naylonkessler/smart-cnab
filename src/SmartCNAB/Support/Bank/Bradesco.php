@@ -36,6 +36,16 @@ class Bradesco implements BankSupport
     ];
 
     /**
+     * Emission codes.
+     *
+     * @var array
+     */
+    protected static $emission = [
+        '1' => 'Banco emite',
+        '2' => 'Cliente emite',
+    ];
+
+    /**
      * Especies codes.
      *
      * @var array
@@ -428,6 +438,14 @@ class Bradesco implements BankSupport
     ];
 
     /**
+     * @return array
+     */
+    public function billing()
+    {
+        return [];
+    }
+
+    /**
      * Return the payment channels.
      *
      * @return array
@@ -467,6 +485,26 @@ class Bradesco implements BankSupport
     public function especies()
     {
         return static::$especies;
+    }
+
+    /**
+     * Return all available emission.
+     *
+     * @return array
+     */
+    public function emission()
+    {
+        return static::$emission;
+    }
+
+    /**
+     * Return all available postage.
+     *
+     * @return array
+     */
+    public function postage()
+    {
+        return [];
     }
 
     /**

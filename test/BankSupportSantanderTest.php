@@ -34,4 +34,28 @@ class BankSupportSantanderTest extends PHPUnit_Framework_TestCase
     {
         $this->assertInternalType('array', $santander->rejectionCodes());
     }
+
+    /**
+     * @depends testSantander
+     */
+    public function testEmission($santander)
+    {
+        $this->assertInternalType('array', $santander->emission());
+    }
+
+    /**
+     * @depends testSantander
+     */
+    public function testPostage($santander)
+    {
+        $this->assertInternalType('array', $santander->postage());
+    }
+
+    /**
+     * @depends testSantander
+     */
+    public function testBilling($santander)
+    {
+        $this->assertInternalType('array', $santander->billing());
+    }
 }

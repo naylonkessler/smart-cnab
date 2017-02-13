@@ -2,11 +2,24 @@
 
 namespace SmartCNAB\Support\Bank;
 
+use SmartCNAB\Contracts\Support\BankSupport;
+
 /**
  * Bank BancoDoBrasil support class.
  */
-class BancoDoBrasil
+class BancoDoBrasil implements BankSupport
 {
+    /**
+     * Channels codes.
+     *
+     * @var array
+     */
+    protected static $billing = [
+        '04DSC' => 'Solicitação de registro na Modalidade Descontada',
+        '08VDR' => 'Solicitação de registro na Modalidade BBVendor',
+        '02VIN' => 'Solicitação de registro na Modalidade Vinculada',
+    ];
+
     /**
      * Channels codes.
      *
@@ -287,6 +300,14 @@ class BancoDoBrasil
     ];
 
     /**
+     * @return array
+     */
+    public function billing()
+    {
+        return static::$billing;
+    }
+
+    /**
      * Return the payment channels.
      *
      * @return array
@@ -311,6 +332,14 @@ class BancoDoBrasil
     }
 
     /**
+     * @return array
+     */
+    public function documentsPrefixes()
+    {
+        return [];
+    }
+
+    /**
      * Return all available especies.
      *
      * @return array
@@ -318,6 +347,26 @@ class BancoDoBrasil
     public function especies()
     {
         return static::$especies;
+    }
+
+    /**
+     * Return all available emission.
+     *
+     * @return array
+     */
+    public function emission()
+    {
+        return [];
+    }
+
+    /**
+     * Return all available postage.
+     *
+     * @return array
+     */
+    public function postage()
+    {
+        return [];
     }
 
     /**

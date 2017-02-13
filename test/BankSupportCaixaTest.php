@@ -28,4 +28,28 @@ class BankSupportCaixaTest extends PHPUnit_Framework_TestCase
         $this->assertInternalType('array', $caixa->motives());
         $this->assertEquals([], $caixa->motives());
     }
+
+    /**
+     * @depends testBankSupCaixa
+     */
+    public function testEmission($caixa)
+    {
+        $this->assertInternalType('array', $caixa->emission());
+    }
+
+    /**
+     * @depends testBankSupCaixa
+     */
+    public function testPostage($caixa)
+    {
+        $this->assertInternalType('array', $caixa->postage());
+    }
+
+    /**
+     * @depends testBankSupCaixa
+     */
+    public function testBilling($caixa)
+    {
+        $this->assertInternalType('array', $caixa->billing());
+    }
 }

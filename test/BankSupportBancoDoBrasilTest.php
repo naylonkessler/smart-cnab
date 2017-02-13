@@ -34,4 +34,28 @@ class BankSupportBancoDoBrasilTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals([], $bancoDoBrasil->rejectionCodes());
     }
+
+    /**
+     * @depends testBancoDoBrasil
+     */
+    public function testEmission($bancoDoBrasil)
+    {
+        $this->assertInternalType('array', $bancoDoBrasil->emission());
+    }
+
+    /**
+     * @depends testBancoDoBrasil
+     */
+    public function testPostage($bancoDoBrasil)
+    {
+        $this->assertInternalType('array', $bancoDoBrasil->postage());
+    }
+
+    /**
+     * @depends testBancoDoBrasil
+     */
+    public function testBilling($bancoDoBrasil)
+    {
+        $this->assertInternalType('array', $bancoDoBrasil->billing());
+    }
 }

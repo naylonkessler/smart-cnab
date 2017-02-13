@@ -8,6 +8,11 @@ interface BankSupport
     /**
      * @return array
      */
+    public function billing();
+
+    /**
+     * @return array
+     */
     public function channels();
 
     /**
@@ -24,6 +29,16 @@ interface BankSupport
      * @return array
      */
     public function especies();
+
+    /**
+     * @return array
+     */
+    public function emission();
+
+    /**
+     * @return array
+     */
+    public function postage();
 
     /**
      * @return array
