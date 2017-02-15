@@ -41,11 +41,13 @@ class PictureTest extends PHPUnit_Framework_TestCase
         $string = $picture->to('X(06)', 'NKA');
         $number = $picture->to('9(04)', '11');
         $money = $picture->to('9(04)V9(2)', 123.12000);
+        $money2 = $picture->to('9(04)V9(2)', 123.00);
         $date = $picture->to('9(06)', new \DateTime('2016-06-09'), ['type' => 'date']);
 
         $this->assertEquals('NKA   ', $string);
         $this->assertEquals('0011', $number);
         $this->assertEquals('012312', $money);
+        $this->assertEquals('012300', $money2);
         $this->assertEquals('090616', $date);
     }
 
