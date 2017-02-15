@@ -3,7 +3,6 @@
 namespace SmartCNAB\Services;
 
 use InvalidArgumentException;
-use RangeException;
 
 use SmartCNAB\Contracts\FactoryInterface;
 use SmartCNAB\Support\Bank;
