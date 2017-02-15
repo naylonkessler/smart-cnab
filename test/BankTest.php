@@ -21,6 +21,10 @@ class BankTest extends PHPUnit_Framework_TestCase
         $bank = \SmartCNAB\Support\Bank::ofNumber(341);
 
         $this->assertInstanceOf(
+            \SmartCNAB\Contracts\Support\BankSupportInterface::class,
+            $bank
+        );
+        $this->assertInstanceOf(
             \SmartCNAB\Support\Bank\Itau::class,
             $bank
         );

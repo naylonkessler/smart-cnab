@@ -11,6 +11,13 @@ use DateTime;
 class Picture
 {
     /**
+     * Constants for regex patterns of pictures contents.
+     */
+    const REGEX_INTEGER = '/^9\((\d+?)\)$/';
+    const REGEX_MONEY = '/^9\((\d+?)\)V9\((\d+?)\)$/';
+    const REGEX_STRING = '/^X\((\d+?)\)$/';
+
+    /**
      * Format a value from a picture.
      *
      * @param  string  $picture
@@ -21,7 +28,7 @@ class Picture
     public function from($picture, $value, array $meta = [])
     {
         $parsed = $this->parse($picture, $meta);
-        $method = 'fromType'.ucfirst($parsed['info-type']);
+        $method = 'fromType' . ucfirst($parsed['info-type']);
         $start = empty($parsed['pos'])? 0 : $parsed['pos'][0] - 1;
         $value = substr($value, $start, $parsed['size']);
 
@@ -29,7 +36,7 @@ class Picture
             return call_user_func_array([$this, $method], [$value, $parsed]);
         }
 
-        $method = $parsed['data-type'].'Trim';
+        $method = $parsed['data-type'] . 'Trim';
 
         return call_user_func_array([$this, $method], [$value, $parsed['size']]);
     }
@@ -48,7 +55,7 @@ class Picture
             return substr($value, 0, $size);
         }
 
-        $method = $meta['data-type'].'Pad';
+        $method = $meta['data-type'] . 'Pad';
 
         return call_user_func_array([$this, $method], [$value, $meta['size']]);
     }
@@ -71,11 +78,11 @@ class Picture
      * Execute a numeric pad (left with no 0).
      *
      * @param  mixed  $number
-     * @return string
+     * @return integer
      */
     public function numericTrim($number)
     {
-        return (int)$number;
+        return (int) $number;
     }
 
     /**
@@ -92,20 +99,20 @@ class Picture
             'info-type' => empty($meta['type'])? 'generic' : $meta['type'],
         ]);
 
-        if (preg_match('/^9\((\d+?)\)$/', $picture, $match)) {
-            $parsed['size'] = (int)$match[1];
+        if (preg_match(self::REGEX_INTEGER, $picture, $match)) {
+            $parsed['size'] = (int) $match[1];
         }
 
-        if (preg_match('/^9\((\d+?)\)V9\((\d+?)\)$/', $picture, $match)) {
+        if (preg_match(self::REGEX_MONEY, $picture, $match)) {
             $parsed['info-type'] = 'money';
-            $parsed['size'] = (int)$match[1] + (int)$match[2];
-            $parsed['first'] = (int)$match[1];
-            $parsed['last'] = (int)$match[2];
+            $parsed['size'] = (int) $match[1] + (int) $match[2];
+            $parsed['first'] = (int) $match[1];
+            $parsed['last'] = (int) $match[2];
         }
 
-        if (preg_match('/^X\((\d+?)\)$/', $picture, $match)) {
+        if (preg_match(self::REGEX_STRING, $picture, $match)) {
             $parsed['data-type'] = 'string';
-            $parsed['size'] = (int)$match[1];
+            $parsed['size'] = (int) $match[1];
         }
 
         return $parsed;
@@ -145,7 +152,7 @@ class Picture
     public function to($picture, $value, array $meta = [])
     {
         $parsed = $this->parse($picture, $meta);
-        $method = 'toType'.ucfirst($parsed['info-type']);
+        $method = 'toType' . ucfirst($parsed['info-type']);
         $value = $this->toDefault($value, $parsed);
         $value = $this->transliterate($value);
 
@@ -177,8 +184,9 @@ class Picture
      */
     protected function fromTypeMoney($value, array $meta = [])
     {
-        $value = (int)$value;
-        $value = substr($value, 0, -$meta['last']).'.'.substr($value, -$meta['last']);
+        $offset = -$meta['last'];
+        $value = (int) $value;
+        $value = substr($value, 0, $offset) . '.' . substr($value, $offset);
 
         return floatval($value);
     }
@@ -200,23 +208,36 @@ class Picture
      *
      * @param  mixed  $value
      * @param  array  $meta
-     * @return string
+     * @return mixed
      */
     protected function toDefault($value, array $meta = [])
     {
-        if (!empty($value)) {
-            return $value;
+        if ( ! empty($value)) return $value;
+
+        if ( ! empty($meta['def'])) {
+            $value = $meta['def'];
         }
 
-        if (!empty($meta['def'])) {
-            $value = $meta['def'];
+        if ($value === '@auto') {
+            $value = $this->toDefaultAuto($value, $meta);
+        }
 
-            if ($value === '@auto') {
-                $method = 'toAuto'.ucfirst($meta['type']);
+        return $value;
+    }
 
-                method_exists($this, $method) &&
-                ($value = call_user_func_array([$this, $method], [$value, $meta]));
-            }
+    /**
+     * Format a value to an automatic default value.
+     *
+     * @param  mixed  $value
+     * @param  array  $meta
+     * @return mixed
+     */
+    protected function toDefaultAuto($value, array $meta = [])
+    {
+        $method = 'toAuto' . ucfirst($meta['type']);
+
+        if (method_exists($this, $method)) {
+            $value = call_user_func([$this, $method], $value, $meta);
         }
 
         return $value;
@@ -258,6 +279,7 @@ class Picture
      */
     protected function transliterate($value)
     {
-        return !is_string($value)? $value : iconv('UTF-8', 'ASCII//TRANSLIT', $value);
+        return ! is_string($value)?
+                    $value : iconv('UTF-8', 'ASCII//TRANSLIT', $value);
     }
 }

@@ -91,6 +91,7 @@
         occurrenceCode is 04 then rebate must be set and so on;
 - See nomalization and bank documentation if needed.
 
+
 ## Rules for entries, payments, discharges and protests on RETURN
 
 ### Banco do Brasil
@@ -152,6 +153,7 @@
 
 - All banks support classes must implement the BankSupport interface;
 - The Bank class must be updated if needed.
+
 
 ## Rules for output
 

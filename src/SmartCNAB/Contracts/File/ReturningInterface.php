@@ -3,7 +3,7 @@
 namespace SmartCNAB\Contracts\File;
 
 /**
- * Returns files contract
+ * Returns files contract.
  */
 interface ReturningInterface
 {

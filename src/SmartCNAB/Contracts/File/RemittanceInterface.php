@@ -3,7 +3,7 @@
 namespace SmartCNAB\Contracts\File;
 
 /**
- * Remittances files contract
+ * Remittances files contract.
  */
 interface RemittanceInterface
 {
@@ -11,7 +11,7 @@ interface RemittanceInterface
      * Add some detail data for file.
      *
      * @param  array  $data
-     * @return self
+     * @return \SmartCNAB\Contracts\File\RemittanceInterface
      */
     public function addDetail(array $data);
 
@@ -19,14 +19,14 @@ interface RemittanceInterface
      * Set data for file header build.
      *
      * @param  array  $data
-     * @return self
+     * @return \SmartCNAB\Contracts\File\RemittanceInterface
      */
     public function begin(array $data);
 
     /**
      * Ends a file with trailer.
      *
-     * @return self
+     * @return \SmartCNAB\Contracts\File\RemittanceInterface
      */
     public function end();
 

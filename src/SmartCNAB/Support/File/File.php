@@ -33,6 +33,54 @@ class File implements FileInterface
     protected $schemaFile;
 
     /**
+     * Return the file lines.
+     *
+     * @return array
+     */
+    public function getLines()
+    {
+        return $this->lines;
+    }
+
+    /**
+     * Loads a file content.
+     *
+     * @param  string  $path
+     * @return \SmartCNAB\Support\File\File
+     * @throws \RuntimeException
+     */
+    public function load($path)
+    {
+        $contents = file($path);
+
+        if ($contents === false) {
+            throw new RuntimeException('Unable to read file ' . $path);
+        }
+
+        $this->lines = $contents;
+
+        return $this;
+    }
+
+    /**
+     * Saves a file and return it.
+     *
+     * @param  string  $path
+     * @return \SplFileObject
+     * @throws \RuntimeException
+     */
+    public function save($path)
+    {
+        $output = $this->generate();
+
+        if (file_put_contents($path, $output) === false) {
+            throw new RuntimeException('Unable to write file ' . $path);
+        }
+
+        return new SplFileObject($path);
+    }
+
+    /**
      * Transform a class to a path.
      *
      * @param  string  $class
@@ -40,9 +88,9 @@ class File implements FileInterface
      */
     protected function classToPath($class)
     {
-        $base = dirname(dirname(dirname(dirname(__FILE__))));
+        $base = realpath(__DIR__ . '/../../..');
 
-        return $base.'/'.dirname(str_replace('\\', '/', $class));
+        return $base . '/' . dirname(str_replace('\\', '/', $class));
     }
 
     /**
@@ -64,36 +112,6 @@ class File implements FileInterface
     }
 
     /**
-     * Return the file lines.
-     *
-     * @return array
-     */
-    public function getLines()
-    {
-        return $this->lines;
-    }
-
-    /**
-     * Loads a file content.
-     *
-     * @param  string  $path
-     * @return self
-     * @throws \RuntimeException
-     */
-    public function load($path)
-    {
-        $contents = file($path);
-
-        if ($contents === false) {
-            throw new RuntimeException('Unable to read file '.$path);
-        }
-
-        $this->lines = $contents;
-
-        return $this;
-    }
-
-    /**
      * Parse and return the schema structure.
      *
      * @return array
@@ -110,30 +128,12 @@ class File implements FileInterface
     }
 
     /**
-     * Saves a file and return it.
-     *
-     * @param  string  $path
-     * @return \SplFileObject
-     * @throws \RuntimeException
-     */
-    public function save($path)
-    {
-        $output = $this->generate();
-
-        if (file_put_contents($path, $output) === false) {
-            throw new RuntimeException('Unable to write file '.$path);
-        }
-
-        return new SplFileObject($path);
-    }
-
-    /**
      * Generate and return the schema file path.
      *
      * @return string
      */
     protected function schemaPath()
     {
-        return realpath($this->classToPath(get_class($this)).$this->schemaFile);
+        return realpath($this->classToPath(get_class($this)) . $this->schemaFile);
     }
 }

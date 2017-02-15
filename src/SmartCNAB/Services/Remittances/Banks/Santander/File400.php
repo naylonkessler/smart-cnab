@@ -93,6 +93,7 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        return ($data['instruction1'] == 6 || $data['instruction2'] == 6)? ($value?: 0) : 0;
+        return ($data['instruction1'] == 6 || $data['instruction2'] == 6)?
+                    ($value?: 0) : 0;
     }
 }

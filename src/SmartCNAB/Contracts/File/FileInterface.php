@@ -3,7 +3,7 @@
 namespace SmartCNAB\Contracts\File;
 
 /**
- * General files contract
+ * General files contract.
  */
 interface FileInterface
 {
@@ -18,7 +18,7 @@ interface FileInterface
      * Loads a file content.
      *
      * @param  string  $path
-     * @return self
+     * @return \SmartCNAB\Contracts\File\FileInterface
      */
     public function load($path);
 

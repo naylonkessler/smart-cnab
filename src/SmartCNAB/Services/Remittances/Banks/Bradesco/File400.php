@@ -16,7 +16,6 @@ class File400 extends Remittance
      */
     protected $schemaFile = '/schemas/400.json';
 
-
     /**
      * Formats a discount to date.
      *
