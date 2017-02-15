@@ -10,6 +10,12 @@ use SmartCNAB\Contracts\Support\BankSupport;
 class Caixa implements BankSupport
 {
     /**
+     * Caixa instructions constants
+     */
+    const CODE_PROTEST = '01';
+    const CODE_DEVOLUTION = '02';
+
+    /**
      * Channels codes.
      *
      * @var array
@@ -68,8 +74,8 @@ class Caixa implements BankSupport
      * @var array
      */
     protected static $instructions = [
-        '01' => 'Protestar - Dias corridos',
-        '02' => 'Devolver - Não protestar',
+        self::CODE_PROTEST => 'Protestar - Dias corridos',
+        self::CODE_DEVOLUTION => 'Devolver - Não protestar',
     ];
 
     /**
