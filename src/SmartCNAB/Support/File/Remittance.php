@@ -2,13 +2,13 @@
 
 namespace SmartCNAB\Support\File;
 
-use SmartCNAB\Contracts\File\Remittance as RemittanceContract;
+use SmartCNAB\Contracts\File\RemittanceInterface;
 use SmartCNAB\Support\Picture;
 
 /**
  * Base remittances class.
  */
-class Remittance extends File implements RemittanceContract
+class Remittance extends File implements RemittanceInterface
 {
     /**
      * Picture instance.
@@ -46,7 +46,7 @@ class Remittance extends File implements RemittanceContract
      * Add some detail data for file.
      *
      * @param  array  $data
-     * @return self
+     * @return \SmartCNAB\Support\File\Remittance
      */
     public function addDetail(array $data)
     {
@@ -58,23 +58,10 @@ class Remittance extends File implements RemittanceContract
     }
 
     /**
-     * Add some detail data for file.
-     *
-     * @param  array  $data
-     * @return self
-     */
-    protected function addLine(array $data)
-    {
-        $this->lines[] = $data;
-
-        return $this;
-    }
-
-    /**
      * Set data for file header build.
      *
      * @param  array  $data
-     * @return self
+     * @return \SmartCNAB\Support\File\Remittance
      */
     public function begin(array $data)
     {
@@ -88,7 +75,7 @@ class Remittance extends File implements RemittanceContract
     /**
      * Ends a file with trailer.
      *
-     * @return self
+     * @return \SmartCNAB\Support\File\Remittance
      */
     public function end()
     {
@@ -96,6 +83,29 @@ class Remittance extends File implements RemittanceContract
         $data = $this->formatLine($data, 'trailer');
         $this->addLine($data);
         $this->addLine(['']);
+
+        return $this;
+    }
+
+    /**
+     * Return the parsed schema.
+     *
+     * @return array
+     */
+    public function getSchema()
+    {
+        return $this->schema;
+    }
+
+    /**
+     * Add some detail data for file.
+     *
+     * @param  array  $data
+     * @return \SmartCNAB\Support\File\Remittance
+     */
+    protected function addLine(array $data)
+    {
+        $this->lines[] = $data;
 
         return $this;
     }
@@ -109,30 +119,37 @@ class Remittance extends File implements RemittanceContract
      */
     protected function formatLine(array $data, $type = 'detail')
     {
-        $formatted = [];
+        $metas = $this->schema[$type];
+        $fields = array_keys($this->schema[$type]);
 
-        foreach ($this->schema[$type] as $field => $meta) {
+        $formatted = array_map(
+            $this->getFormatMapper($data, $type),
+            $metas,
+            $fields
+        );
+
+        return array_combine($fields, $formatted);
+    }
+
+    /**
+     * Create and returns a new line format mapper using received parameters.
+     *
+     * @param  array  $data
+     * @param  string  $type
+     * @return Closure
+     */
+    protected function getFormatMapper(array $data, $type)
+    {
+        return function ($meta, $field) use ($data, $type) {
             $value = empty($data[$field])? '' : $data[$field];
-            $method = 'format'.ucfirst($type).ucfirst($field);
+            $method = 'format' . ucfirst($type) . ucfirst($field);
 
             if (method_exists($this, $method)) {
                 $value = call_user_func([$this, $method], $value, $data, $meta);
             }
 
-            $formatted[$field] = $this->picture->to($meta['pic'], $value, $meta);
-        }
-
-        return $formatted;
-    }
-
-    /**
-     * Return the parsed schema.
-     *
-     * @return array
-     */
-    public function getSchema()
-    {
-        return $this->schema;
+            return $this->picture->to($meta['pic'], $value, $meta);
+        };
     }
 
     /**

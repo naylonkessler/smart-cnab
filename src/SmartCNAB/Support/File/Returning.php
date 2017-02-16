@@ -2,13 +2,13 @@
 
 namespace SmartCNAB\Support\File;
 
-use SmartCNAB\Contracts\File\Returning as ReturningContract;
+use SmartCNAB\Contracts\File\ReturningInterface;
 use SmartCNAB\Support\Picture;
 
 /**
  * Base returning class.
  */
-class Returning extends File implements ReturningContract
+class Returning extends File implements ReturningInterface
 {
     /**
      * Picture instance.

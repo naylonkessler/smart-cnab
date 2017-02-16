@@ -2,12 +2,12 @@
 
 namespace SmartCNAB\Support\Bank;
 
-use SmartCNAB\Contracts\Support\BankSupport;
+use SmartCNAB\Contracts\Support\BankSupportInterface;
 
 /**
  * Bank Bradesco support class.
  */
-class Bradesco implements BankSupport
+class Bradesco implements BankSupportInterface
 {
     /**
      * Channels codes.

@@ -14,7 +14,7 @@ class File400 extends Remittance
      *
      * @var array
      */
-    protected $portCodes = [
+    protected $portfolioCodes = [
         '108' => ['I', 'D'],
         '180' => ['I', 'D'],
         '121' => ['I', 'D'],
@@ -144,7 +144,7 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        $bypass = $this->portCodes[$data['portfolio']][1] === 'D' ||
+        $bypass = $this->portfolioCodes[$data['portfolio']][1] === 'D' ||
                     $data['portfolio'] == 115;
 
         return $bypass? $value : '';
@@ -163,8 +163,8 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        return ( ! empty($this->portCodes[$data['portfolio']]))?
-                    $this->portCodes[$data['portfolio']][0] : $value;
+        return ( ! empty($this->portfolioCodes[$data['portfolio']]))?
+                    $this->portfolioCodes[$data['portfolio']][0] : $value;
     }
 
     /**

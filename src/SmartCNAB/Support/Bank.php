@@ -8,7 +8,7 @@ namespace SmartCNAB\Support;
 class Bank
 {
     /**
-     * Bank numbers constants
+     * Bank numbers constants.
      */
     const BANCO_DO_BRASIL = 1;
     const BRADESCO = 237;
@@ -39,7 +39,7 @@ class Bank
      */
     public static function isHandled($number)
     {
-        return !empty(static::$banksMap[$number]);
+        return ! empty(static::$banksMap[$number]);
     }
 
     /**
@@ -57,7 +57,7 @@ class Bank
      * Return a bank support instance of received bank number.
      *
      * @param  mixed  $number
-     * @return object
+     * @return \SmartCNAB\Contracts\Support\BankSupportInterface
      */
     public static function ofNumber($number)
     {

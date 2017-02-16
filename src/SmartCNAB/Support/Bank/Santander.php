@@ -2,12 +2,12 @@
 
 namespace SmartCNAB\Support\Bank;
 
-use SmartCNAB\Contracts\Support\BankSupport;
+use SmartCNAB\Contracts\Support\BankSupportInterface;
 
 /**
  * Bank Santander support class.
  */
-class Santander implements BankSupport
+class Santander implements BankSupportInterface
 {
     /**
      * Especies codes.

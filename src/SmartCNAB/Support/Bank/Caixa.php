@@ -2,12 +2,12 @@
 
 namespace SmartCNAB\Support\Bank;
 
-use SmartCNAB\Contracts\Support\BankSupport;
+use SmartCNAB\Contracts\Support\BankSupportInterface;
 
 /**
  * Bank Caixa support class.
  */
-class Caixa implements BankSupport
+class Caixa implements BankSupportInterface
 {
     /**
      * Caixa instructions constants
