@@ -1,5 +1,8 @@
 # SmartCNAB
 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/dc5052cb-a570-40ef-bb75-88ba1bab8c94/big.png)](https://insight.sensiolabs.com/projects/dc5052cb-a570-40ef-bb75-88ba1bab8c94)
+[![Build Status](https://travis-ci.org/naylonkessler/smart-cnab.svg?branch=master)](https://travis-ci.org/naylonkessler/smart-cnab)
+
 ## Warning: This package is under active development so breaking changes can accur.
 
 ```php
