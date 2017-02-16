@@ -104,6 +104,11 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
+        if ($value == '' && $data['occurrenceCode'] == '09')
+        {
+            return $value;
+        }
+
         return $value?: $data['expiration']->add(new \DateInterval('P1D'));
     }
 
