@@ -32,6 +32,7 @@ class FileCaixaTest extends PHPUnit_Framework_TestCase
                                 'companyDocument' => '01234567890123',
                                 'expiration' => new \DateTime(),
                                 'emission' => new \DateTime(),
+                                'occurrenceCode' => '01',
                             ])
                             ->end()
                             ->getLines();
@@ -59,6 +60,7 @@ class FileCaixaTest extends PHPUnit_Framework_TestCase
                                 'companyDocument' => '01234567890123',
                                 'expiration' => new \DateTime(),
                                 'emission' => new \DateTime(),
+                                'occurrenceCode' => '01',
                             ])
                             ->end()
                             ->save($path);

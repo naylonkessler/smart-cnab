@@ -2,6 +2,7 @@
 
 namespace SmartCNAB\Services\Remittances\Banks\Caixa;
 
+use SmartCNAB\Support\Bank\Caixa;
 use SmartCNAB\Support\File\Remittance;
 
 /**
@@ -65,6 +66,32 @@ class File400 extends Remittance
     }
 
     /**
+     * Format instruction1 according occurrence code.
+     *
+     * @param  mixed  $value
+     * @param  array  $data
+     * @param  array  $meta
+     * @return mixed
+     */
+    protected function formatDetailInstruction1(
+        $value,
+        array $data = [],
+        array $meta = []
+    ) {
+        if ($data['occurrenceCode'] == '11')
+        {
+            return Caixa::CODE_PROTEST;
+        }
+
+        if ($data['occurrenceCode'] == '12')
+        {
+            return Caixa::CODE_DEVOLUTION;
+        }
+
+        return $value;
+    }
+
+    /**
      * Formats a late interest date.
      *
      * @param  mixed  $value
@@ -77,6 +104,11 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
+        if ($value == '' && $data['occurrenceCode'] == '09')
+        {
+            return $value;
+        }
+
         return $value?: $data['expiration']->add(new \DateInterval('P1D'));
     }
 
