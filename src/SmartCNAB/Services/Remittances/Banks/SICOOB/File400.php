@@ -17,14 +17,14 @@ class File400 extends Remittance
     protected $schemaFile = '/schemas/400.json';
 
     /**
-     * Formats an account on detail.
+     * Mutates an account on detail.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailAccount(
+    protected function mutateDetailAccount(
         $value,
         array $data = [],
         array $meta = []
@@ -33,14 +33,14 @@ class File400 extends Remittance
     }
 
     /**
-     * Formats an account DV on detail.
+     * Mutates an account DV on detail.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailAccountDv(
+    protected function mutateDetailAccountDv(
         $value,
         array $data = [],
         array $meta = []
@@ -51,46 +51,46 @@ class File400 extends Remittance
     }
 
     /**
-     * Formats a branch on detail.
+     * Mutates a branch on detail.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailBranch(
+    protected function mutateDetailBranch(
         $value,
         array $data = [],
         array $meta = []
     ) {
-        return $this->formatHeaderBranch($value, $data, $meta);
+        return $this->mutateHeaderBranch($value, $data, $meta);
     }
 
     /**
-     * Formats a branch DV on detail.
+     * Mutates a branch DV on detail.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailBranchDv(
+    protected function mutateDetailBranchDv(
         $value,
         array $data = [],
         array $meta = []
     ) {
-        return $this->formatHeaderBranchDv($value, $data, $meta);
+        return $this->mutateHeaderBranchDv($value, $data, $meta);
     }
 
     /**
-     * Formats a company document type.
+     * Mutates a company document type.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailCompanyDocumentType(
+    protected function mutateDetailCompanyDocumentType(
         $value,
         array $data = [],
         array $meta = []
@@ -99,14 +99,14 @@ class File400 extends Remittance
     }
 
     /**
-     * Formats a discount to date.
+     * Mutates a discount to date.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailDiscountTo(
+    protected function mutateDetailDiscountTo(
         $value,
         array $data = [],
         array $meta = []
@@ -115,14 +115,14 @@ class File400 extends Remittance
     }
 
     /**
-     * Formats a document type.
+     * Mutates a document type.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailDocumentType(
+    protected function mutateDetailDocumentType(
         $value,
         array $data = [],
         array $meta = []
@@ -131,14 +131,14 @@ class File400 extends Remittance
     }
 
     /**
-     * Formats a guarantee contract on detail.
+     * Mutates a guarantee contract on detail.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailGuaranteeContract(
+    protected function mutateDetailGuaranteeContract(
         $value,
         array $data = [],
         array $meta = []
@@ -147,14 +147,14 @@ class File400 extends Remittance
     }
 
     /**
-     * Formats a guarantee contract DV on detail.
+     * Mutates a guarantee contract DV on detail.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailGuaranteeContractDv(
+    protected function mutateDetailGuaranteeContractDv(
         $value,
         array $data = [],
         array $meta = []
@@ -165,46 +165,46 @@ class File400 extends Remittance
     }
 
     /**
-     * Formats a receive branch on detail.
+     * Mutates a receive branch on detail.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailReceiveBranch(
+    protected function mutateDetailReceiveBranch(
         $value,
         array $data = [],
         array $meta = []
     ) {
-        return $this->formatDetailBranch($value, $data, $meta);
+        return $this->mutateDetailBranch($value, $data, $meta);
     }
 
     /**
-     * Formats a receive branch DV on detail.
+     * Mutates a receive branch DV on detail.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailReceiveBranchDv(
+    protected function mutateDetailReceiveBranchDv(
         $value,
         array $data = [],
         array $meta = []
     ) {
-        return $this->formatDetailBranchDv($value, $data, $meta);
+        return $this->mutateDetailBranchDv($value, $data, $meta);
     }
 
     /**
-     * Formats a branch on header.
+     * Mutates a branch on header.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatHeaderBranch(
+    protected function mutateHeaderBranch(
         $value,
         array $data = [],
         array $meta = []
@@ -213,14 +213,14 @@ class File400 extends Remittance
     }
 
     /**
-     * Formats a branch DV on header.
+     * Mutates a branch DV on header.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatHeaderBranchDv(
+    protected function mutateHeaderBranchDv(
         $value,
         array $data = [],
         array $meta = []
@@ -231,14 +231,14 @@ class File400 extends Remittance
     }
 
     /**
-     * Formats a company code on header.
+     * Mutates a company code on header.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatHeaderCompanyCode(
+    protected function mutateHeaderCompanyCode(
         $value,
         array $data = [],
         array $meta = []
@@ -249,14 +249,14 @@ class File400 extends Remittance
     }
 
     /**
-     * Formats a company code DV on header.
+     * Mutates a company code DV on header.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatHeaderCompanyCodeDv(
+    protected function mutateHeaderCompanyCodeDv(
         $value,
         array $data = [],
         array $meta = []

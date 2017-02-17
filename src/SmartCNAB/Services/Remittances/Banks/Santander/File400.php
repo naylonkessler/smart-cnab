@@ -17,14 +17,14 @@ class File400 extends Remittance
     protected $schemaFile = '/schemas/400.json';
 
     /**
-     * Formats a company document type.
+     * Mutates a company document type.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailCompanyDocumentType(
+    protected function mutateDetailCompanyDocumentType(
         $value,
         array $data = [],
         array $meta = []
@@ -33,14 +33,14 @@ class File400 extends Remittance
     }
 
     /**
-     * Formats a late interest date.
+     * Mutates a late interest date.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailLateInterestDate(
+    protected function mutateDetailLateInterestDate(
         $value,
         array $data = [],
         array $meta = []
@@ -49,14 +49,14 @@ class File400 extends Remittance
     }
 
     /**
-     * Formats the late interest flag based on late interest percentage.
+     * Mutates the late interest flag based on late interest percentage.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailLateInterestFlag(
+    protected function mutateDetailLateInterestFlag(
         $value,
         array $data = [],
         array $meta = []
@@ -65,14 +65,14 @@ class File400 extends Remittance
     }
 
     /**
-     * Formats a document type.
+     * Mutates a document type.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailDocumentType(
+    protected function mutateDetailDocumentType(
         $value,
         array $data = [],
         array $meta = []
@@ -81,14 +81,14 @@ class File400 extends Remittance
     }
 
     /**
-     * Formats a deadline.
+     * Mutates a deadline.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailDeadline(
+    protected function mutateDetailDeadline(
         $value,
         array $data = [],
         array $meta = []

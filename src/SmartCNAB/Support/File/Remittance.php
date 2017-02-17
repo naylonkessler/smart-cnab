@@ -142,7 +142,7 @@ class Remittance extends File implements RemittanceInterface
     {
         return function ($meta, $field) use ($data, $type) {
             $value = empty($data[$field])? '' : $data[$field];
-            $method = 'format' . ucfirst($type) . ucfirst($field);
+            $method = 'mutate' . ucfirst($type) . ucfirst($field);
 
             if (method_exists($this, $method)) {
                 $value = call_user_func([$this, $method], $value, $data, $meta);

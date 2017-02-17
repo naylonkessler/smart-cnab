@@ -36,46 +36,46 @@ class File400 extends Remittance
     protected $schemaFile = '/schemas/400.json';
 
     /**
-     * Formats an account on detail.
+     * Mutates an account on detail.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailAccount(
+    protected function mutateDetailAccount(
         $value,
         array $data = [],
         array $meta = []
     ) {
-        return $this->formatHeaderAccount($value, $data, $meta);
+        return $this->mutateHeaderAccount($value, $data, $meta);
     }
 
     /**
-     * Formats an account DV on detail.
+     * Mutates an account DV on detail.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailAccountDv(
+    protected function mutateDetailAccountDv(
         $value,
         array $data = [],
         array $meta = []
     ) {
-        return $this->formatHeaderAccountDv($value, $data, $meta);
+        return $this->mutateHeaderAccountDv($value, $data, $meta);
     }
 
     /**
-     * Formats a company document type.
+     * Mutates a company document type.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailCompanyDocumentType(
+    protected function mutateDetailCompanyDocumentType(
         $value,
         array $data = [],
         array $meta = []
@@ -84,14 +84,14 @@ class File400 extends Remittance
     }
 
     /**
-     * Formats a discount to date.
+     * Mutates a discount to date.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailDiscountTo(
+    protected function mutateDetailDiscountTo(
         $value,
         array $data = [],
         array $meta = []
@@ -100,14 +100,14 @@ class File400 extends Remittance
     }
 
     /**
-     * Formats a document type.
+     * Mutates a document type.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailDocumentType(
+    protected function mutateDetailDocumentType(
         $value,
         array $data = [],
         array $meta = []
@@ -116,14 +116,14 @@ class File400 extends Remittance
     }
 
     /**
-     * Formats a late interest date.
+     * Mutates a late interest date.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailLateInterestDate(
+    protected function mutateDetailLateInterestDate(
         $value,
         array $data = [],
         array $meta = []
@@ -132,14 +132,14 @@ class File400 extends Remittance
     }
 
     /**
-     * Formats the our number.
+     * Mutates the our number.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailOurNumber(
+    protected function mutateDetailOurNumber(
         $value,
         array $data = [],
         array $meta = []
@@ -151,14 +151,14 @@ class File400 extends Remittance
     }
 
     /**
-     * Formats a portfolio code.
+     * Mutates a portfolio code.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailPortfolioCode(
+    protected function mutateDetailPortfolioCode(
         $value,
         array $data = [],
         array $meta = []
@@ -168,14 +168,14 @@ class File400 extends Remittance
     }
 
     /**
-     * Formats an account on header.
+     * Mutates an account on header.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatHeaderAccount(
+    protected function mutateHeaderAccount(
         $value,
         array $data = [],
         array $meta = []
@@ -186,14 +186,14 @@ class File400 extends Remittance
     }
 
     /**
-     * Formats an account DV on header.
+     * Mutates an account DV on header.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatHeaderAccountDv(
+    protected function mutateHeaderAccountDv(
         $value,
         array $data = [],
         array $meta = []
