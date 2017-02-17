@@ -78,15 +78,9 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        if ($data['occurrenceCode'] == '11')
-        {
-            return Caixa::CODE_PROTEST;
-        }
+        if ($data['occurrenceCode'] == '11') return Caixa::INST_PROTEST;
 
-        if ($data['occurrenceCode'] == '12')
-        {
-            return Caixa::CODE_DEVOLUTION;
-        }
+        if ($data['occurrenceCode'] == '12') return Caixa::INST_DEVOLUTION;
 
         return $value;
     }
