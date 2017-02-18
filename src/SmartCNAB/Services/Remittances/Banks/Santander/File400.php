@@ -21,13 +21,11 @@ class File400 extends Remittance
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
     protected function mutateDetailCompanyDocumentType(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
         return strlen($data['companyDocument']) === 14 ? 2 : 1;
     }
@@ -37,13 +35,11 @@ class File400 extends Remittance
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
     protected function mutateDetailLateInterestDate(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
         return $value ?: $data['expiration']->add(new \DateInterval('P1D'));
     }
@@ -53,13 +49,11 @@ class File400 extends Remittance
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
     protected function mutateDetailLateInterestFlag(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
         return ( ! empty($data['lateInterestPercentage'])) ? 4 : 0;
     }
@@ -69,13 +63,11 @@ class File400 extends Remittance
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
     protected function mutateDetailDocumentType(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
         return strlen($data['document']) === 14 ? 2 : 1;
     }
@@ -85,13 +77,11 @@ class File400 extends Remittance
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
     protected function mutateDetailDeadline(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
         return ($data['instruction1'] == 6 || $data['instruction2'] == 6) ?
                     ($value ?: 0) : 0;

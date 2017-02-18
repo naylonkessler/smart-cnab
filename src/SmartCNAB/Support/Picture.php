@@ -168,10 +168,9 @@ class Picture
      * Format a value from a date.
      *
      * @param  mixed  $value
-     * @param  array  $meta
-     * @return \DateTime
+     * @return \DateTime|false
      */
-    protected function fromTypeDate($value, array $meta = [])
+    protected function fromTypeDate($value)
     {
         return DateTime::createFromFormat('dmy', $value);
     }
@@ -195,11 +194,9 @@ class Picture
     /**
      * Format a value to an auto date.
      *
-     * @param  mixed  $value
-     * @param  array  $meta
-     * @return string
+     * @return \DateTime
      */
-    protected function toAutoDate($value, array $meta = [])
+    protected function toAutoDate()
     {
         return new DateTime();
     }

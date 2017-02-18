@@ -22,13 +22,11 @@ class File400 extends Remittance
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
     protected function mutateDetailCompanyDocumentType(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
         return strlen($data['companyDocument']) === 14 ? 2 : 1;
     }
@@ -38,13 +36,11 @@ class File400 extends Remittance
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
     protected function mutateDetailDiscountTo(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
         return $value ?: $data['expiration'];
     }
@@ -54,13 +50,11 @@ class File400 extends Remittance
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
     protected function mutateDetailDocumentType(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
         return strlen($data['document']) === 14 ? 2 : 1;
     }
@@ -70,17 +64,15 @@ class File400 extends Remittance
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
     protected function mutateDetailInstruction1(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
-        if ($data['occurrenceCode'] == '11') return Caixa::INST_PROTEST;
+        if ($data['occurrenceCode'] == 11) return Caixa::INST_PROTEST;
 
-        if ($data['occurrenceCode'] == '12') return Caixa::INST_DEVOLUTION;
+        if ($data['occurrenceCode'] == 12) return Caixa::INST_DEVOLUTION;
 
         return $value;
     }
@@ -90,18 +82,15 @@ class File400 extends Remittance
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
     protected function mutateDetailLateInterestDate(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
-        if ($value == '' && $data['occurrenceCode'] == '09')
-        {
-            return $value;
-        }
+        $returnValue = $value == '' && $data['occurrenceCode'] == 9;
+
+        if ($returnValue) return $value;
 
         return $value ?: $data['expiration']->add(new \DateInterval('P1D'));
     }
@@ -110,15 +99,10 @@ class File400 extends Remittance
      * Mutates a portfolio.
      *
      * @param  mixed  $value
-     * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
-    protected function mutateDetailPortfolio(
-        $value,
-        array $data = [],
-        array $meta = []
-    ) {
+    protected function mutateDetailPortfolio($value)
+    {
         return ($value === 'SR' ? 2 : ($value === 'RG' ? 1 : $value));
     }
 }

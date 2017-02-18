@@ -72,13 +72,11 @@ class File400 extends Remittance
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
     protected function mutateDetailCompanyDocumentType(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
         return strlen($data['companyDocument']) === 14 ? 2 : 1;
     }
@@ -88,13 +86,11 @@ class File400 extends Remittance
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
     protected function mutateDetailDiscountTo(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
         return $value ?: $data['expiration'];
     }
@@ -104,13 +100,11 @@ class File400 extends Remittance
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
     protected function mutateDetailDocumentType(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
         return strlen($data['document']) === 14 ? 2 : 1;
     }
@@ -120,13 +114,11 @@ class File400 extends Remittance
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
     protected function mutateDetailLateInterestDate(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
         return $value ?: $data['expiration']->add(new \DateInterval('P1D'));
     }
@@ -136,13 +128,11 @@ class File400 extends Remittance
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
     protected function mutateDetailOurNumber(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
         $bypass = $this->portfolioCodes[$data['portfolio']][1] === 'D' ||
                     $data['portfolio'] == 115;
@@ -155,13 +145,11 @@ class File400 extends Remittance
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
     protected function mutateDetailPortfolioCode(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
         return ( ! empty($this->portfolioCodes[$data['portfolio']])) ?
                     $this->portfolioCodes[$data['portfolio']][0] : $value;
@@ -172,13 +160,11 @@ class File400 extends Remittance
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
     protected function mutateHeaderAccount(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
         if (empty($data['account'])) return $value;
 
@@ -190,13 +176,11 @@ class File400 extends Remittance
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
     protected function mutateHeaderAccountDv(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
         if (empty($data['accountDv'])) return $value;
 

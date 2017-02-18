@@ -2,6 +2,7 @@
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/dc5052cb-a570-40ef-bb75-88ba1bab8c94/mini.png)](https://insight.sensiolabs.com/projects/dc5052cb-a570-40ef-bb75-88ba1bab8c94)
 [![Build Status](https://travis-ci.org/naylonkessler/smart-cnab.svg?branch=master)](https://travis-ci.org/naylonkessler/smart-cnab)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/naylonkessler/smart-cnab/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/naylonkessler/smart-cnab/?branch=master)
 
 ## Warning: This package is under active development so breaking changes can accur.
 

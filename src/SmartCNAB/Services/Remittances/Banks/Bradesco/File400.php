@@ -21,13 +21,11 @@ class File400 extends Remittance
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
     protected function mutateDetailDiscountTo(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
         return $value ?: $data['expiration'];
     }
@@ -37,13 +35,11 @@ class File400 extends Remittance
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
     protected function mutateDetailLateInterestFlag(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
         return ( ! empty($data['lateInterestPercentage'])) ? 2 : 0;
     }

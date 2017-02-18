@@ -20,15 +20,10 @@ class File400 extends Remittance
      * Mutates an account on detail.
      *
      * @param  mixed  $value
-     * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
-    protected function mutateDetailAccount(
-        $value,
-        array $data = [],
-        array $meta = []
-    ) {
+    protected function mutateDetailAccount($value)
+    {
         return substr($value, 0, -1);
     }
 
@@ -37,13 +32,11 @@ class File400 extends Remittance
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
     protected function mutateDetailAccountDv(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
         if (empty($data['accountDv'])) return $value;
 
@@ -87,13 +80,11 @@ class File400 extends Remittance
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
     protected function mutateDetailCompanyDocumentType(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
         return strlen($data['companyDocument']) === 14 ? 2 : 1;
     }
@@ -103,13 +94,11 @@ class File400 extends Remittance
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
     protected function mutateDetailDiscountTo(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
         return $value ?: $data['expiration'];
     }
@@ -119,13 +108,11 @@ class File400 extends Remittance
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
     protected function mutateDetailDocumentType(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
         return strlen($data['document']) === 14 ? 2 : 1;
     }
@@ -134,15 +121,10 @@ class File400 extends Remittance
      * Mutates a guarantee contract on detail.
      *
      * @param  mixed  $value
-     * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
-    protected function mutateDetailGuaranteeContract(
-        $value,
-        array $data = [],
-        array $meta = []
-    ) {
+    protected function mutateDetailGuaranteeContract($value)
+    {
         return substr($value, 0, -1);
     }
 
@@ -151,13 +133,11 @@ class File400 extends Remittance
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
     protected function mutateDetailGuaranteeContractDv(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
         if (empty($data['guaranteeContract'])) return $value;
 
@@ -200,15 +180,10 @@ class File400 extends Remittance
      * Mutates a branch on header.
      *
      * @param  mixed  $value
-     * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
-    protected function mutateHeaderBranch(
-        $value,
-        array $data = [],
-        array $meta = []
-    ) {
+    protected function mutateHeaderBranch($value)
+    {
         return substr($value, 0, -1);
     }
 
@@ -217,13 +192,11 @@ class File400 extends Remittance
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
     protected function mutateHeaderBranchDv(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
         if (empty($data['branch'])) return $value;
 
@@ -235,13 +208,11 @@ class File400 extends Remittance
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
     protected function mutateHeaderCompanyCode(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
         if (empty($data['account'])) return $value;
 
@@ -253,13 +224,11 @@ class File400 extends Remittance
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
     protected function mutateHeaderCompanyCodeDv(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
         if (empty($data['account'])) return $value;
 

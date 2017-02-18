@@ -28,7 +28,7 @@ class Itau implements BankSupportInterface
         '15' => 'Documento de dívida',
         '16' => 'Encargos condominiais',
         '17' => 'Conta de prestação de serviços',
-        // '18' => 'Boleto de proposta', // Not implemented
+        // '18' => 'Boleto de proposta', // Not implemented yet
         '99' => 'Diversos',
     ];
 

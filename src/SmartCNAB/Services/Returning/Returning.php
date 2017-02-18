@@ -1,29 +1,16 @@
 <?php namespace SmartCNAB\Services\Returning;
 
+/**
+ * Base service class for all returning service classes.
+ * This class contains all shared logic around returning parsing rules.
+ */
 class Returning
 {
-    /**
-     * @return mixed
-     */
-    protected function getCustomGetter($name)
-    {
-
-    }
-
-    /**
-     * @return array
-     */
-    protected function parseCustomGetters()
-    {
-
-    }
-
     /**
      * @return array
      */
     public function getMessageAttribute(array $data)
     {
-
     }
 
     /**
@@ -31,7 +18,6 @@ class Returning
      */
     public function getMotivesAttribute(array $data)
     {
-
     }
 
     /**
@@ -39,15 +25,6 @@ class Returning
      */
     public function getWasAnError(array $data)
     {
-
-    }
-
-    /**
-     * @return boolean
-     */
-    public function getWasPaidAttribute(array $data)
-    {
-
     }
 
     /**
@@ -55,7 +32,6 @@ class Returning
      */
     public function getWasEntryConfirmedAttribute(array $data)
     {
-
     }
 
     /**
@@ -63,7 +39,13 @@ class Returning
      */
     public function getWasDischargedAttribute(array $data)
     {
+    }
 
+    /**
+     * @return boolean
+     */
+    public function getWasPaidAttribute(array $data)
+    {
     }
 
     /**
@@ -71,6 +53,19 @@ class Returning
      */
     public function getWasProtestedAttribute(array $data)
     {
+    }
 
+    /**
+     * @return mixed
+     */
+    protected function getCustomGetter($name)
+    {
+    }
+
+    /**
+     * @return array
+     */
+    protected function parseCustomGetters()
+    {
     }
 }

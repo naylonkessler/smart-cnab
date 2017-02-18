@@ -126,10 +126,10 @@ class Caixa implements BankSupportInterface
         '07' => 'Alteração do prazo de protesto',
         '08' => 'Alteração do prazo de devolução',
         '09' => 'Alteração de outros dados',
-        // '10' => 'Alteração de dados com emissão de bloqueto',
+        // '10' => 'Alteração de dados com emissão de bloqueto', // Not implemented yet
         '11' => 'Alteração da opção de protesto para devolução',
         '12' => 'Alteração da opção de devolução para protesto',
-        // '31' => 'Alteração de outros dados',
+        // '31' => 'Alteração de outros dados', // Not implemented yet
     ];
 
     /**
