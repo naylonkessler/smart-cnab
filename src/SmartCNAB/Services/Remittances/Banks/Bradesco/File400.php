@@ -29,7 +29,7 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        return $value?: $data['expiration'];
+        return $value ?: $data['expiration'];
     }
 
     /**
@@ -45,6 +45,6 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        return ( ! empty($data['lateInterestPercentage']))? 2 : 0;
+        return ( ! empty($data['lateInterestPercentage'])) ? 2 : 0;
     }
 }

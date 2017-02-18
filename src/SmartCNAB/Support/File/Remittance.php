@@ -120,7 +120,7 @@ class Remittance extends File implements RemittanceInterface
     protected function formatLine(array $data, $type = 'detail')
     {
         $metas = $this->schema[$type];
-        $fields = array_keys($this->schema[$type]);
+        $fields = array_keys($metas);
 
         $formatted = array_map(
             $this->getFormatMapper($data, $type),
@@ -141,7 +141,7 @@ class Remittance extends File implements RemittanceInterface
     protected function getFormatMapper(array $data, $type)
     {
         return function ($meta, $field) use ($data, $type) {
-            $value = empty($data[$field])? '' : $data[$field];
+            $value = empty($data[$field]) ? '' : $data[$field];
             $method = 'mutate' . ucfirst($type) . ucfirst($field);
 
             if (method_exists($this, $method)) {

@@ -80,7 +80,7 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        return strlen($data['companyDocument']) === 14? 2 : 1;
+        return strlen($data['companyDocument']) === 14 ? 2 : 1;
     }
 
     /**
@@ -96,7 +96,7 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        return $value?: $data['expiration'];
+        return $value ?: $data['expiration'];
     }
 
     /**
@@ -112,7 +112,7 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        return strlen($data['document']) === 14? 2 : 1;
+        return strlen($data['document']) === 14 ? 2 : 1;
     }
 
     /**
@@ -128,7 +128,7 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        return $value?: $data['expiration']->add(new \DateInterval('P1D'));
+        return $value ?: $data['expiration']->add(new \DateInterval('P1D'));
     }
 
     /**
@@ -147,7 +147,7 @@ class File400 extends Remittance
         $bypass = $this->portfolioCodes[$data['portfolio']][1] === 'D' ||
                     $data['portfolio'] == 115;
 
-        return $bypass? $value : '';
+        return $bypass ? $value : '';
     }
 
     /**
@@ -163,7 +163,7 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        return ( ! empty($this->portfolioCodes[$data['portfolio']]))?
+        return ( ! empty($this->portfolioCodes[$data['portfolio']])) ?
                     $this->portfolioCodes[$data['portfolio']][0] : $value;
     }
 
@@ -182,7 +182,7 @@ class File400 extends Remittance
     ) {
         if (empty($data['account'])) return $value;
 
-        return $value?: $data['account'];
+        return $value ?: $data['account'];
     }
 
     /**
@@ -200,6 +200,6 @@ class File400 extends Remittance
     ) {
         if (empty($data['accountDv'])) return $value;
 
-        return $value?: $data['accountDv'];
+        return $value ?: $data['accountDv'];
     }
 }

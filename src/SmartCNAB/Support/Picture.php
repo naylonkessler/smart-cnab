@@ -29,7 +29,7 @@ class Picture
     {
         $parsed = $this->parse($picture, $meta);
         $method = 'fromType' . ucfirst($parsed['info-type']);
-        $start = empty($parsed['pos'])? 0 : $parsed['pos'][0] - 1;
+        $start = empty($parsed['pos']) ? 0 : $parsed['pos'][0] - 1;
         $value = substr($value, $start, $parsed['size']);
 
         if (method_exists($this, $method)) {
@@ -288,7 +288,7 @@ class Picture
      */
     protected function transliterate($value)
     {
-        return ! is_string($value)?
+        return ! is_string($value) ?
                     $value : iconv('UTF-8', 'ASCII//TRANSLIT', $value);
     }
 }

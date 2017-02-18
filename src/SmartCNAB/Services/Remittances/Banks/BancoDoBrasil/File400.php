@@ -93,7 +93,7 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        return strlen($data['companyDocument']) === 14? 2 : 1;
+        return strlen($data['companyDocument']) === 14 ? 2 : 1;
     }
 
     /**
@@ -109,7 +109,7 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        return $value?: $data['expiration'];
+        return $value ?: $data['expiration'];
     }
 
     /**
@@ -125,7 +125,7 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        return strlen($data['document']) === 14? 2 : 1;
+        return strlen($data['document']) === 14 ? 2 : 1;
     }
 
     /**
@@ -143,7 +143,7 @@ class File400 extends Remittance
     ) {
         if (empty($data['account'])) return $value;
 
-        return $value?: $data['account'];
+        return $value ?: $data['account'];
     }
 
     /**
@@ -161,7 +161,7 @@ class File400 extends Remittance
     ) {
         if (empty($data['account'])) return $value;
 
-        return $value?: $data['accountDv'];
+        return $value ?: $data['accountDv'];
     }
 
     /**
@@ -179,7 +179,7 @@ class File400 extends Remittance
     ) {
         if (empty($data['branch'])) return $value;
 
-        return $value?: $data['branch'];
+        return $value ?: $data['branch'];
     }
 
     /**
@@ -197,6 +197,6 @@ class File400 extends Remittance
     ) {
         if (empty($data['branch'])) return $value;
 
-        return $value?: $data['branchDv'];
+        return $value ?: $data['branchDv'];
     }
 }

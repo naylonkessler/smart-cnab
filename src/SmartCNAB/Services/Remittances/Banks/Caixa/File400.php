@@ -30,7 +30,7 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        return strlen($data['companyDocument']) === 14? 2 : 1;
+        return strlen($data['companyDocument']) === 14 ? 2 : 1;
     }
 
     /**
@@ -46,7 +46,7 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        return $value?: $data['expiration'];
+        return $value ?: $data['expiration'];
     }
 
     /**
@@ -62,7 +62,7 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        return strlen($data['document']) === 14? 2 : 1;
+        return strlen($data['document']) === 14 ? 2 : 1;
     }
 
     /**
@@ -103,7 +103,7 @@ class File400 extends Remittance
             return $value;
         }
 
-        return $value?: $data['expiration']->add(new \DateInterval('P1D'));
+        return $value ?: $data['expiration']->add(new \DateInterval('P1D'));
     }
 
     /**
@@ -119,6 +119,6 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        return ($value === 'SR'? 2 : ($value === 'RG'? 1 : $value));
+        return ($value === 'SR' ? 2 : ($value === 'RG' ? 1 : $value));
     }
 }

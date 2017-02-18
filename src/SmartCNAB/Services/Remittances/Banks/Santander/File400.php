@@ -29,7 +29,7 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        return strlen($data['companyDocument']) === 14? 2 : 1;
+        return strlen($data['companyDocument']) === 14 ? 2 : 1;
     }
 
     /**
@@ -45,7 +45,7 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        return $value?: $data['expiration']->add(new \DateInterval('P1D'));
+        return $value ?: $data['expiration']->add(new \DateInterval('P1D'));
     }
 
     /**
@@ -61,7 +61,7 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        return ( ! empty($data['lateInterestPercentage']))? 4 : 0;
+        return ( ! empty($data['lateInterestPercentage'])) ? 4 : 0;
     }
 
     /**
@@ -77,7 +77,7 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        return strlen($data['document']) === 14? 2 : 1;
+        return strlen($data['document']) === 14 ? 2 : 1;
     }
 
     /**
@@ -93,7 +93,7 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        return ($data['instruction1'] == 6 || $data['instruction2'] == 6)?
-                    ($value?: 0) : 0;
+        return ($data['instruction1'] == 6 || $data['instruction2'] == 6) ?
+                    ($value ?: 0) : 0;
     }
 }
