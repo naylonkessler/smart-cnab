@@ -464,7 +464,7 @@ class Bradesco implements BankSupport
     {
         return [
             'especie' => '01',
-            'instruction1' => '01',
+            'instruction1' => '00',
             'instruction2' => '00',
         ];
     }
