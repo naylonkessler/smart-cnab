@@ -39,7 +39,7 @@ class Factory implements FactoryInterface
      */
     public function returning($path, $bank = null)
     {
-        $bank = $bank?: Inspector::bankNumberOf($path);
+        $bank = $bank ?: Inspector::bankNumberOf($path);
         $bankNs = $this->discoverBankNamespace($bank, 'Returning');
         $version = Inspector::fileVersionOf($path);
         $file = "File{$version}";

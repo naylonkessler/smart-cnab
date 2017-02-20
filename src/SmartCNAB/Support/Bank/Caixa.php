@@ -16,6 +16,14 @@ class Caixa implements BankSupportInterface
     const INST_DEVOLUTION = '02';
 
     /**
+     * Constants for returning occurrences statuses.
+     */
+    const OCCURRENCES_DISCHARGED = [2, 23];
+    const OCCURRENCES_ENTRY = [2];
+    const OCCURRENCES_PAID = [21, 22];
+    const OCCURRENCES_PROTESTED = [25];
+
+    /**
      * Channels codes.
      *
      * @var array
@@ -228,16 +236,6 @@ class Caixa implements BankSupportInterface
     }
 
     /**
-     * Return all available postage.
-     *
-     * @return array
-     */
-    public function postage()
-    {
-        return static::$postage;
-    }
-
-    /**
      * Return all available instructions.
      *
      * @return array
@@ -253,6 +251,16 @@ class Caixa implements BankSupportInterface
     public function motives()
     {
         return [];
+    }
+
+    /**
+     * Return all available postage.
+     *
+     * @return array
+     */
+    public function postage()
+    {
+        return static::$postage;
     }
 
     /**

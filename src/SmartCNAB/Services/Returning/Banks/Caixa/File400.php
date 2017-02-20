@@ -2,7 +2,7 @@
 
 namespace SmartCNAB\Services\Returning\Banks\Caixa;
 
-use SmartCNAB\Support\File\Returning;
+use SmartCNAB\Services\Returning\Returning;
 
 /**
  * Class for Caixa return CNAB 400 layout.

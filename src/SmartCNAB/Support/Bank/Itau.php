@@ -10,6 +10,14 @@ use SmartCNAB\Contracts\Support\BankSupportInterface;
 class Itau implements BankSupportInterface
 {
     /**
+     * Constants for returning occurrences statuses.
+     */
+    const OCCURRENCES_DISCHARGED = [2, 64];
+    const OCCURRENCES_ENTRY = [9, 47, 59, 72];
+    const OCCURRENCES_PAID = [6, 7, 8, 10];
+    const OCCURRENCES_PROTESTED = [32];
+
+    /**
      * Especies codes.
      *
      * @var array
@@ -285,16 +293,6 @@ class Itau implements BankSupportInterface
     }
 
     /**
-     * Return all available postage.
-     *
-     * @return array
-     */
-    public function postage()
-    {
-        return [];
-    }
-
-    /**
      * Return all available instructions.
      *
      * @return array
@@ -308,6 +306,16 @@ class Itau implements BankSupportInterface
      * @return array
      */
     public function motives()
+    {
+        return [];
+    }
+
+    /**
+     * Return all available postage.
+     *
+     * @return array
+     */
+    public function postage()
     {
         return [];
     }

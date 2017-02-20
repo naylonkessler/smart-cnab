@@ -2,7 +2,7 @@
 
 namespace SmartCNAB\Services\Returning\Banks\Bradesco;
 
-use SmartCNAB\Support\File\Returning;
+use SmartCNAB\Services\Returning\Returning;
 
 /**
  * Class for Bradesco return CNAB 400 layout.

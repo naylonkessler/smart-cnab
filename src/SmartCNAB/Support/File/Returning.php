@@ -47,9 +47,7 @@ class Returning extends File implements ReturningInterface
     {
         $details = array_slice($this->lines, 1, count($this->lines) - 2);
 
-        return array_map(function ($detail) {
-            return (object) $this->parseLine($detail);
-        }, $details);
+        return array_map([$this, 'detailMapper'], $details);
     }
 
     /**
@@ -84,6 +82,19 @@ class Returning extends File implements ReturningInterface
         $data = $this->parseLine(end($this->lines), 'trailer');
 
         return (object) $data;
+    }
+
+    /**
+     * Mapper method for one line parsing.
+     *
+     * @param  string  $detail
+     * @return \StdClass
+     */
+    protected function detailMapper($detail)
+    {
+        $parsed = (object) $this->parseLine($detail);
+
+        return $parsed;
     }
 
     /**

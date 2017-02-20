@@ -2,7 +2,7 @@
 
 namespace SmartCNAB\Services\Returning\Banks\SICOOB;
 
-use SmartCNAB\Support\File\Returning;
+use SmartCNAB\Services\Returning\Returning;
 
 /**
  * Class for SICOOB return CNAB 400 layout.

@@ -10,6 +10,14 @@ use SmartCNAB\Contracts\Support\BankSupportInterface;
 class Bradesco implements BankSupportInterface
 {
     /**
+     * Constants for returning occurrences statuses.
+     */
+    const OCCURRENCES_DISCHARGED = [9, 10];
+    const OCCURRENCES_ENTRY = [2];
+    const OCCURRENCES_PAID = [6, 15, 17];
+    const OCCURRENCES_PROTESTED = [19, 25];
+
+    /**
      * Channels codes.
      *
      * @var array
@@ -498,16 +506,6 @@ class Bradesco implements BankSupportInterface
     }
 
     /**
-     * Return all available postage.
-     *
-     * @return array
-     */
-    public function postage()
-    {
-        return [];
-    }
-
-    /**
      * Return all available instructions.
      *
      * @return array
@@ -525,6 +523,16 @@ class Bradesco implements BankSupportInterface
     public function motives()
     {
         return static::$motives;
+    }
+
+    /**
+     * Return all available postage.
+     *
+     * @return array
+     */
+    public function postage()
+    {
+        return [];
     }
 
     /**

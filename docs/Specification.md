@@ -161,13 +161,13 @@
 
 - All banks must have getters for status of error, entry, payment, discharge and protest;
     - These getters must be generalized when possible;
-    - For errors the getter must be was_an_error for error occurrence codes or
+    - For errors the getter must be wasAnError for error occurrence codes or
         rejection codes;
-    - For entry the getter must be was_entry_confirmed for entry occurrence codes;
-    - For payment the getter must be was_paid for payment occurrence codes;
-    - For discharge the getter must be was_discharged for discharge occurrence
+    - For entry the getter must be wasEntryConfirmed for entry occurrence codes;
+    - For payment the getter must be wasPaid for payment occurrence codes;
+    - For discharge the getter must be wasDischarged for discharge occurrence
         codes;
-    - For protest the getter must be was_protested for protest occurrence codes;
+    - For protest the getter must be wasProtested for protest occurrence codes;
 - All banks must have a getter for messages and motives on detail records;
     - Messages will return the messages associated with motive codes;
     - Motives will return the motives codes returned by bank;

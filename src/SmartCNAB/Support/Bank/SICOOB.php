@@ -10,6 +10,14 @@ use SmartCNAB\Contracts\Support\BankSupportInterface;
 class SICOOB implements BankSupportInterface
 {
     /**
+     * Constants for returning occurrences statuses.
+     */
+    const OCCURRENCES_DISCHARGED = [9, 10];
+    const OCCURRENCES_ENTRY = [2];
+    const OCCURRENCES_PAID = [5, 6, 15];
+    const OCCURRENCES_PROTESTED = [23];
+
+    /**
      * Documents (especies) prefixed.
      *
      * @var array
@@ -187,6 +195,24 @@ class SICOOB implements BankSupportInterface
     }
 
     /**
+     * Return all available instructions.
+     *
+     * @return array
+     */
+    public function instructions()
+    {
+        return static::$instructions;
+    }
+
+    /**
+     * @return array
+     */
+    public function motives()
+    {
+        return [];
+    }
+
+    /**
      * Return all available postage.
      *
      * @return array
@@ -199,27 +225,9 @@ class SICOOB implements BankSupportInterface
     /**
      * @return array
      */
-    public function motives()
-    {
-        return [];
-    }
-
-    /**
-     * @return array
-     */
     public function rejectionCodes()
     {
         return [];
-    }
-
-    /**
-     * Return all available instructions.
-     *
-     * @return array
-     */
-    public function instructions()
-    {
-        return static::$instructions;
     }
 
     /**

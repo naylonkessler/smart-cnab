@@ -10,6 +10,14 @@ use SmartCNAB\Contracts\Support\BankSupportInterface;
 class Santander implements BankSupportInterface
 {
     /**
+     * Constants for returning occurrences statuses.
+     */
+    const OCCURRENCES_DISCHARGED = [9, 10];
+    const OCCURRENCES_ENTRY = [2];
+    const OCCURRENCES_PAID = [6, 7, 8, 17];
+    const OCCURRENCES_PROTESTED = [15];
+
+    /**
      * Especies codes.
      *
      * @var array
@@ -359,16 +367,6 @@ class Santander implements BankSupportInterface
     }
 
     /**
-     * Return all available postage.
-     *
-     * @return array
-     */
-    public function postage()
-    {
-        return [];
-    }
-
-    /**
      * Return all available instructions.
      *
      * @return array
@@ -382,6 +380,16 @@ class Santander implements BankSupportInterface
      * @return array
      */
     public function motives()
+    {
+        return [];
+    }
+
+    /**
+     * Return all available postage.
+     *
+     * @return array
+     */
+    public function postage()
     {
         return [];
     }

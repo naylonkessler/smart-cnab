@@ -4,5 +4,41 @@
         <testsuite name="All">
             <directory>./test/</directory>
         </testsuite>
+        <testsuite name="Itau">
+            <file>./test/BankSupportTest.php</file>
+            <file>./test/BankTest.php</file>
+            <file>./test/FileTest.php</file>
+            <file>./test/FactoryTest.php</file>
+        </testsuite>
+        <testsuite name="Bradesco">
+            <file>./test/BankSupportBradescoTest.php</file>
+            <file>./test/BankBradescoTest.php</file>
+            <file>./test/FileBradescoTest.php</file>
+            <file>./test/FactoryBradescoTest.php</file>
+        </testsuite>
+        <testsuite name="Caixa">
+            <file>./test/BankSupportCaixaTest.php</file>
+            <file>./test/BankCaixaTest.php</file>
+            <file>./test/FileCaixaTest.php</file>
+            <file>./test/FactoryCaixaTest.php</file>
+        </testsuite>
+        <testsuite name="SICOOB">
+            <file>./test/BankSupportSICOOBTest.php</file>
+            <file>./test/BankSICOOBTest.php</file>
+            <file>./test/FileSICOOBTest.php</file>
+            <file>./test/FactorySICOOBTest.php</file>
+        </testsuite>
+        <testsuite name="BancoDoBrasil">
+            <file>./test/BankSupportBancoDoBrasilTest.php</file>
+            <file>./test/BankBancoDoBrasilTest.php</file>
+            <file>./test/FileBancoDoBrasilTest.php</file>
+            <file>./test/FactoryBancoDoBrasilTest.php</file>
+        </testsuite>
+        <testsuite name="Santander">
+            <file>./test/BankSupportSantanderTest.php</file>
+            <file>./test/BankSantanderTest.php</file>
+            <file>./test/FileSantanderTest.php</file>
+            <file>./test/FactorySantanderTest.php</file>
+        </testsuite>
     </testsuites>
 </phpunit>

@@ -10,6 +10,14 @@ use SmartCNAB\Contracts\Support\BankSupportInterface;
 class BancoDoBrasil implements BankSupportInterface
 {
     /**
+     * Constants for returning occurrences statuses.
+     */
+    const OCCURRENCES_DISCHARGED = [9];
+    const OCCURRENCES_ENTRY = [2];
+    const OCCURRENCES_PAID = [5, 6, 7, 8, 15];
+    const OCCURRENCES_PROTESTED = [19];
+
+    /**
      * Channels codes.
      *
      * @var array
@@ -360,16 +368,6 @@ class BancoDoBrasil implements BankSupportInterface
     }
 
     /**
-     * Return all available postage.
-     *
-     * @return array
-     */
-    public function postage()
-    {
-        return [];
-    }
-
-    /**
      * Return all available instructions.
      *
      * @return array
@@ -387,6 +385,16 @@ class BancoDoBrasil implements BankSupportInterface
     public function motives()
     {
         return static::$motives;
+    }
+
+    /**
+     * Return all available postage.
+     *
+     * @return array
+     */
+    public function postage()
+    {
+        return [];
     }
 
     /**

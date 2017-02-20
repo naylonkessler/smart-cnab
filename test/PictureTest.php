@@ -96,4 +96,12 @@ class PictureTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('0012', $number);
         $this->assertEquals($refDate->format('dmy'), $date);
     }
+
+    public function testSpecialCharactersTransliterate()
+    {
+        $picture = new \SmartCNAB\Support\Picture();
+        $text = $picture->to('X(9)', 'testé ç .');
+
+        $this->assertEquals('teste c .', $text);
+    }
 }
