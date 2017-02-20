@@ -2,7 +2,7 @@
 
 namespace SmartCNAB\Services\Returning\Banks\Santander;
 
-use SmartCNAB\Support\File\Returning;
+use SmartCNAB\Services\Returning\Returning;
 
 /**
  * Class for Itau return CNAB 400 layout.

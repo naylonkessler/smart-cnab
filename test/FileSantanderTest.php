@@ -71,32 +71,6 @@ class FileSantanderTest extends PHPUnit_Framework_TestCase
         $this->assertFileExists($path);
     }
 
-    // public function testReturningParsing()
-    // {
-    //     $factory = new \SmartCNAB\Services\Factory();
-    //     $returning = $factory->returning(
-    //         dirname(__FILE__).'/sample.RET',
-    //         \SmartCNAB\Support\Bank::SICOOB
-    //     );
-    //     $schema = $returning->getSchema();
-    //     $lines = $returning->getLines();
-    //     $header = $returning->header();
-    //     $details = $returning->details();
-    //     $trailer = $returning->trailer();
-
-    //     $this->assertCount(3, $lines);
-    //     $this->assertInstanceOf(\StdClass::class, $header);
-    //     $this->assertTrue(is_array($details));
-    //     $this->assertCount(1, $details);
-    //     $this->assertInstanceOf(\StdClass::class, $details[0]);
-    //     $this->assertInstanceOf(\StdClass::class, $trailer);
-    //     $this->assertCount(count($schema['header']), (array)$header);
-    //     $this->assertCount(count($schema['detail']), (array)$details[0]);
-    //     $this->assertCount(count($schema['trailer']), (array)$trailer);
-    //     $this->assertEquals(341, $header->bankCode);
-    //     $this->assertEquals('1-21', $details[0]->companyUse);
-    // }
-
     public function testSpecialCharactersTransliterate() {
         $factory = new \SmartCNAB\Services\Factory();
         $remittance = $factory->remittance(
@@ -146,5 +120,5 @@ class FileSantanderTest extends PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('companyDocumentType', $details[1]);
     }
 
-   
+
 }

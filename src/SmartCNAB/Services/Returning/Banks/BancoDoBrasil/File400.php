@@ -2,7 +2,7 @@
 
 namespace SmartCNAB\Services\Returning\Banks\BancoDoBrasil;
 
-use SmartCNAB\Support\File\Returning;
+use SmartCNAB\Services\Returning\Returning;
 
 /**
  * Class for BancodoBrasil return CNAB 400 layout.

@@ -16,6 +16,14 @@ class Caixa implements BankSupportInterface
     const INST_DEVOLUTION = '02';
 
     /**
+     * Constants for returning occurrences statuses.
+     */
+    const OCCURRENCES_DISCHARGED = [2, 23];
+    const OCCURRENCES_ENTRY = [2];
+    const OCCURRENCES_PAID = [21, 22];
+    const OCCURRENCES_PROTESTED = [25];
+
+    /**
      * Channels codes.
      *
      * @var array
@@ -126,10 +134,10 @@ class Caixa implements BankSupportInterface
         '07' => 'Alteração do prazo de protesto',
         '08' => 'Alteração do prazo de devolução',
         '09' => 'Alteração de outros dados',
-        // '10' => 'Alteração de dados com emissão de bloqueto',
+        // '10' => 'Alteração de dados com emissão de bloqueto', // Not implemented yet
         '11' => 'Alteração da opção de protesto para devolução',
         '12' => 'Alteração da opção de devolução para protesto',
-        // '31' => 'Alteração de outros dados',
+        // '31' => 'Alteração de outros dados', // Not implemented yet
     ];
 
     /**
@@ -228,16 +236,6 @@ class Caixa implements BankSupportInterface
     }
 
     /**
-     * Return all available postage.
-     *
-     * @return array
-     */
-    public function postage()
-    {
-        return static::$postage;
-    }
-
-    /**
      * Return all available instructions.
      *
      * @return array
@@ -253,6 +251,16 @@ class Caixa implements BankSupportInterface
     public function motives()
     {
         return [];
+    }
+
+    /**
+     * Return all available postage.
+     *
+     * @return array
+     */
+    public function postage()
+    {
+        return static::$postage;
     }
 
     /**

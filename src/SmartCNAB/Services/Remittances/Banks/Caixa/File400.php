@@ -18,51 +18,45 @@ class File400 extends Remittance
     protected $schemaFile = '/schemas/400.json';
 
     /**
-     * Formats a company document type.
+     * Mutates a company document type.
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailCompanyDocumentType(
+    protected function mutateDetailCompanyDocumentType(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
-        return strlen($data['companyDocument']) === 14? 2 : 1;
+        return strlen($data['companyDocument']) === 14 ? 2 : 1;
     }
 
     /**
-     * Formats a discount to date.
+     * Mutates a discount to date.
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailDiscountTo(
+    protected function mutateDetailDiscountTo(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
-        return $value?: $data['expiration'];
+        return $value ?: $data['expiration'];
     }
 
     /**
-     * Formats a document type.
+     * Mutates a document type.
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailDocumentType(
+    protected function mutateDetailDocumentType(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
-        return strlen($data['document']) === 14? 2 : 1;
+        return strlen($data['document']) === 14 ? 2 : 1;
     }
 
     /**
@@ -70,55 +64,45 @@ class File400 extends Remittance
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailInstruction1(
+    protected function mutateDetailInstruction1(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
-        if ($data['occurrenceCode'] == '11') return Caixa::INST_PROTEST;
+        if ($data['occurrenceCode'] == 11) return Caixa::INST_PROTEST;
 
-        if ($data['occurrenceCode'] == '12') return Caixa::INST_DEVOLUTION;
+        if ($data['occurrenceCode'] == 12) return Caixa::INST_DEVOLUTION;
 
         return $value;
     }
 
     /**
-     * Formats a late interest date.
+     * Mutates a late interest date.
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailLateInterestDate(
+    protected function mutateDetailLateInterestDate(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
-        if ($value == '' && $data['occurrenceCode'] == '09')
-        {
-            return $value;
-        }
+        $returnValue = $value == '' && $data['occurrenceCode'] == 9;
 
-        return $value?: $data['expiration']->add(new \DateInterval('P1D'));
+        if ($returnValue) return $value;
+
+        return $value ?: $data['expiration']->add(new \DateInterval('P1D'));
     }
 
     /**
-     * Formats a portfolio.
+     * Mutates a portfolio.
      *
      * @param  mixed  $value
-     * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailPortfolio(
-        $value,
-        array $data = [],
-        array $meta = []
-    ) {
-        return ($value === 'SR'? 2 : ($value === 'RG'? 1 : $value));
+    protected function mutateDetailPortfolio($value)
+    {
+        return ($value === 'SR' ? 2 : ($value === 'RG' ? 1 : $value));
     }
 }

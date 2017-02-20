@@ -1,0 +1,60 @@
+{
+    "header": {
+        "registryType": {
+            "pos": [1, 1],
+            "pic": "9(01)",
+            "def": "0"
+        },
+        "s2": {
+            "pos": [2, 394],
+            "pic": "X(393)"
+        },
+        "sequential": {
+            "pos": [395, 400],
+            "pic": "9(06)"
+        }
+    },
+    "detail": {
+        "registryType": {
+            "pos": [1, 1],
+            "pic": "9(01)",
+            "def": "1"
+        },
+        "occurrenceCode": {
+            "pos": [2, 3],
+            "pic": "9(02)",
+            "def": "1"
+        },
+        "field1": {
+            "pos": [4, 13],
+            "pic": "X(10)"
+        },
+        "field2": {
+            "pos": [14, 19],
+            "pic": "9(06)"
+        },
+        "s4": {
+            "pos": [20, 394],
+            "pic": "X(375)"
+        },
+        "sequential": {
+            "pos": [395, 400],
+            "pic": "9(06)"
+        }
+    },
+    "trailer": {
+        "registryType": {
+            "pos": [1, 1],
+            "pic": "9(01)",
+            "def": "9"
+        },
+        "s1": {
+            "pos": [2, 394],
+            "pic": "X(393)"
+        },
+        "sequential": {
+            "pos": [395, 400],
+            "pic": "9(06)"
+        }
+    }
+}

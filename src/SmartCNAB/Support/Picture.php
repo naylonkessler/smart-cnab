@@ -29,7 +29,7 @@ class Picture
     {
         $parsed = $this->parse($picture, $meta);
         $method = 'fromType' . ucfirst($parsed['info-type']);
-        $start = empty($parsed['pos'])? 0 : $parsed['pos'][0] - 1;
+        $start = empty($parsed['pos']) ? 0 : $parsed['pos'][0] - 1;
         $value = substr($value, $start, $parsed['size']);
 
         if (method_exists($this, $method)) {
@@ -94,10 +94,11 @@ class Picture
      */
     public function parse($picture, array $meta = [])
     {
-        $parsed = array_merge($meta, [
+        $parsed = array_merge([
             'data-type' => 'numeric',
             'info-type' => empty($meta['type'])? 'generic' : $meta['type'],
-        ]);
+            'strict' => true,
+        ], $meta);
 
         if (preg_match(self::REGEX_INTEGER, $picture, $match)) {
             $parsed['size'] = (int) $match[1];
@@ -167,10 +168,9 @@ class Picture
      * Format a value from a date.
      *
      * @param  mixed  $value
-     * @param  array  $meta
-     * @return \DateTime
+     * @return \DateTime|false
      */
-    protected function fromTypeDate($value, array $meta = [])
+    protected function fromTypeDate($value)
     {
         return DateTime::createFromFormat('dmy', $value);
     }
@@ -194,11 +194,9 @@ class Picture
     /**
      * Format a value to an auto date.
      *
-     * @param  mixed  $value
-     * @param  array  $meta
-     * @return string
+     * @return \DateTime
      */
-    protected function toAutoDate($value, array $meta = [])
+    protected function toAutoDate()
     {
         return new DateTime();
     }
@@ -252,7 +250,15 @@ class Picture
      */
     protected function toTypeDate($value, array $meta = [])
     {
-        $value = $value instanceOf DateTime? $value->format('dmy') : null;
+        $isDate = $value instanceOf DateTime;
+
+        if ($isDate) {
+            $value = $value->format('dmy');
+        }
+
+        if ( ! $isDate && $meta['strict']) {
+            $value = null;
+        }
 
         return $this->limit($value, $meta['size'], $meta);
     }
@@ -279,7 +285,7 @@ class Picture
      */
     protected function transliterate($value)
     {
-        return ! is_string($value)?
+        return ! is_string($value) ?
                     $value : iconv('UTF-8', 'ASCII//TRANSLIT', $value);
     }
 }

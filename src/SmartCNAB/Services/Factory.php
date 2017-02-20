@@ -39,7 +39,7 @@ class Factory implements FactoryInterface
      */
     public function returning($path, $bank = null)
     {
-        $bank = $bank?: Inspector::bankNumberOf($path);
+        $bank = $bank ?: Inspector::bankNumberOf($path);
         $bankNs = $this->discoverBankNamespace($bank, 'Returning');
         $version = Inspector::fileVersionOf($path);
         $file = "File{$version}";
@@ -52,7 +52,7 @@ class Factory implements FactoryInterface
      * Discover and return a bank namespace with received bank code.
      *
      * @param  integer  $bank
-     * @param  string  $types  If remittance or returning
+     * @param  string  $type  If remittance or returning
      * @return string
      * @throws \InvalidArgumentException
      */

@@ -1,0 +1,365 @@
+{
+    "header": {
+        "registryType": {
+            "pos": [1, 1],
+            "pic": "9(01)"
+        },
+        "returnCode": {
+            "pos": [2, 2],
+            "pic": "9(01)"
+        },
+        "returnLiteral": {
+            "pos": [3, 9],
+            "pic": "X(07)"
+        },
+        "serviceCode": {
+            "pos": [10, 11],
+            "pic": "9(02)"
+        },
+        "serviceLiteral": {
+            "pos": [12, 26],
+            "pic": "X(15)"
+        },
+        "branch": {
+            "pos": [27, 30],
+            "pic": "9(04)"
+        },
+        "z1": {
+            "pos": [31, 32],
+            "pic": "9(02)"
+        },
+        "account": {
+            "pos": [33, 37],
+            "pic": "9(05)"
+        },
+        "dac": {
+            "pos": [38, 38],
+            "pic": "9(01)"
+        },
+        "s1": {
+            "pos": [39, 46],
+            "pic": "X(08)"
+        },
+        "companyName": {
+            "pos": [47, 76],
+            "pic": "X(30)"
+        },
+        "bankCode": {
+            "pos": [77, 79],
+            "pic": "9(03)"
+        },
+        "bankName": {
+            "pos": [80, 94],
+            "pic": "X(15)"
+        },
+        "generationDate": {
+            "pos": [95, 100],
+            "pic": "9(06)",
+            "type": "date"
+        },
+        "density": {
+            "pos": [101, 105],
+            "pic": "9(05)"
+        },
+        "densityUnit": {
+            "pos": [106, 108],
+            "pic": "X(03)"
+        },
+        "returnSequential": {
+            "pos": [109, 113],
+            "pic": "9(05)"
+        },
+        "creditDate": {
+            "pos": [114, 119],
+            "pic": "9(06)",
+            "type": "date"
+        },
+        "s2": {
+            "pos": [120, 394],
+            "pic": "X(275)"
+        },
+        "sequential": {
+            "pos": [395, 400],
+            "pic": "9(06)"
+        }
+    },
+    "detail": {
+        "registryType": {
+            "pos": [1, 1],
+            "pic": "9(01)"
+        },
+        "companyDocumentType": {
+            "pos": [2, 3],
+            "pic": "9(02)"
+        },
+        "companyDocument": {
+            "pos": [4, 17],
+            "pic": "9(14)"
+        },
+        "branch": {
+            "pos": [18, 21],
+            "pic": "9(04)"
+        },
+        "z1": {
+            "pos": [22, 23],
+            "pic": "9(02)"
+        },
+        "account": {
+            "pos": [24, 28],
+            "pic": "9(05)"
+        },
+        "dac": {
+            "pos": [29, 29],
+            "pic": "9(01)"
+        },
+        "s1": {
+            "pos": [30, 37],
+            "pic": "X(08)"
+        },
+        "companyUse": {
+            "pos": [38, 62],
+            "pic": "X(25)"
+        },
+        "ourNumber": {
+            "pos": [63, 70],
+            "pic": "9(08)"
+        },
+        "s2": {
+            "pos": [71, 82],
+            "pic": "X(12)"
+        },
+        "portfolio": {
+            "pos": [83, 85],
+            "pic": "9(03)"
+        },
+        "ourNumber2": {
+            "pos": [86, 93],
+            "pic": "9(08)"
+        },
+        "ourNumber2Dac": {
+            "pos": [94, 94],
+            "pic": "9(01)"
+        },
+        "s3": {
+            "pos": [95, 107],
+            "pic": "X(13)"
+        },
+        "portfolioCode": {
+            "pos": [108, 108],
+            "pic": "X(01)"
+        },
+        "occurrenceCode": {
+            "pos": [109, 110],
+            "pic": "9(02)"
+        },
+        "occurrenceDate": {
+            "pos": [111, 116],
+            "pic": "9(06)",
+            "type": "date"
+        },
+        "documentNumber": {
+            "pos": [117, 126],
+            "pic": "X(10)"
+        },
+        "ourNumberConference": {
+            "pos": [127, 134],
+            "pic": "9(08)"
+        },
+        "s4": {
+            "pos": [135, 146],
+            "pic": "X(12)"
+        },
+        "expiration": {
+            "pos": [147, 152],
+            "pic": "9(06)",
+            "type": "date"
+        },
+        "value": {
+            "pos": [153, 165],
+            "pic": "9(11)V9(2)"
+        },
+        "receiveBankCode": {
+            "pos": [166, 168],
+            "pic": "9(03)"
+        },
+        "receiveBranch": {
+            "pos": [169, 172],
+            "pic": "9(04)"
+        },
+        "receiveBranchDac": {
+            "pos": [173, 173],
+            "pic": "9(01)"
+        },
+        "especies": {
+            "pos": [174, 175],
+            "pic": "9(02)"
+        },
+        "billingFare": {
+            "pos": [176, 188],
+            "pic": "9(11)V9(2)"
+        },
+        "s5": {
+            "pos": [189, 214],
+            "pic": "X(26)"
+        },
+        "iof": {
+            "pos": [215, 227],
+            "pic": "9(11)V9(2)"
+        },
+        "rebate": {
+            "pos": [228, 240],
+            "pic": "9(11)V9(2)"
+        },
+        "discount": {
+            "pos": [241, 253],
+            "pic": "9(11)V9(2)"
+        },
+        "mainValue": {
+            "pos": [254, 266],
+            "pic": "9(11)V9(2)"
+        },
+        "interests": {
+            "pos": [267, 279],
+            "pic": "9(11)V9(2)"
+        },
+        "otherCredits": {
+            "pos": [280, 292],
+            "pic": "9(11)V9(2)"
+        },
+        "dda": {
+            "pos": [293, 293],
+            "pic": "X(01)"
+        },
+        "s6": {
+            "pos": [294, 295],
+            "pic": "X(02)"
+        },
+        "creditDate": {
+            "pos": [296, 301],
+            "pic": "9(06)",
+            "type": "date"
+        },
+        "instCancel": {
+            "pos": [302, 305],
+            "pic": "9(04)"
+        },
+        "s7": {
+            "pos": [306, 311],
+            "pic": "X(06)"
+        },
+        "z2": {
+            "pos": [312, 324],
+            "pic": "9(13)"
+        },
+        "name": {
+            "pos": [325, 354],
+            "pic": "X(30)"
+        },
+        "s8": {
+            "pos": [355, 377],
+            "pic": "X(23)"
+        },
+        "errorsMessage": {
+            "pos": [378, 385],
+            "pic": "X(08)"
+        },
+        "s9": {
+            "pos": [386, 392],
+            "pic": "X(07)"
+        },
+        "creditCode": {
+            "pos": [393, 394],
+            "pic": "X(02)"
+        },
+        "sequential": {
+            "pos": [395, 400],
+            "pic": "9(06)"
+        }
+    },
+    "trailer": {
+        "registryType": {
+            "pos": [1, 1],
+            "pic": "9(01)"
+        },
+        "returnCode": {
+            "pos": [2, 2],
+            "pic": "9(01)"
+        },
+        "serviceCode": {
+            "pos": [3, 4],
+            "pic": "9(02)"
+        },
+        "bankCode": {
+            "pos": [5, 7],
+            "pic": "9(03)"
+        },
+        "s1": {
+            "pos": [8, 17],
+            "pic": "X(10)"
+        },
+        "simpleQuantity": {
+            "pos": [18, 25],
+            "pic": "9(08)"
+        },
+        "simpleValue": {
+            "pos": [26, 39],
+            "pic": "9(12)V9(2)"
+        },
+        "bankNotice1": {
+            "pos": [40, 47],
+            "pic": "X(08)"
+        },
+        "s2": {
+            "pos": [48, 57],
+            "pic": "X(10)"
+        },
+        "linkQuantity": {
+            "pos": [58, 65],
+            "pic": "9(08)"
+        },
+        "linkValue": {
+            "pos": [66, 79],
+            "pic": "9(12)V9(2)"
+        },
+        "bankNotice2": {
+            "pos": [80, 87],
+            "pic": "X(08)"
+        },
+        "s3": {
+            "pos": [88, 177],
+            "pic": "X(90)"
+        },
+        "directQuantity": {
+            "pos": [178, 185],
+            "pic": "9(08)"
+        },
+        "directValue": {
+            "pos": [186, 199],
+            "pic": "9(12)V9(2)"
+        },
+        "bankNotice3": {
+            "pos": [200, 207],
+            "pic": "X(08)"
+        },
+        "returnSequential": {
+            "pos": [208, 212],
+            "pic": "9(05)"
+        },
+        "quantity": {
+            "pos": [213, 220],
+            "pic": "9(08)"
+        },
+        "value": {
+            "pos": [221, 234],
+            "pic": "9(12)V9(2)"
+        },
+        "s4": {
+            "pos": [235, 394],
+            "pic": "X(160)"
+        },
+        "sequential": {
+            "pos": [395, 400],
+            "pic": "9(06)"
+        }
+    }
+}

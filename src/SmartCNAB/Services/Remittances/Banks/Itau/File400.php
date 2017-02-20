@@ -36,170 +36,154 @@ class File400 extends Remittance
     protected $schemaFile = '/schemas/400.json';
 
     /**
-     * Formats an account on detail.
+     * Mutates an account on detail.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailAccount(
+    protected function mutateDetailAccount(
         $value,
         array $data = [],
         array $meta = []
     ) {
-        return $this->formatHeaderAccount($value, $data, $meta);
+        return $this->mutateHeaderAccount($value, $data, $meta);
     }
 
     /**
-     * Formats an account DV on detail.
+     * Mutates an account DV on detail.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailAccountDv(
+    protected function mutateDetailAccountDv(
         $value,
         array $data = [],
         array $meta = []
     ) {
-        return $this->formatHeaderAccountDv($value, $data, $meta);
+        return $this->mutateHeaderAccountDv($value, $data, $meta);
     }
 
     /**
-     * Formats a company document type.
+     * Mutates a company document type.
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailCompanyDocumentType(
+    protected function mutateDetailCompanyDocumentType(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
-        return strlen($data['companyDocument']) === 14? 2 : 1;
+        return strlen($data['companyDocument']) === 14 ? 2 : 1;
     }
 
     /**
-     * Formats a discount to date.
+     * Mutates a discount to date.
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailDiscountTo(
+    protected function mutateDetailDiscountTo(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
-        return $value?: $data['expiration'];
+        return $value ?: $data['expiration'];
     }
 
     /**
-     * Formats a document type.
+     * Mutates a document type.
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailDocumentType(
+    protected function mutateDetailDocumentType(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
-        return strlen($data['document']) === 14? 2 : 1;
+        return strlen($data['document']) === 14 ? 2 : 1;
     }
 
     /**
-     * Formats a late interest date.
+     * Mutates a late interest date.
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailLateInterestDate(
+    protected function mutateDetailLateInterestDate(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
-        return $value?: $data['expiration']->add(new \DateInterval('P1D'));
+        return $value ?: $data['expiration']->add(new \DateInterval('P1D'));
     }
 
     /**
-     * Formats the our number.
+     * Mutates the our number.
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailOurNumber(
+    protected function mutateDetailOurNumber(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
         $bypass = $this->portfolioCodes[$data['portfolio']][1] === 'D' ||
                     $data['portfolio'] == 115;
 
-        return $bypass? $value : '';
+        return $bypass ? $value : '';
     }
 
     /**
-     * Formats a portfolio code.
+     * Mutates a portfolio code.
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailPortfolioCode(
+    protected function mutateDetailPortfolioCode(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
-        return ( ! empty($this->portfolioCodes[$data['portfolio']]))?
+        return ( ! empty($this->portfolioCodes[$data['portfolio']])) ?
                     $this->portfolioCodes[$data['portfolio']][0] : $value;
     }
 
     /**
-     * Formats an account on header.
+     * Mutates an account on header.
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
-    protected function formatHeaderAccount(
+    protected function mutateHeaderAccount(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
         if (empty($data['account'])) return $value;
 
-        return $value?: $data['account'];
+        return $value ?: $data['account'];
     }
 
     /**
-     * Formats an account DV on header.
+     * Mutates an account DV on header.
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
-    protected function formatHeaderAccountDv(
+    protected function mutateHeaderAccountDv(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
         if (empty($data['accountDv'])) return $value;
 
-        return $value?: $data['accountDv'];
+        return $value ?: $data['accountDv'];
     }
 }

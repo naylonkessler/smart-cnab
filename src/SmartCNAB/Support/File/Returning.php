@@ -27,6 +27,7 @@ class Returning extends File implements ReturningInterface
     /**
      * Initialize and return a new instance.
      *
+     * @param  string  $path  path of returning file
      * @param  \SmartCNAB\Support\Picture  $picture
      */
     public function __construct($path, Picture $picture)
@@ -46,9 +47,7 @@ class Returning extends File implements ReturningInterface
     {
         $details = array_slice($this->lines, 1, count($this->lines) - 2);
 
-        return array_map(function($detail) {
-            return (object)$this->parseLine($detail);
-        }, $details);
+        return array_map([$this, 'detailMapper'], $details);
     }
 
     /**
@@ -70,25 +69,7 @@ class Returning extends File implements ReturningInterface
     {
         $data = $this->parseLine($this->lines[0], 'header');
 
-        return (object)$data;
-    }
-
-    /**
-     * Parses a line data received using the schema.
-     *
-     * @param  string  $data
-     * @param  string  $type
-     * @return array
-     */
-    protected function parseLine($data, $type = 'detail')
-    {
-        $parsed = [];
-
-        foreach ($this->schema[$type] as $field => $meta) {
-            $parsed[$field] = $this->picture->from($meta['pic'], $data, $meta);
-        }
-
-        return $parsed;
+        return (object) $data;
     }
 
     /**
@@ -100,6 +81,49 @@ class Returning extends File implements ReturningInterface
     {
         $data = $this->parseLine(end($this->lines), 'trailer');
 
-        return (object)$data;
+        return (object) $data;
+    }
+
+    /**
+     * Mapper method for one line parsing.
+     *
+     * @param  string  $detail
+     * @return \StdClass
+     */
+    protected function detailMapper($detail)
+    {
+        $parsed = (object) $this->parseLine($detail);
+
+        return $parsed;
+    }
+
+    /**
+     * Create and returns a new line parse mapper using received parameters.
+     *
+     * @param  string  $data
+     * @return Closure
+     */
+    protected function getParseMapper($data)
+    {
+        return function ($meta) use ($data) {
+            return $this->picture->from($meta['pic'], $data, $meta);
+        };
+    }
+
+    /**
+     * Parses a line data received using the schema.
+     *
+     * @param  string  $data
+     * @param  string  $type
+     * @return array
+     */
+    protected function parseLine($data, $type = 'detail')
+    {
+        $metas = $this->schema[$type];
+        $fields = array_keys($metas);
+
+        $parsed = array_map($this->getParseMapper($data), $metas);
+
+        return array_combine($fields, $parsed);
     }
 }

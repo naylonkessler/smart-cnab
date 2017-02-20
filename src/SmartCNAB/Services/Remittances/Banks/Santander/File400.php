@@ -17,83 +17,73 @@ class File400 extends Remittance
     protected $schemaFile = '/schemas/400.json';
 
     /**
-     * Formats a company document type.
+     * Mutates a company document type.
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailCompanyDocumentType(
+    protected function mutateDetailCompanyDocumentType(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
-        return strlen($data['companyDocument']) === 14? 2 : 1;
+        return strlen($data['companyDocument']) === 14 ? 2 : 1;
     }
 
     /**
-     * Formats a late interest date.
+     * Mutates a late interest date.
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailLateInterestDate(
+    protected function mutateDetailLateInterestDate(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
-        return $value?: $data['expiration']->add(new \DateInterval('P1D'));
+        return $value ?: $data['expiration']->add(new \DateInterval('P1D'));
     }
 
     /**
-     * Formats the late interest flag based on late interest percentage.
+     * Mutates the late interest flag based on late interest percentage.
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailLateInterestFlag(
+    protected function mutateDetailLateInterestFlag(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
-        return ( ! empty($data['lateInterestPercentage']))? 4 : 0;
+        return ( ! empty($data['lateInterestPercentage'])) ? 4 : 0;
     }
 
     /**
-     * Formats a document type.
+     * Mutates a document type.
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailDocumentType(
+    protected function mutateDetailDocumentType(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
-        return strlen($data['document']) === 14? 2 : 1;
+        return strlen($data['document']) === 14 ? 2 : 1;
     }
 
     /**
-     * Formats a deadline.
+     * Mutates a deadline.
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailDeadline(
+    protected function mutateDetailDeadline(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
-        return ($data['instruction1'] == 6 || $data['instruction2'] == 6)?
-                    ($value?: 0) : 0;
+        return ($data['instruction1'] == 6 || $data['instruction2'] == 6) ?
+                    ($value ?: 0) : 0;
     }
 }

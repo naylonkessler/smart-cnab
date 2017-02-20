@@ -17,186 +17,172 @@ class File400 extends Remittance
     protected $schemaFile = '/schemas/400.json';
 
     /**
-     * Formats an account on detail.
+     * Mutates an account on detail.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailAccount(
+    protected function mutateDetailAccount(
         $value,
         array $data = [],
         array $meta = []
     ) {
-        return $this->formatHeaderAccount($value, $data, $meta);
+        return $this->mutateHeaderAccount($value, $data, $meta);
     }
 
     /**
-     * Formats an account DV on detail.
+     * Mutates an account DV on detail.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailAccountDv(
+    protected function mutateDetailAccountDv(
         $value,
         array $data = [],
         array $meta = []
     ) {
-        return $this->formatHeaderAccountDv($value, $data, $meta);
+        return $this->mutateHeaderAccountDv($value, $data, $meta);
     }
 
     /**
-     * Formats a branch on detail.
+     * Mutates a branch on detail.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailBranch(
+    protected function mutateDetailBranch(
         $value,
         array $data = [],
         array $meta = []
     ) {
-        return $this->formatHeaderBranch($value, $data, $meta);
+        return $this->mutateHeaderBranch($value, $data, $meta);
     }
 
     /**
-     * Formats a branch DV on detail.
+     * Mutates a branch DV on detail.
      *
      * @param  mixed  $value
      * @param  array  $data
      * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailBranchDv(
+    protected function mutateDetailBranchDv(
         $value,
         array $data = [],
         array $meta = []
     ) {
-        return $this->formatHeaderBranchDv($value, $data, $meta);
+        return $this->mutateHeaderBranchDv($value, $data, $meta);
     }
 
     /**
-     * Formats a company document type.
+     * Mutates a company document type.
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailCompanyDocumentType(
+    protected function mutateDetailCompanyDocumentType(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
-        return strlen($data['companyDocument']) === 14? 2 : 1;
+        return strlen($data['companyDocument']) === 14 ? 2 : 1;
     }
 
     /**
-     * Formats a discount to date.
+     * Mutates a discount to date.
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailDiscountTo(
+    protected function mutateDetailDiscountTo(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
-        return $value?: $data['expiration'];
+        return $value ?: $data['expiration'];
     }
 
     /**
-     * Formats a document type.
+     * Mutates a document type.
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailDocumentType(
+    protected function mutateDetailDocumentType(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
-        return strlen($data['document']) === 14? 2 : 1;
+        return strlen($data['document']) === 14 ? 2 : 1;
     }
 
     /**
-     * Formats an account on header.
+     * Mutates an account on header.
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
-    protected function formatHeaderAccount(
+    protected function mutateHeaderAccount(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
         if (empty($data['account'])) return $value;
 
-        return $value?: $data['account'];
+        return $value ?: $data['account'];
     }
 
     /**
-     * Formats an account DV on header.
+     * Mutates an account DV on header.
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
-    protected function formatHeaderAccountDv(
+    protected function mutateHeaderAccountDv(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
         if (empty($data['account'])) return $value;
 
-        return $value?: $data['accountDv'];
+        return $value ?: $data['accountDv'];
     }
 
     /**
-     * Formats a branch on header.
+     * Mutates a branch on header.
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
-    protected function formatHeaderBranch(
+    protected function mutateHeaderBranch(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
         if (empty($data['branch'])) return $value;
 
-        return $value?: $data['branch'];
+        return $value ?: $data['branch'];
     }
 
     /**
-     * Formats a branch DV on header.
+     * Mutates a branch DV on header.
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
-    protected function formatHeaderBranchDv(
+    protected function mutateHeaderBranchDv(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
         if (empty($data['branch'])) return $value;
 
-        return $value?: $data['branchDv'];
+        return $value ?: $data['branchDv'];
     }
 }

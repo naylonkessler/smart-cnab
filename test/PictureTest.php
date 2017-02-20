@@ -8,28 +8,40 @@ class PictureTest extends PHPUnit_Framework_TestCase
         $string = $picture->parse('X(08)');
         $number = $picture->parse('9(06)');
         $date = $picture->parse('9(06)', ['type' => 'date']);
+        $date2 = $picture->parse('9(06)', ['type' => 'date', 'strict' => false]);
         $money = $picture->parse('9(08)V9(02)');
 
         $this->assertEquals([
             'data-type' => 'string',
             'info-type' => 'generic',
             'size' => 8,
+            'strict' => true,
         ], $string);
         $this->assertEquals([
             'data-type' => 'numeric',
             'info-type' => 'generic',
             'size' => 6,
+            'strict' => true,
         ], $number);
         $this->assertEquals([
             'data-type' => 'numeric',
             'info-type' => 'date',
             'size' => 6,
+            'strict' => true,
             'type' => 'date',
         ], $date);
         $this->assertEquals([
             'data-type' => 'numeric',
+            'info-type' => 'date',
+            'size' => 6,
+            'type' => 'date',
+            'strict' => false,
+        ], $date2);
+        $this->assertEquals([
+            'data-type' => 'numeric',
             'info-type' => 'money',
             'size' => 10,
+            'strict' => true,
             'first' => 8,
             'last' => 2,
         ], $money);
@@ -43,12 +55,16 @@ class PictureTest extends PHPUnit_Framework_TestCase
         $money = $picture->to('9(04)V9(2)', 123.12000);
         $money2 = $picture->to('9(04)V9(2)', 123.00);
         $date = $picture->to('9(06)', new \DateTime('2016-06-09'), ['type' => 'date']);
+        $date2 = $picture->to('9(06)', '77777777', ['type' => 'date', 'strict' => false]);
+        $date3 = $picture->to('9(06)', '77777777', ['type' => 'date']);
 
         $this->assertEquals('NKA   ', $string);
         $this->assertEquals('0011', $number);
         $this->assertEquals('012312', $money);
         $this->assertEquals('012300', $money2);
         $this->assertEquals('090616', $date);
+        $this->assertEquals('777777', $date2);
+        $this->assertEquals('000000', $date3);
     }
 
     public function testPictureFromFormat()
@@ -79,5 +95,13 @@ class PictureTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals('0012', $number);
         $this->assertEquals($refDate->format('dmy'), $date);
+    }
+
+    public function testSpecialCharactersTransliterate()
+    {
+        $picture = new \SmartCNAB\Support\Picture();
+        $text = $picture->to('X(9)', 'testé ç .');
+
+        $this->assertEquals('teste c .', $text);
     }
 }

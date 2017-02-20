@@ -17,34 +17,30 @@ class File400 extends Remittance
     protected $schemaFile = '/schemas/400.json';
 
     /**
-     * Formats a discount to date.
+     * Mutates a discount to date.
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailDiscountTo(
+    protected function mutateDetailDiscountTo(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
-        return $value?: $data['expiration'];
+        return $value ?: $data['expiration'];
     }
 
     /**
-     * Formats the late interest flag based on late interest percentage.
+     * Mutates the late interest flag based on late interest percentage.
      *
      * @param  mixed  $value
      * @param  array  $data
-     * @param  array  $meta
      * @return mixed
      */
-    protected function formatDetailLateInterestFlag(
+    protected function mutateDetailLateInterestFlag(
         $value,
-        array $data = [],
-        array $meta = []
+        array $data = []
     ) {
-        return ( ! empty($data['lateInterestPercentage']))? 2 : 0;
+        return ( ! empty($data['lateInterestPercentage'])) ? 2 : 0;
     }
 }
