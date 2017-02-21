@@ -31,6 +31,13 @@ abstract class Bank implements BankSupportInterface
     protected static $especies = [];
 
     /**
+     * Emission codes.
+     *
+     * @var array
+     */
+    protected static $emission = [];
+
+    /**
      * Billing instruction.
      *
      * @var array
@@ -43,6 +50,13 @@ abstract class Bank implements BankSupportInterface
      * @var array
      */
     protected static $motives = [];
+
+    /**
+     * Postage codes.
+     *
+     * @var array
+     */
+    protected static $postage = [];
 
     /**
      * Remittance occurrences codes.
@@ -108,7 +122,7 @@ abstract class Bank implements BankSupportInterface
      */
     public function emission()
     {
-        return [];
+        return static::$emission;
     }
 
     /**
@@ -143,7 +157,7 @@ abstract class Bank implements BankSupportInterface
      */
     public function postage()
     {
-        return [];
+        return static::$postage;
     }
 
     /**
