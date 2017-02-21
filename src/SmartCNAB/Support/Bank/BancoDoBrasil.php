@@ -316,7 +316,7 @@ class BancoDoBrasil extends Bank
     {
         return [
             'especie' => '01',
-            'instruction1' => '02',
+            'instruction1' => '00',
             'instruction2' => '00',
         ];
     }
