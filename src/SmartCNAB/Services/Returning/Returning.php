@@ -35,20 +35,31 @@ class Returning extends SupportReturning
     }
 
     /**
+     * @param  \StdClass  $data
      * @return array
      */
-    public function getMessage(array $data)
+    public function getMessage(StdClass $data)
     {
     }
 
     /**
+     * Fetch and return motives descriptions from received detail data.
+     *
+     * @param  \StdClass  $data
      * @return array
      */
-    public function getMotives(array $data)
+    public function getMotives(StdClass $data)
     {
+        $motives = $this->supportBank->motives($data->occurrenceCode);
+        $motive = str_pad($this->motive, 2, 0, STR_PAD_LEFT);
+
+        return empty($motives[$motive]) ? [] : [$motives[$motive]];
     }
 
     /**
+     * Check and return if received data has some error status.
+     *
+     * @param  \StdClass  $data
      * @return boolean
      */
     public function wasAnError(StdClass $data)

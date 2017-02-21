@@ -2,12 +2,12 @@
 
 namespace SmartCNAB\Support\Bank;
 
-use SmartCNAB\Contracts\Support\BankSupportInterface;
+use SmartCNAB\Support\Bank\Bank;
 
 /**
  * Bank Caixa support class.
  */
-class Caixa implements BankSupportInterface
+class Caixa extends Bank
 {
     /**
      * Caixa instructions constants.
@@ -176,24 +176,6 @@ class Caixa implements BankSupportInterface
     ];
 
     /**
-     * @return array
-     */
-    public function billing()
-    {
-        return [];
-    }
-
-    /**
-     * Return the payment channels.
-     *
-     * @return array
-     */
-    public function channels()
-    {
-        return static::$channels;
-    }
-
-    /**
      * Return the default state of itau infos.
      *
      * @return array
@@ -208,88 +190,19 @@ class Caixa implements BankSupportInterface
     }
 
     /**
-     * @return array
-     */
-    public function documentsPrefixes()
-    {
-        return [];
-    }
-
-    /**
-     * Return all available especies.
+     * Return all motives codes.
      *
+     * @param  int  $occurrenceCode
      * @return array
      */
-    public function especies()
+    public function motives($occurrenceCode = null)
     {
-        return static::$especies;
-    }
+        if ($occurrenceCode == '99') return [];
 
-    /**
-     * Return all available emission.
-     *
-     * @return array
-     */
-    public function emission()
-    {
-        return static::$emission;
-    }
+        if ( ! $occurrenceCode) return $this->rejectionCodes();
 
-    /**
-     * Return all available instructions.
-     *
-     * @return array
-     */
-    public function instructions()
-    {
-        return static::$instructions;
-    }
+        $occurrenceCode = str_pad($occurrenceCode, 2, 0, STR_PAD_LEFT);
 
-    /**
-     * @return array
-     */
-    public function motives()
-    {
-        return [];
-    }
-
-    /**
-     * Return all available postage.
-     *
-     * @return array
-     */
-    public function postage()
-    {
-        return static::$postage;
-    }
-
-    /**
-     * Return all rejection codes.
-     *
-     * @return array
-     */
-    public function rejectionCodes()
-    {
-        return static::$rejectionCodes;
-    }
-
-    /**
-     * Return all occurrences available for remittances.
-     *
-     * @return array
-     */
-    public function remittanceOccurrences()
-    {
-        return static::$remittanceOccurrences;
-    }
-
-    /**
-     * Return all occurrences available for returning.
-     *
-     * @return array
-     */
-    public function returnOccurrences()
-    {
-        return static::$returnOccurrences;
+        return $this->rejectionCodes($occurrenceCode);
     }
 }

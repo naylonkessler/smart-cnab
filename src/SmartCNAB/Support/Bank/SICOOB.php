@@ -2,12 +2,12 @@
 
 namespace SmartCNAB\Support\Bank;
 
-use SmartCNAB\Contracts\Support\BankSupportInterface;
+use SmartCNAB\Support\Bank\Bank;
 
 /**
  * Bank SICOOB support class.
  */
-class SICOOB implements BankSupportInterface
+class SICOOB extends Bank
 {
     /**
      * Constants for returning occurrences statuses.
@@ -135,22 +135,6 @@ class SICOOB implements BankSupportInterface
     ];
 
     /**
-     * @return array
-     */
-    public function billing()
-    {
-        return [];
-    }
-
-    /**
-     * @return array
-     */
-    public function channels()
-    {
-        return [];
-    }
-
-    /**
      * Return the default state of itau infos.
      *
      * @return array
@@ -162,91 +146,5 @@ class SICOOB implements BankSupportInterface
             'instruction1' => '00',
             'instruction2' => '00',
         ];
-    }
-
-    /**
-     * Return all available documents prefixes.
-     *
-     * @return array
-     */
-    public function documentsPrefixes()
-    {
-        return static::$documentsPrefixes;
-    }
-
-    /**
-     * Return all available especies.
-     *
-     * @return array
-     */
-    public function especies()
-    {
-        return static::$especies;
-    }
-
-    /**
-     * Return all available emission.
-     *
-     * @return array
-     */
-    public function emission()
-    {
-        return static::$emission;
-    }
-
-    /**
-     * Return all available instructions.
-     *
-     * @return array
-     */
-    public function instructions()
-    {
-        return static::$instructions;
-    }
-
-    /**
-     * @return array
-     */
-    public function motives()
-    {
-        return [];
-    }
-
-    /**
-     * Return all available postage.
-     *
-     * @return array
-     */
-    public function postage()
-    {
-        return static::$postage;
-    }
-
-    /**
-     * @return array
-     */
-    public function rejectionCodes()
-    {
-        return [];
-    }
-
-    /**
-     * Return all occurrences available for remittances.
-     *
-     * @return array
-     */
-    public function remittanceOccurrences()
-    {
-        return static::$remittanceOccurrences;
-    }
-
-    /**
-     * Return all occurrences available for returning.
-     *
-     * @return array
-     */
-    public function returnOccurrences()
-    {
-        return static::$returnOccurrences;
     }
 }
