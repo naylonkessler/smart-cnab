@@ -24,6 +24,20 @@ abstract class Bank implements BankSupportInterface
     protected static $channels = [];
 
     /**
+     * Prefixes of documents.
+     *
+     * @var array
+     */
+    protected static $documentsPrefixes = [];
+
+    /**
+     * Emission types.
+     *
+     * @var array
+     */
+    protected static $emission = [];
+
+    /**
      * Especies codes.
      *
      * @var array
@@ -43,6 +57,20 @@ abstract class Bank implements BankSupportInterface
      * @var array
      */
     protected static $motives = [];
+
+    /**
+     * Postage types.
+     *
+     * @var array
+     */
+    protected static $postage = [];
+
+    /**
+     * Return all available rejection codes.
+     *
+     * @var array
+     */
+    protected static $rejectionCodes = [];
 
     /**
      * Remittance occurrences codes.
@@ -79,16 +107,28 @@ abstract class Bank implements BankSupportInterface
     /**
      * Return the default state of itau infos.
      *
-     * @return array
+     * @return \StdClass
      */
     abstract public function defaults();
 
     /**
+     * Return all available documents prefixes.
+     *
      * @return array
      */
     public function documentsPrefixes()
     {
-        return [];
+        return static::$documentsPrefixes;
+    }
+
+    /**
+     * Return all available emission.
+     *
+     * @return array
+     */
+    public function emission()
+    {
+        return static::$emission;
     }
 
     /**
@@ -99,16 +139,6 @@ abstract class Bank implements BankSupportInterface
     public function especies()
     {
         return static::$especies;
-    }
-
-    /**
-     * Return all available emission.
-     *
-     * @return array
-     */
-    public function emission()
-    {
-        return [];
     }
 
     /**
@@ -143,15 +173,17 @@ abstract class Bank implements BankSupportInterface
      */
     public function postage()
     {
-        return [];
+        return static::$postage;
     }
 
     /**
+     * Return all available rejection codes.
+     *
      * @return array
      */
     public function rejectionCodes()
     {
-        return [];
+        return static::$rejectionCodes;
     }
 
     /**
@@ -182,9 +214,11 @@ abstract class Bank implements BankSupportInterface
      */
     protected function findMotives($occurrenceCode)
     {
-        $motives = array_filter($motives, function ($key) use ($occurrenceCode) {
+        $filter = function ($key) use ($occurrenceCode) {
             return in_array($occurrenceCode, explode(',', $key));
-        }, ARRAY_FILTER_USE_KEY);
+        };
+
+        $motives = array_filter(static::$motives, $filter, ARRAY_FILTER_USE_KEY);
 
         return reset($motives);
     }

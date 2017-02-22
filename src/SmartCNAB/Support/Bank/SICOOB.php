@@ -135,13 +135,13 @@ class SICOOB extends Bank
     ];
 
     /**
-     * Return the default state of itau infos.
+     * Return the default state of info.
      *
-     * @return array
+     * @return \StdClass
      */
     public function defaults()
     {
-        return [
+        return (object) [
             'especie' => '01',
             'instruction1' => '00',
             'instruction2' => '00',

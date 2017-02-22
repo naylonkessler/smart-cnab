@@ -16,7 +16,7 @@ class BankSupportTest extends PHPUnit_Framework_TestCase
      */
     public function testChannels($itau)
     {
-        $this->assertEquals([], $itau->channels());
+        $this->assertInternalType('array', $itau->channels());
     }
 
     /**
@@ -24,7 +24,7 @@ class BankSupportTest extends PHPUnit_Framework_TestCase
      */
     public function testDocumentsPrefixes($itau)
     {
-        $this->assertEquals([], $itau->documentsPrefixes());
+        $this->assertInternalType('array', $itau->documentsPrefixes());
     }
 
     /**
@@ -32,7 +32,7 @@ class BankSupportTest extends PHPUnit_Framework_TestCase
      */
     public function testMotives($itau)
     {
-        $this->assertEquals([], $itau->motives());
+        $this->assertInternalType('array', $itau->motives());
     }
 
     /**
@@ -40,7 +40,7 @@ class BankSupportTest extends PHPUnit_Framework_TestCase
      */
     public function testRejectionCodes($itau)
     {
-        $this->assertEquals([], $itau->rejectionCodes());
+        $this->assertInternalType('array', $itau->rejectionCodes());
     }
 
     /**

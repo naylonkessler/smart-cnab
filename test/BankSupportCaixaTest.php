@@ -20,7 +20,6 @@ class BankSupportCaixaTest extends PHPUnit_Framework_TestCase
     public function testDocumentsPrefixes($caixa)
     {
         $this->assertInternalType('array', $caixa->documentsPrefixes());
-        $this->assertEquals([], $caixa->documentsPrefixes());
     }
 
     /**
@@ -29,7 +28,6 @@ class BankSupportCaixaTest extends PHPUnit_Framework_TestCase
     public function testMotives($caixa)
     {
         $this->assertInternalType('array', $caixa->motives());
-        $this->assertEquals([], $caixa->motives());
     }
 
     /**

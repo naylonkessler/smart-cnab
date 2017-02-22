@@ -239,7 +239,7 @@
             "pic": "9(06)",
             "type": "date"
         },
-        "instCancel": {
+        "canceledInstruction": {
             "pos": [302, 305],
             "pic": "9(04)"
         },
@@ -259,7 +259,7 @@
             "pos": [355, 377],
             "pic": "X(23)"
         },
-        "errorsMessage": {
+        "motive": {
             "pos": [378, 385],
             "pic": "X(08)"
         },

@@ -51,7 +51,7 @@ class Returning extends SupportReturning
     public function getMotives(StdClass $data)
     {
         $motives = $this->supportBank->motives($data->occurrenceCode);
-        $motive = str_pad($this->motive, 2, 0, STR_PAD_LEFT);
+        $motive = str_pad($data->motive, 2, 0, STR_PAD_LEFT);
 
         return empty($motives[$motive]) ? [] : [$motives[$motive]];
     }
@@ -64,6 +64,9 @@ class Returning extends SupportReturning
      */
     public function wasAnError(StdClass $data)
     {
+        $bank = $this->supportBank;
+
+        return in_array($data->occurrenceCode, $bank::OCCURRENCES_ERROR);
     }
 
     /**
@@ -154,6 +157,7 @@ class Returning extends SupportReturning
      */
     protected function parseStatusAttributes(StdClass $detail)
     {
+        $detail->motives = $this->getMotives($detail);
         $detail->wasAnError = $this->wasAnError($detail);
         $detail->wasDischarged = $this->wasDischarged($detail);
         $detail->wasEntryConfirmed = $this->wasEntryConfirmed($detail);
