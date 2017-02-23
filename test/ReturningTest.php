@@ -39,53 +39,32 @@ class ReturningTest extends PHPUnit_Framework_TestCase
         $this->assertCount(4, $details);
         $this->assertEquals(341, $header->bankCode);
         $this->assertEquals('', $details[0]->companyUse);
+
+        return $returning;
     }
 
-    public function testStatusGetters()
+    /**
+     * @depends testReturningParsing
+     */
+    public function testStatusGetters($returning)
     {
-        $factory = new \SmartCNAB\Services\Factory();
-        $returning = $factory->returning(__DIR__ . '/fixture/sample.RET');
-        $details = $returning->details();
-        $detail = $details[0];
+        $detail = $returning->details()[0];
 
+        $this->assertObjectHasAttribute('motives', $detail);
         $this->assertObjectHasAttribute('wasAnError', $detail);
         $this->assertObjectHasAttribute('wasDischarged', $detail);
         $this->assertObjectHasAttribute('wasEntryConfirmed', $detail);
         $this->assertObjectHasAttribute('wasPaid', $detail);
         $this->assertObjectHasAttribute('wasProtested', $detail);
-
-        return $details;
     }
 
     /**
-     * @depends testStatusGetters
+     * @depends testReturningParsing
      */
-    public function testWasPaidStatus($details)
+    public function testMessageGetters($returning)
     {
-        $this->assertTrue($details[0]->wasPaid);
-    }
+        $header = $returning->header();
 
-    /**
-     * @depends testStatusGetters
-     */
-    public function testWasEntryConfirmedStatus($details)
-    {
-        $this->assertTrue($details[2]->wasEntryConfirmed);
-    }
-
-    /**
-     * @depends testStatusGetters
-     */
-    public function testWasDischargedStatus($details)
-    {
-        $this->assertTrue($details[1]->wasDischarged);
-    }
-
-    /**
-     * @depends testStatusGetters
-     */
-    public function testWasProtestedStatus($details)
-    {
-        $this->assertTrue($details[3]->wasProtested);
+        $this->assertObjectHasAttribute('message', $header);
     }
 }

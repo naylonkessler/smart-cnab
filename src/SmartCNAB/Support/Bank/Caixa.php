@@ -12,8 +12,8 @@ class Caixa extends Bank
     /**
      * Caixa instructions constants.
      */
-    const INST_PROTEST = '01';
-    const INST_DEVOLUTION = '02';
+    const INSTRUCTION_PROTEST = '01';
+    const INSTRUCTION_DEVOLUTION = '02';
 
     /**
      * Constants for returning occurrences statuses.
@@ -82,8 +82,8 @@ class Caixa extends Bank
      * @var array
      */
     protected static $instructions = [
-        self::INST_PROTEST => 'Protestar - Dias corridos',
-        self::INST_DEVOLUTION => 'Devolver - Não protestar',
+        self::INSTRUCTION_PROTEST => 'Protestar - Dias corridos',
+        self::INSTRUCTION_DEVOLUTION => 'Devolver - Não protestar',
     ];
 
     /**

@@ -35,11 +35,14 @@ class Returning extends SupportReturning
     }
 
     /**
+     * Fetch and return the message received on header data.
+     *
      * @param  \StdClass  $data
      * @return array
      */
     public function getMessage(StdClass $data)
     {
+        return [];
     }
 
     /**
@@ -51,9 +54,21 @@ class Returning extends SupportReturning
     public function getMotives(StdClass $data)
     {
         $motives = $this->supportBank->motives($data->occurrenceCode);
-        $motive = str_pad($data->motive, 2, 0, STR_PAD_LEFT);
 
         return empty($motives[$motive]) ? [] : [$motives[$motive]];
+    }
+
+    /**
+     * Returns the file header.
+     *
+     * @return \StdClass
+     */
+    public function header()
+    {
+        $data = parent::header();
+        $data->message = $this->getMessage($data);
+
+        return $data;
     }
 
     /**

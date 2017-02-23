@@ -12,9 +12,10 @@ class Itau extends Bank
     /**
      * Constants for returning occurrences statuses.
      */
-    const OCCURRENCES_DISCHARGED = [2, 64];
-    const OCCURRENCES_ENTRY = [9, 47, 59, 72];
+    const OCCURRENCES_DISCHARGED = [9, 47, 59, 72];
+    const OCCURRENCES_ENTRY = [2, 64];
     const OCCURRENCES_ERROR = [3, 15, 16, 17, 18];
+    const OCCURRENCES_INSTRUCTION_CANCELED = [57];
     const OCCURRENCES_PAID = [6, 7, 8, 10];
     const OCCURRENCES_PROTESTED = [32];
 
