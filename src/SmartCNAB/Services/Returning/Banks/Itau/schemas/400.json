@@ -32,7 +32,7 @@
             "pos": [33, 37],
             "pic": "9(05)"
         },
-        "dac": {
+        "accountDv": {
             "pos": [38, 38],
             "pic": "9(01)"
         },
@@ -65,7 +65,7 @@
             "pos": [106, 108],
             "pic": "X(03)"
         },
-        "returnSequential": {
+        "fileSequential": {
             "pos": [109, 113],
             "pic": "9(05)"
         },
@@ -108,7 +108,7 @@
             "pos": [24, 28],
             "pic": "9(05)"
         },
-        "dac": {
+        "accountDv": {
             "pos": [29, 29],
             "pic": "9(01)"
         },
@@ -132,11 +132,11 @@
             "pos": [83, 85],
             "pic": "9(03)"
         },
-        "ourNumber2": {
+        "generatedOurNumber": {
             "pos": [86, 93],
             "pic": "9(08)"
         },
-        "ourNumber2Dac": {
+        "generatedOurNumberDv": {
             "pos": [94, 94],
             "pic": "9(01)"
         },
@@ -157,7 +157,7 @@
             "pic": "9(06)",
             "type": "date"
         },
-        "documentNumber": {
+        "yourNumber": {
             "pos": [117, 126],
             "pic": "X(10)"
         },
@@ -186,7 +186,7 @@
             "pos": [169, 172],
             "pic": "9(04)"
         },
-        "receiveBranchDac": {
+        "receiveBranchDv": {
             "pos": [173, 173],
             "pic": "9(01)"
         },
@@ -226,7 +226,7 @@
             "pos": [280, 292],
             "pic": "9(11)V9(2)"
         },
-        "dda": {
+        "ddaFlag": {
             "pos": [293, 293],
             "pic": "X(01)"
         },
@@ -255,7 +255,7 @@
             "pos": [325, 354],
             "pic": "X(30)"
         },
-        "s8": {
+        "s7": {
             "pos": [355, 377],
             "pic": "X(23)"
         },
@@ -263,11 +263,11 @@
             "pos": [378, 385],
             "pic": "X(08)"
         },
-        "s9": {
+        "s8": {
             "pos": [386, 392],
             "pic": "X(07)"
         },
-        "creditCode": {
+        "channel": {
             "pos": [393, 394],
             "pic": "X(02)"
         },
@@ -305,7 +305,7 @@
             "pos": [26, 39],
             "pic": "9(12)V9(2)"
         },
-        "bankNotice1": {
+        "simpleNotice": {
             "pos": [40, 47],
             "pic": "X(08)"
         },
@@ -321,7 +321,7 @@
             "pos": [66, 79],
             "pic": "9(12)V9(2)"
         },
-        "bankNotice2": {
+        "linkNotice": {
             "pos": [80, 87],
             "pic": "X(08)"
         },
@@ -337,11 +337,11 @@
             "pos": [186, 199],
             "pic": "9(12)V9(2)"
         },
-        "bankNotice3": {
+        "directNotice": {
             "pos": [200, 207],
             "pic": "X(08)"
         },
-        "returnSequential": {
+        "fileSequential": {
             "pos": [208, 212],
             "pic": "9(05)"
         },
