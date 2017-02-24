@@ -74,4 +74,18 @@ class Itau400ReturningTest extends PHPUnit_Framework_TestCase
             \SmartCNAB\Support\Bank\Itau::OCCURRENCES_PROTESTED
         ));
     }
+
+    /**
+     * @depends testReturningParsing
+     */
+    public function testMotive($returning)
+    {
+        $details = $returning->details();
+
+        $this->assertEquals(1842, $details[1]->motive);
+        $this->assertNotEquals(
+            ['Boleto dda, divida não reconhecida pelo pagador.'],
+            $details[1]->motives
+        );
+    }
 }

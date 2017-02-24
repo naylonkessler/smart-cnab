@@ -239,15 +239,15 @@
             "pic": "9(06)",
             "type": "date"
         },
-        "canceledInstruction": {
+        "otherMotive": {
             "pos": [302, 305],
             "pic": "9(04)"
         },
-        "s7": {
+        "payerClaimDate": {
             "pos": [306, 311],
             "pic": "X(06)"
         },
-        "z2": {
+        "payerClaimValue": {
             "pos": [312, 324],
             "pic": "9(13)"
         },

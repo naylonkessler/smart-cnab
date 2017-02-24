@@ -17,6 +17,8 @@ class Itau extends Bank
     const OCCURRENCES_ERROR = [3, 15, 16, 17, 18];
     const OCCURRENCES_INSTRUCTION_CANCELED = [57];
     const OCCURRENCES_PAID = [6, 7, 8, 10];
+    const OCCURRENCES_PAYER_CLAIMS = [25];
+    const OCCURRENCES_PROTEST_ORDER_HALTED = [24];
     const OCCURRENCES_PROTESTED = [32];
 
     /**

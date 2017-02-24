@@ -27,14 +27,31 @@ class File400 extends Returning
      */
     public function getMotives(StdClass $data)
     {
-        $motives = $this->supportBank->motives($data->occurrenceCode);
-        $motive = $this->parseMotiveParts($data);
+        $map = $this->supportBank->motives($data->occurrenceCode);
+        $parts = $this->parseMotiveParts($data);
 
-        $motive = array_map(function ($motive) use ($motives) {
-            return empty($motives[$motive]) ? null : $motives[$motive];
-        }, $motive);
+        $mapper = function ($motive) use ($map) {
+            return empty($map[$motive]) ? null : $map[$motive];
+        };
 
-        return array_filter($motive);
+        return array_filter(array_map($mapper, $parts));
+    }
+
+    /**
+     * Check if received data as other motive set.
+     *
+     * @param  \StdClass  $data
+     * @return boolean
+     */
+    protected function hasOtherMotive(StdClass $data)
+    {
+        $others = array_merge(
+            Itau::OCCURRENCES_INSTRUCTION_CANCELED,
+            Itau::OCCURRENCES_PAYER_CLAIMS,
+            Itau::OCCURRENCES_PROTEST_ORDER_HALTED
+        );
+
+        return in_array($data->occurrenceCode, $others);
     }
 
     /**
@@ -51,8 +68,8 @@ class File400 extends Returning
             return str_split($motive, 2);
         }
 
-        if (in_array($data->occurrenceCode, Itau::OCCURRENCES_INSTRUCTION_CANCELED)) {
-            return [$data->canceledInstruction];
+        if ($this->hasOtherMotive($data)) {
+            return [$data->otherMotive];
         }
 
         return [$motive];
