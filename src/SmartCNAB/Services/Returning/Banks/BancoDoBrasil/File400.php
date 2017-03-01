@@ -2,7 +2,6 @@
 
 namespace SmartCNAB\Services\Returning\Banks\BancoDoBrasil;
 
-use SmartCNAB\Services\Returning\MultiPartMotiveTrait;
 use SmartCNAB\Services\Returning\Returning;
 
 /**
