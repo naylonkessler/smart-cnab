@@ -12,8 +12,12 @@ class BancoDoBrasil extends Bank
     /**
      * Constants for returning occurrences statuses.
      */
-    const OCCURRENCES_DISCHARGED = [9];
+    const OCCURRENCES_CONFIRMATION = [12, 13, 14, 16, 21, 22, 23, 24, 25, 26,
+        28, 31, 32, 33, 34, 35, 36, 37, 38, 39, 41, 42, 44, 46, 72, 73, 96, 97,
+        98];
+    const OCCURRENCES_DISCHARGED = [9, 10, 20];
     const OCCURRENCES_ENTRY = [2];
+    const OCCURRENCES_ERROR = [3];
     const OCCURRENCES_PAID = [5, 6, 7, 8, 15];
     const OCCURRENCES_PROTESTED = [19];
 

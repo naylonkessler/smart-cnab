@@ -2,10 +2,11 @@
 
 namespace SmartCNAB\Services\Returning\Banks\BancoDoBrasil;
 
+use SmartCNAB\Services\Returning\MultiPartMotiveTrait;
 use SmartCNAB\Services\Returning\Returning;
 
 /**
- * Class for BancodoBrasil return CNAB 400 layout.
+ * Class for BancoDoBrasil return CNAB 400 layout.
  */
 class File400 extends Returning
 {

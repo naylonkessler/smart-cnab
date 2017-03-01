@@ -4,6 +4,7 @@ namespace SmartCNAB\Services\Returning\Banks\Itau;
 
 use StdClass;
 
+use SmartCNAB\Services\Returning\MultiPartMotiveTrait;
 use SmartCNAB\Services\Returning\Returning;
 use SmartCNAB\Support\Bank\Itau;
 
@@ -12,30 +13,14 @@ use SmartCNAB\Support\Bank\Itau;
  */
 class File400 extends Returning
 {
+    use MultiPartMotiveTrait;
+
     /**
      * File schema file.
      *
      * @var string
      */
     protected $schemaFile = '/schemas/400.json';
-
-    /**
-     * Fetch and return motives descriptions from received detail data.
-     *
-     * @param  \StdClass  $data
-     * @return array
-     */
-    public function getMotives(StdClass $data)
-    {
-        $map = $this->supportBank->motives($data->occurrenceCode);
-        $parts = $this->parseMotiveParts($data);
-
-        $mapper = function ($motive) use ($map) {
-            return empty($map[$motive]) ? null : $map[$motive];
-        };
-
-        return array_filter(array_map($mapper, $parts));
-    }
 
     /**
      * Check if received data as other motive set.

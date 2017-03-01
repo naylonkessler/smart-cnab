@@ -55,7 +55,7 @@ class Returning extends SupportReturning
     {
         $motives = $this->supportBank->motives($data->occurrenceCode);
 
-        return empty($motives[$motive]) ? [] : [$motives[$motive]];
+        return empty($motives[$data->motive]) ? [] : [$motives[$data->motive]];
     }
 
     /**
