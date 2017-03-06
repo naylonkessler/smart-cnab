@@ -84,7 +84,7 @@
             "pos": [18, 20],
             "pic": "9(03)"
         },
-        "companyId": {
+        "companyCode": {
             "pos": [21, 37],
             "pic": "X(17)"
         },
@@ -162,11 +162,11 @@
             "pos": [176, 188],
             "pic": "9(11)V9(2)"
         },
-        "otherChanges":  {
+        "otherDebits":  {
             "pos": [189, 201],
             "pic": "9(11)V9(2)"
         },
-        "interestOp":  {
+        "lateInterest":  {
             "pos": [202, 214],
             "pic": "9(11)V9(2)"
         },
@@ -186,7 +186,7 @@
             "pos": [254, 266],
             "pic": "9(11)V9(2)"
         },
-        "interest": {
+        "interests": {
             "pos": [267, 279],
             "pic": "9(11)V9(2)"
         },
@@ -207,7 +207,7 @@
             "pic": "9(06)",
             "type": "date"
         },
-        "paymentSource": {
+        "channel": {
             "pos": [302, 304],
             "pic": "9(03)"
         },
@@ -215,7 +215,7 @@
             "pos": [305, 314],
             "pic": "X(10)"
         },
-        "chequeCode": {
+        "bankCode": {
             "pos": [315, 318],
             "pic": "9(04)"
         },
@@ -227,11 +227,11 @@
             "pos": [329, 368],
             "pic": "X(40)"
         },
-        "registryNumber": {
+        "registry": {
             "pos": [369, 370],
             "pic": "9(02)"
         },
-        "recordNumber": {
+        "protocol": {
             "pos": [371, 380],
             "pic": "X(10)"
         },

@@ -12,10 +12,19 @@ class Bradesco extends Bank
     /**
      * Constants for returning occurrences statuses.
      */
+    const OCCURRENCES_DEBITS = [28];
     const OCCURRENCES_DISCHARGED = [9, 10];
+    const OCCURRENCES_DISUSED_AUTO_DEBIT = [35];
     const OCCURRENCES_ENTRY = [2];
+    const OCCURRENCES_ERROR = [3, 24, 27, 30, 32];
     const OCCURRENCES_PAID = [6, 15, 17];
+    const OCCURRENCES_PAYER_CLAIMS = [29];
     const OCCURRENCES_PROTESTED = [19, 25];
+
+    /**
+     * Motives for debits occurrence code that has irregular size.
+     */
+    const MOTIVES_DEBITS_IRREGULAR = [100, 101, 102, 105, 106, 107];
 
     /**
      * Channels codes.

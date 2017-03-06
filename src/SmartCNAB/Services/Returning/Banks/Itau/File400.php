@@ -47,7 +47,7 @@ class File400 extends Returning
      */
     protected function parseMotiveParts(StdClass $data)
     {
-        $motive = $data->motive;
+        $motive = str_pad(trim($data->motive), 8, 0, STR_PAD_LEFT);
 
         if (in_array($data->occurrenceCode, Itau::OCCURRENCES_ERROR)) {
             return str_split($motive, 2);
