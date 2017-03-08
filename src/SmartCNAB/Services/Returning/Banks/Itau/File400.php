@@ -31,6 +31,7 @@ class File400 extends Returning
     protected function hasOtherMotive(StdClass $data)
     {
         $others = array_merge(
+            Itau::OCCURRENCES_DEBITS,
             Itau::OCCURRENCES_INSTRUCTION_CANCELED,
             Itau::OCCURRENCES_PAYER_CLAIMS,
             Itau::OCCURRENCES_PROTEST_ORDER_HALTED
