@@ -83,7 +83,11 @@ class File400 extends Remittance
         $value,
         array $data = []
     ) {
-        return ($data['instruction1'] == 6 || $data['instruction2'] == 6) ?
-                    ($value ?: 0) : 0;
+        if ($data['instruction1'] == 6 || $data['instruction2'] == 6)
+        {
+            return $value ?: 0;
+        }
+
+        return !empty($data['deadline'])? $data['deadline'] : $value;
     }
 }
