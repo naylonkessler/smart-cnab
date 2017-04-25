@@ -23,7 +23,8 @@
         "serviceLiteral": {
             "pos": [12, 19],
             "pic": "X(08)",
-            "def": "COBRANCA"
+            "def": "COBRANÇA",
+            "translit": false
         },
         "s1": {
             "pos": [20, 26],

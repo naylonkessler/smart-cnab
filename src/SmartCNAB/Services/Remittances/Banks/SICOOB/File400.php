@@ -24,7 +24,7 @@ class File400 extends Remittance
      */
     protected function mutateDetailAccount($value)
     {
-        return substr($value, 0, -1);
+        return $value;
     }
 
     /**
@@ -100,6 +100,8 @@ class File400 extends Remittance
         $value,
         array $data = []
     ) {
+        if($data['discount'] == '0') return '';
+
         return $value ?: $data['expiration'];
     }
 
@@ -157,7 +159,9 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        return $this->mutateDetailBranch($value, $data, $meta);
+        if (empty($data['branch'])) return $value;
+
+        return empty($data['branch']) ? $value : $data['branch'];
     }
 
     /**
@@ -173,7 +177,9 @@ class File400 extends Remittance
         array $data = [],
         array $meta = []
     ) {
-        return $this->mutateDetailBranchDv($value, $data, $meta);
+        if (empty($data['branch'])) return $value;
+
+        return empty($data['branchDv']) ? $value : $data['branchDv'];
     }
 
     /**
@@ -184,7 +190,7 @@ class File400 extends Remittance
      */
     protected function mutateHeaderBranch($value)
     {
-        return substr($value, 0, -1);
+        return $value;
     }
 
     /**
@@ -214,9 +220,9 @@ class File400 extends Remittance
         $value,
         array $data = []
     ) {
-        if (empty($data['account'])) return $value;
+        if (empty($data['companyCode'])) return $value;
 
-        return $value ?: $data['account'];
+        return $value ? substr($value, 0, -1) : substr($data['companyCode'], 0, -1);
     }
 
     /**
@@ -230,8 +236,8 @@ class File400 extends Remittance
         $value,
         array $data = []
     ) {
-        if (empty($data['account'])) return $value;
+        if (empty($data['companyCode'])) return $value;
 
-        return $value ?: $data['accountDv'];
+        return $value ? substr($data['value'], -1) : substr($data['companyCode'], -1);
     }
 }

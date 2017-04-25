@@ -105,7 +105,7 @@ class File implements FileInterface
         }, $this->getLines());
 
         $output = implode("\r\n", $lines);
-        $output = iconv('UTF-8', 'ASCII//TRANSLIT', $output);
+        // $output = iconv('UTF-8', 'ASCII//TRANSLIT', $output);
         $output = strtoupper($output);
 
         return $output;

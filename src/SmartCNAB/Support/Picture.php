@@ -52,7 +52,7 @@ class Picture
     public function limit($value, $size, array $meta = [])
     {
         if (strlen($value) > $size) {
-            return substr($value, 0, $size);
+            return mb_substr($value, 0, $size);
         }
 
         $method = $meta['data-type'] . 'Pad';
@@ -98,6 +98,7 @@ class Picture
             'data-type' => 'numeric',
             'info-type' => empty($meta['type'])? 'generic' : $meta['type'],
             'strict' => true,
+            'translit' => true,
         ], $meta);
 
         if (preg_match(self::REGEX_INTEGER, $picture, $match)) {
@@ -155,7 +156,10 @@ class Picture
         $parsed = $this->parse($picture, $meta);
         $method = 'toType' . ucfirst($parsed['info-type']);
         $value = $this->toDefault($value, $parsed);
-        $value = $this->transliterate($value);
+
+        if ($parsed['translit']) {
+            $value = $this->transliterate($value);
+        }
 
         if (method_exists($this, $method)) {
             return call_user_func_array([$this, $method], [$value, $parsed]);
