@@ -60,8 +60,8 @@ class Caixa extends Bank
      * @var array
      */
     protected static $emission = [
-        '01' => 'Banco emite',
-        '02' => 'Cliente emite',
+        '1' => 'Banco emite',
+        '2' => 'Cliente emite',
     ];
 
     /**

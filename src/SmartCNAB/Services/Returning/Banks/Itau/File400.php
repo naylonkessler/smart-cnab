@@ -31,6 +31,7 @@ class File400 extends Returning
     protected function hasOtherMotive(StdClass $data)
     {
         $others = array_merge(
+            Itau::OCCURRENCES_DEBITS,
             Itau::OCCURRENCES_INSTRUCTION_CANCELED,
             Itau::OCCURRENCES_PAYER_CLAIMS,
             Itau::OCCURRENCES_PROTEST_ORDER_HALTED
@@ -47,7 +48,7 @@ class File400 extends Returning
      */
     protected function parseMotiveParts(StdClass $data)
     {
-        $motive = $data->motive;
+        $motive = str_pad(trim($data->motive), 8, 0, STR_PAD_LEFT);
 
         if (in_array($data->occurrenceCode, Itau::OCCURRENCES_ERROR)) {
             return str_split($motive, 2);

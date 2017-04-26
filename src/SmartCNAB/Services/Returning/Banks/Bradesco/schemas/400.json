@@ -45,7 +45,7 @@
             "pos": [101, 108],
             "pic": "9(08)"
         },
-        "returnSequential": {
+        "bankNotice": {
             "pos": [109, 113],
             "pic": "9(05)"
         },
@@ -84,7 +84,7 @@
             "pos": [18, 20],
             "pic": "9(03)"
         },
-        "companyId": {
+        "companyCode": {
             "pos": [21, 37],
             "pic": "X(17)"
         },
@@ -116,7 +116,7 @@
             "pos": [106, 107],
             "pic": "9(02)"
         },
-         "portfolioCode": {
+        "portfolio": {
             "pos": [108, 108],
             "pic": "9(01)"
         },
@@ -129,11 +129,11 @@
             "pic": "9(06)",
             "type": "date"
         },
-        "documentNumber": {
+        "yourNumber": {
             "pos": [117, 126],
             "pic": "X(10)"
         },
-        "ourNumberConference": {
+        "generatedOurNumber": {
             "pos": [127, 146],
             "pic": "X(20)"
         },
@@ -162,11 +162,11 @@
             "pos": [176, 188],
             "pic": "9(11)V9(2)"
         },
-        "otherChanges":  {
+        "otherDebits":  {
             "pos": [189, 201],
             "pic": "9(11)V9(2)"
         },
-        "interestOp":  {
+        "lateInterest":  {
             "pos": [202, 214],
             "pic": "9(11)V9(2)"
         },
@@ -186,7 +186,7 @@
             "pos": [254, 266],
             "pic": "9(11)V9(2)"
         },
-        "interest": {
+        "interests": {
             "pos": [267, 279],
             "pic": "9(11)V9(2)"
         },
@@ -198,7 +198,7 @@
             "pos": [293, 294],
             "pic": "X(02)"
         },
-        "eventCode25":  {
+        "protestMotive":  {
             "pos": [295, 295],
             "pic": "X(01)"
         },
@@ -207,7 +207,7 @@
             "pic": "9(06)",
             "type": "date"
         },
-        "paymentSource": {
+        "channel": {
             "pos": [302, 304],
             "pic": "9(03)"
         },
@@ -215,11 +215,11 @@
             "pos": [305, 314],
             "pic": "X(10)"
         },
-        "chequeCode": {
+        "bankCode": {
             "pos": [315, 318],
             "pic": "9(04)"
         },
-        "rejectionCode": {
+        "motive": {
             "pos": [319, 328],
             "pic": "9(10)"
         },
@@ -227,11 +227,11 @@
             "pos": [329, 368],
             "pic": "X(40)"
         },
-        "registryNumber": {
+        "registry": {
             "pos": [369, 370],
             "pic": "9(02)"
         },
-        "recordNumber": {
+        "protocol": {
             "pos": [371, 380],
             "pic": "X(10)"
         },
@@ -265,15 +265,15 @@
             "pos": [8, 17],
             "pic": "X(10)"
         },
-        "simpleQuantity": {
+        "quantity": {
             "pos": [18, 25],
             "pic": "9(08)"
         },
-        "simpleValue": {
+        "value": {
             "pos": [26, 39],
             "pic": "9(12)V9(2)"
         },
-        "bankNotice1": {
+        "notice": {
             "pos": [40, 47],
             "pic": "X(08)"
         },
@@ -281,63 +281,63 @@
             "pos": [48, 57],
             "pic": "X(10)"
         },
-        "linkQuantity": {
+        "entryQuantity": {
             "pos": [58, 62],
             "pic": "9(05)"
         },
-        "linkValue": {
+        "entryValue": {
             "pos": [63, 74],
             "pic": "9(10)V9(2)"
         },
-        "eventLiq6Value": {
+        "paidValue": {
             "pos": [75, 86],
             "pic": "9(10)V9(2)"
         },
-        "eventLiq6Quantity": {
+        "paidQuantity": {
             "pos": [87, 91],
             "pic": "9(05)"
         },
-        "event6Value": {
+        "paidValue2": {
             "pos": [92, 103],
             "pic": "9(10)V9(2)"
         },
-        "event9Quantity": {
+        "dischargedQuantity": {
             "pos": [104, 108],
             "pic": "9(05)"
         },
-        "event9Value": {
+        "dischargedValue": {
             "pos": [109, 120],
             "pic": "9(10)V9(2)"
         },
-        "event13Quantity": {
+        "rebateCanceledQuantity": {
             "pos": [121, 125],
             "pic": "9(05)"
         },
-        "event13Value": {
+        "rebateCanceledValue": {
             "pos": [126, 137],
             "pic": "9(10)V9(2)"
         },
-        "event14Quantity": {
+        "expirationUpdatedQuantity": {
             "pos": [138, 142],
             "pic": "9(05)"
         },
-        "event14Value": {
+        "expirationUpdatedValue": {
             "pos": [143, 154],
             "pic": "9(10)V9(2)"
         },
-        "event12Quantity": {
+        "rebatedQuantity": {
             "pos": [155, 159],
             "pic": "9(05)"
         },
-        "event12Value": {
+        "rebatedValue": {
             "pos": [160, 171],
             "pic": "9(10)V9(2)"
         },
-        "event19Quantity": {
+        "protestedQuantity": {
             "pos": [172, 176],
             "pic": "9(05)"
         },
-        "event19Value": {
+        "protestedValue": {
             "pos": [177, 188],
             "pic": "9(10)V9(2)"
         },
