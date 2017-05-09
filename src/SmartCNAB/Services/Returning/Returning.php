@@ -53,9 +53,11 @@ class Returning extends SupportReturning
      */
     public function getMotives(StdClass $data)
     {
+        $motive = '';
         $motives = $this->supportBank->motives($data->occurrenceCode);
+        !empty($data->motive) && $motive = str_pad(trim($data->motive), 10, 0, STR_PAD_LEFT);
 
-        return empty($motives[$data->motive]) ? [] : [$motives[$data->motive]];
+        return empty($motives[$motive]) ? [] : [$motives[$motive]];
     }
 
     /**

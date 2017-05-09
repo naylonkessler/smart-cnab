@@ -16,6 +16,7 @@ class SICOOB extends Bank
     const OCCURRENCES_ENTRY = [2];
     const OCCURRENCES_PAID = [5, 6, 15];
     const OCCURRENCES_PROTESTED = [23];
+    const OCCURRENCES_ERROR = [];
 
     /**
      * Documents (especies) prefixed.
